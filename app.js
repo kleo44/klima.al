@@ -23,18 +23,6 @@ function setLang(l) {
 
 document.querySelectorAll('.lb').forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
 
-/* ── Promo bar close ──────────────────────────────── */
-const promoBar = document.getElementById('promoBar');
-document.getElementById('promoClose').addEventListener('click', () => {
-  promoBar.style.maxHeight = promoBar.offsetHeight + 'px';
-  promoBar.style.overflow  = 'hidden';
-  promoBar.style.transition = 'max-height .4s ease, padding .4s ease, opacity .3s ease';
-  requestAnimationFrame(() => {
-    promoBar.style.maxHeight = '0';
-    promoBar.style.padding   = '0';
-    promoBar.style.opacity   = '0';
-  });
-});
 
 /* ── Sticky header shadow ─────────────────────────── */
 const header = document.getElementById('header');
