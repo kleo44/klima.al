@@ -717,6 +717,25 @@ button { cursor: pointer; border: none; background: none; font-family: var(--fon
 /* ═══════════════════════════════════════════════════
    SCROLL-TO-TOP
    ═══════════════════════════════════════════════════ */
+.whatsapp-float {
+  position: fixed;
+  bottom: 84px;
+  right: 28px;
+  z-index: 999;
+  width: 52px;
+  height: 52px;
+  background: #25d366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(37,211,102,.45);
+  transition: var(--tr);
+}
+.whatsapp-float:hover { background: #1ebe5d; transform: translateY(-3px); }
+.sl-wa { background: rgba(37,211,102,.15); border-color: #25d366; color: #25d366; }
+.sl-wa:hover { background: #25d366; color: #fff; }
+
 .scroll-top {
   position: fixed;
   bottom: 28px;
