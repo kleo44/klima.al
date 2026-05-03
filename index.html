@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Klima.Al – Kondicionerë Mitsubishi Heavy Industries</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<!-- ══ PROMO BAR ══ -->
+<div class="promo-bar" id="promoBar">
+  <span data-sq="🔥 Ofertë e Verës: Instalim Falas me çdo kondicionerë MSZ-AP — Deri më 31 Maj 2026"
+        data-en="🔥 Summer Offer: Free Installation with every MSZ-AP air conditioner — Until May 31 2026">
+    🔥 Ofertë e Verës: Instalim Falas me çdo kondicionerë MSZ-AP — Deri më 31 Maj 2026
+  </span>
+  <button class="promo-close" id="promoClose" aria-label="Close">✕</button>
+</div>
+
+<!-- ══ HEADER (DARK) ══ -->
+<header class="header" id="header">
+  <div class="container header-inner">
+    <a href="#" class="logo">
+      <span class="logo-k">KLIMA</span><span class="logo-dot">.</span><span class="logo-al">AL</span>
+    </a>
+
+    <nav class="nav" id="nav">
+      <ul class="nav-list">
+        <li><a class="nav-link" href="#hero"     data-sq="Kreu"          data-en="Home">Kreu</a></li>
+        <li class="has-drop">
+          <a class="nav-link" href="#products"   data-sq="Produkte"      data-en="Products">Produkte</a>
+          <ul class="drop">
+            <li><a href="#products"  data-sq="Të gjitha modelet"     data-en="All models">Të gjitha modelet</a></li>
+            <li><a href="#cat"       data-sq="Kondicionerë Split"    data-en="Split AC">Kondicionerë Split</a></li>
+            <li><a href="#cat"       data-sq="Sisteme Multi-Split"   data-en="Multi-Split">Sisteme Multi-Split</a></li>
+            <li><a href="#cat"       data-sq="Sisteme Komerciale"    data-en="Commercial">Sisteme Komerciale</a></li>
+          </ul>
+        </li>
+        <li><a class="nav-link" href="#features" data-sq="Teknologji"    data-en="Technology">Teknologji</a></li>
+        <li><a class="nav-link" href="#services" data-sq="Shërbime"      data-en="Services">Shërbime</a></li>
+        <li><a class="nav-link" href="#contact"  data-sq="Kontakt"       data-en="Contact">Kontakt</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-right">
+      <a href="tel:+355691234567" class="header-phone">📞 +355 69 123 4567</a>
+      <div class="lang-sw">
+        <button class="lb lb-active" data-lang="sq">SQ</button>
+        <span>|</span>
+        <button class="lb" data-lang="en">EN</button>
+      </div>
+    </div>
+
+    <button class="burger" id="burger"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- ══ HERO (SPLIT) ══ -->
+<section class="hero" id="hero">
+  <div class="hero-left">
+    <span class="hero-badge" data-sq="Distributor Zyrtar · Mitsubishi Heavy Industries" data-en="Official Distributor · Mitsubishi Heavy Industries">Distributor Zyrtar · Mitsubishi Heavy Industries</span>
+    <h1 data-sq-html="ZGJIDHNI<br>KLIMËN<br>TUAJ" data-en-html="CHOOSE<br>YOUR<br>CLIMATE">ZGJIDHNI<br>KLIMËN<br>TUAJ</h1>
+    <p data-sq="Kondicionerë inverter japonezë me efiçiencë maksimale. Instalim profesional. Garanci 3 vjet."
+       data-en="Japanese inverter air conditioners with maximum efficiency. Professional installation. 3-year warranty.">
+      Kondicionerë inverter japonezë me efiçiencë maksimale. Instalim profesional. Garanci 3 vjet.
+    </p>
+    <div class="hero-btns">
+      <a href="#products" class="btn btn-red"          data-sq="Shfleto Produktet" data-en="Browse Products">Shfleto Produktet</a>
+      <a href="#contact"  class="btn btn-ghost-white"  data-sq="Porosit Tani"     data-en="Order Now">Porosit Tani</a>
+    </div>
+    <div class="hero-meta">
+      <div class="hm-item"><strong>10+</strong><span data-sq="vite eksperiencë" data-en="years experience">vite eksperiencë</span></div>
+      <div class="hm-div"></div>
+      <div class="hm-item"><strong>2 000+</strong><span data-sq="instalime" data-en="installations">instalime</span></div>
+      <div class="hm-div"></div>
+      <div class="hm-item"><strong>A+++</strong><span data-sq="klasa energjie" data-en="energy class">klasa energjie</span></div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-img-wrap">
+      <img src="https://www.mitsubishi-termal.it/wp-content/uploads/2023/04/kireia-r32.jpg"
+           onerror="this.src='https://placehold.co/480x380/0e1c2f/ffffff?text=KIREIA+R32'"
+           alt="KIREIA Mural R32" class="hero-product-img" />
+      <div class="hero-chip">
+        <span data-sq="Bestseller 2026" data-en="Bestseller 2026">Bestseller 2026</span>
+        <strong>KIREIA Series</strong>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SHOP BY CATEGORY ══ -->
+<section class="cat-section" id="cat">
+  <div class="container">
+    <div class="cat-header">
+      <h2 data-sq="Shfletoni sipas kategorisë" data-en="Shop by Category">Shfletoni sipas kategorisë</h2>
+    </div>
+    <div class="cat-grid">
+
+      <a href="#products" class="cat-tile" data-filter-target="residential"
+         style="--bg:url('https://www.mitsubishi-termal.it/wp-content/uploads/2023/04/kireia-evo-applicazione-2.jpg')">
+        <div class="cat-overlay"></div>
+        <div class="cat-body">
+          <span class="cat-tag" data-sq="Kondicionerë Mural" data-en="Wall Units">Kondicionerë Mural</span>
+          <h3 data-sq="KIREIA · Evo · Smart" data-en="KIREIA · Evo · Smart">KIREIA · Evo · Smart</h3>
+          <p data-sq="SRK ZS-WF · ZTL-W · ZSP-W" data-en="SRK ZS-WF · ZTL-W · ZSP-W">SRK ZS-WF · ZTL-W · ZSP-W</p>
+          <span class="cat-arrow">→</span>
+        </div>
+      </a>
+
+      <a href="#products" class="cat-tile" data-filter-target="premium"
+         style="--bg:url('https://www.mitsubishi-termal.it/wp-content/uploads/2023/06/kireia-plus-applicazione.jpg')">
+        <div class="cat-overlay"></div>
+        <div class="cat-body">
+          <span class="cat-tag" data-sq="Seria Premium" data-en="Premium Series">Seria Premium</span>
+          <h3 data-sq="KIREIA Titanium · Plus" data-en="KIREIA Titanium · Plus">KIREIA Titanium · Plus</h3>
+          <p data-sq="SRK ZS-WF-T · ZSX-WF · A+++" data-en="SRK ZS-WF-T · ZSX-WF · A+++">SRK ZS-WF-T · ZSX-WF · A+++</p>
+          <span class="cat-arrow">→</span>
+        </div>
+      </a>
+
+      <a href="#products" class="cat-tile" data-filter-target="floor"
+         style="--bg:url('https://www.mitsubishi-termal.it/wp-content/uploads/2023/06/console-R32.jpg')">
+        <div class="cat-overlay"></div>
+        <div class="cat-body">
+          <span class="cat-tag" data-sq="Pajisje Tokësore" data-en="Floor Units">Pajisje Tokësore</span>
+          <h3 data-sq="Primary Heating" data-en="Primary Heating">Primary Heating</h3>
+          <p data-sq="SRF ZS-W · Tokësor · 2.5–5.0 kW" data-en="SRF ZS-W · Floor Type · 2.5–5.0 kW">SRF ZS-W · Tokësor · 2.5–5.0 kW</p>
+          <span class="cat-arrow">→</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ PRODUCTS ══ -->
+<section class="products-section" id="products">
+  <div class="container">
+    <div class="sec-head">
+      <div>
+        <span class="sec-label" data-sq="Linja Jonë" data-en="Our Range">Linja Jonë</span>
+        <h2 data-sq="Të gjitha modelet Kireia · Primary Heating" data-en="All KIREIA · Primary Heating Models">Të gjitha modelet Kireia · Primary Heating</h2>
+      </div>
+      <div class="filter-row">
+        <button class="fb fb-active" data-filter="all"         data-sq="Të Gjitha"  data-en="All">Të Gjitha</button>
+        <button class="fb"           data-filter="residential" data-sq="Mural"       data-en="Wall Unit">Mural</button>
+        <button class="fb"           data-filter="premium"     data-sq="Premium"     data-en="Premium">Premium</button>
+        <button class="fb"           data-filter="floor"       data-sq="Tokësor"     data-en="Floor">Tokësor</button>
+      </div>
+    </div>
+
+    <div class="pg">
+
+      <!-- Card 1: KIREIA Evo -->
+      <div class="pc" data-cat="residential">
+        <div class="pc-img">
+          <img src="https://www.mitsubishi-termal.it/wp-content/uploads/2023/04/kireia-evo.jpg"
+               onerror="this.src='https://placehold.co/320x220/f5f5f5/9b1b2e?text=KIREIA+Evo'"
+               alt="KIREIA Evo" />
+        </div>
+        <div class="pc-body">
+          <p class="pc-series">SRK ZTL-W Series</p>
+          <h3 class="pc-name" data-sq="Standard Inverter" data-en="Standard Inverter">Standard Inverter</h3>
+          <div class="pc-specs">
+            <div><span data-sq="Fuqi" data-en="Capacity">Fuqi</span><strong>1.5–7.1 kW</strong></div>
+            <div><span data-sq="Klasa" data-en="Class">Klasa</span><strong>A++</strong></div>
+            <div><span data-sq="Zhurmë" data-en="Noise">Zhurmë</span><strong>19 dB</strong></div>
+            <div><span>Wi-Fi</span><strong>✔</strong></div>
+          </div>
+          <div class="pc-foot">
+            <div class="pc-price"><span data-sq="Nga" data-en="From">Nga</span><strong>750 €</strong></div>
+            <a href="#contact" class="btn btn-red btn-sm" data-sq="Porosit Tani" data-en="Order Now">Porosit Tani</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2: KIREIA -->
+      <div class="pc" data-cat="residential">
+        <div class="pc-flag bestseller" data-sq="Bestseller" data-en="Bestseller">Bestseller</div>
+        <div class="pc-img">
+          <img src="https://www.mitsubishi-termal.it/wp-content/uploads/2023/04/kireia-r32.jpg"
+               onerror="this.src='https://placehold.co/320x220/f5f5f5/9b1b2e?text=KIREIA'"
+               alt="KIREIA Mural R32" />
+        </div>
+        <div class="pc-body">
+          <p class="pc-series">SRK ZS-WF Series</p>
+          <h3 class="pc-name" data-sq="Mural R32" data-en="Mural R32">Mural R32</h3>
+          <div class="pc-specs">
+            <div><span data-sq="Fuqi" data-en="Capacity">Fuqi</span><strong>2.0–5.0 kW</strong></div>
+            <div><span data-sq="Klasa" data-en="Class">Klasa</span><strong>A+++</strong></div>
+            <div><span>SEER</span><strong>8.50</strong></div>
+            <div><span>Wi-Fi</span><strong>✔</strong></div>
+          </div>
+          <div class="pc-foot">
+            <div class="pc-price"><span data-sq="Nga" data-en="From">Nga</span><strong>945 €</strong></div>
+            <a href="#contact" class="btn btn-red btn-sm" data-sq="Porosit Tani" data-en="Order Now">Porosit Tani</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3: KIREIA Titanium -->
+      <div class="pc" data-cat="premium">
+        <div class="pc-flag popular" data-sq="Premium" data-en="Premium">Premium</div>
+        <div class="pc-img">
+          <img src="https://www.mitsubishi-termal.it/wp-content/uploads/2023/04/kireia-titanio.jpg"
+               onerror="this.src='https://placehold.co/320x220/f5f5f5/9b1b2e?text=KIREIA+Titanium'"
+               alt="KIREIA Titanium" />
+        </div>
+        <div class="pc-body">
+          <p class="pc-series">SRK ZS-WF-T Series</p>
+          <h3 class="pc-name" data-sq="Titanium Edition" data-en="Titanium Edition">Titanium Edition</h3>
+          <div class="pc-specs">
+            <div><span data-sq="Fuqi" data-en="Capacity">Fuqi</span><strong>2.0–5.0 kW</strong></div>
+            <div><span data-sq="Klasa" data-en="Class">Klasa</span><strong>A+++</strong></div>
+            <div><span>SEER</span><strong>8.50</strong></div>
+            <div><span>Wi-Fi</span><strong>✔</strong></div>
+          </div>
+          <div class="pc-foot">
+            <div class="pc-price"><span data-sq="Nga" data-en="From">Nga</span><strong>1 040 €</strong></div>
+            <a href="#contact" class="btn btn-red btn-sm" data-sq="Porosit Tani" data-en="Order Now">Porosit Tani</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5: KIREIA Smart -->
+      <div class="pc" data-cat="residential">
+        <div class="pc-img">
+          <img src="https://www.mitsubishi-termal.it/wp-content/uploads/2024/02/kireia-smart-2026.jpg"
+               onerror="this.src='https://placehold.co/320x220/f5f5f5/9b1b2e?text=KIREIA+Smart'"
+               alt="KIREIA Smart" />
+        </div>
+        <div class="pc-body">
+          <p class="pc-series">SRK ZSP-W Series</p>
+          <h3 class="pc-name" data-sq="Smart Inverter" data-en="Smart Inverter">Smart Inverter</h3>
+          <div class="pc-specs">
+            <div><span data-sq="Fuqi" data-en="Capacity">Fuqi</span><strong>2.5–4.5 kW</strong></div>
+            <div><span data-sq="Klasa" data-en="Class">Klasa</span><strong>A++</strong></div>
+            <div><span data-sq="Zhurmë" data-en="Noise">Zhurmë</span><strong>23 dB</strong></div>
+            <div><span>R32</span><strong>✔</strong></div>
+          </div>
+          <div class="pc-foot">
+            <div class="pc-price"><span data-sq="Çmim" data-en="Price">Çmim</span><strong data-sq="Me kërkesë" data-en="On request">Me kërkesë</strong></div>
+            <a href="#contact" class="btn btn-red btn-sm" data-sq="Porosit Tani" data-en="Order Now">Porosit Tani</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6: KIREIA Plus -->
+      <div class="pc" data-cat="premium">
+        <div class="pc-flag new-flag" data-sq="I Ri" data-en="New">I Ri</div>
+        <div class="pc-img">
+          <img src="https://www.mitsubishi-termal.it/wp-content/uploads/2023/06/kireia-plus-titanio-r32.jpg"
+               onerror="this.src='https://placehold.co/320x220/f5f5f5/9b1b2e?text=KIREIA+Plus'"
+               alt="KIREIA Plus" />
+        </div>
+        <div class="pc-body">
+          <p class="pc-series">SRK ZSX-WF Series</p>
+          <h3 class="pc-name" data-sq="Plus Inverter" data-en="Plus Inverter">Plus Inverter</h3>
+          <div class="pc-specs">
+            <div><span data-sq="Fuqi" data-en="Capacity">Fuqi</span><strong>2.0–6.1 kW</strong></div>
+            <div><span data-sq="Klasa" data-en="Class">Klasa</span><strong>A+++</strong></div>
+            <div><span data-sq="Zhurmë" data-en="Noise">Zhurmë</span><strong>19 dB</strong></div>
+            <div><span>Wi-Fi</span><strong>✔</strong></div>
+          </div>
+          <div class="pc-foot">
+            <div class="pc-price"><span data-sq="Çmim" data-en="Price">Çmim</span><strong data-sq="Me kërkesë" data-en="On request">Me kërkesë</strong></div>
+            <a href="#contact" class="btn btn-red btn-sm" data-sq="Porosit Tani" data-en="Order Now">Porosit Tani</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4: Primary Heating Tokësor -->
+      <div class="pc" data-cat="floor">
+        <div class="pc-flag new-flag" data-sq="I Ri" data-en="New">I Ri</div>
+        <div class="pc-img">
+          <img src="https://www.mitsubishi-termal.it/wp-content/uploads/2023/04/primary-heating-console-monosplit-r32-01.jpg"
+               onerror="this.src='https://placehold.co/320x220/f5f5f5/9b1b2e?text=Primary+Heating'"
+               alt="Primary Heating Tokësor" />
+        </div>
+        <div class="pc-body">
+          <p class="pc-series">SRF ZS-W Series</p>
+          <h3 class="pc-name" data-sq="Primary Heating Tokësor" data-en="Primary Heating Floor">Primary Heating Tokësor</h3>
+          <div class="pc-specs">
+            <div><span data-sq="Fuqi" data-en="Capacity">Fuqi</span><strong>2.5–5.0 kW</strong></div>
+            <div><span data-sq="Klasa" data-en="Class">Klasa</span><strong>A++</strong></div>
+            <div><span>SEER</span><strong>8.10</strong></div>
+            <div><span data-sq="Montim" data-en="Mount">Montim</span><strong data-sq="Dysheme" data-en="Floor">Dysheme</strong></div>
+          </div>
+          <div class="pc-foot">
+            <div class="pc-price"><span data-sq="Nga" data-en="From">Nga</span><strong>1 250 €</strong></div>
+            <a href="#contact" class="btn btn-red btn-sm" data-sq="Porosit Tani" data-en="Order Now">Porosit Tani</a>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /pg -->
+  </div>
+</section>
+
+<!-- ══ FEATURE SECTIONS (ALTERNATING) ══ -->
+<div id="features">
+
+  <!-- Feature 1: Hyper Heating -->
+  <section class="feat-section feat-dark">
+    <div class="container feat-inner">
+      <div class="feat-img">
+        <img src="https://www.mitsubishi-termal.it/wp-content/uploads/2023/04/kireia-r32.jpg"
+             onerror="this.src='https://placehold.co/540x400/0e1c2f/9b1b2e?text=KIREIA+R32'"
+             alt="KIREIA Mural R32" />
+        <div class="feat-temp-badge">-25°C</div>
+      </div>
+      <div class="feat-text">
+        <span class="feat-label" data-sq="Teknologji Japoneze" data-en="Japanese Technology">Teknologji Japoneze</span>
+        <h2 data-sq-html="Hyper Heating<br>INVERTER™" data-en-html="Hyper Heating<br>INVERTER™">Hyper Heating<br>INVERTER™</h2>
+        <p data-sq="Sistemi revolucionar i ngrohjes funksionon me efikasitet të plotë edhe kur temperatura jashtë bie deri në -25°C. Mos u shqetëso më për dimrin shqiptar."
+           data-en="The revolutionary heating system operates at full efficiency even when the outside temperature drops to -25°C. No more worries about Albanian winters.">
+          Sistemi revolucionar i ngrohjes funksionon me efikasitet të plotë edhe kur temperatura jashtë bie deri në -25°C. Mos u shqetëso më për dimrin shqiptar.
+        </p>
+        <ul class="feat-bullets">
+          <li data-sq="✔ COP deri 4.2 — performancë maksimale" data-en="✔ COP up to 4.2 — peak performance">✔ COP deri 4.2 — performancë maksimale</li>
+          <li data-sq="✔ Funksionon deri -25°C jashtë"         data-en="✔ Works down to -25°C outside">✔ Funksionon deri -25°C jashtë</li>
+          <li data-sq="✔ Zëvendëson kaldajën me kosto më të ulët" data-en="✔ Replaces boiler at lower cost">✔ Zëvendëson kaldajën me kosto më të ulët</li>
+        </ul>
+        <a href="#products" class="btn btn-red" data-sq="Shiko Serinë KIREIA" data-en="View KIREIA Series">Shiko Serinë KIREIA</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature 2: Wi-Fi / MELCloud -->
+  <section class="feat-section">
+    <div class="container feat-inner feat-inner--rev">
+      <div class="feat-img feat-img--light">
+        <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&q=80"
+             onerror="this.src='https://placehold.co/540x400/f0f4ff/1a1a2e?text=MELCloud+App'"
+             alt="MELCloud Wi-Fi" />
+      </div>
+      <div class="feat-text">
+        <span class="feat-label" data-sq="Kontroll Inteligjent" data-en="Smart Control">Kontroll Inteligjent</span>
+        <h2 data-sq-html="Kontrollo nga<br>kudo në botë" data-en-html="Control from<br>anywhere in the world">Kontrollo nga<br>kudo në botë</h2>
+        <p data-sq="Me aplikacionin falas MELCloud, ndiz, fik dhe rregulloni kondicionerin tuaj nga telefoni — qoftë nga dhoma e gjumit apo nga ana tjetër e botës."
+           data-en="With the free MELCloud app, turn on, off and adjust your air conditioner from your phone — whether from the bedroom or the other side of the world.">
+          Me aplikacionin falas MELCloud, ndiz, fik dhe rregulloni kondicionerin tuaj nga telefoni — qoftë nga dhoma e gjumit apo nga ana tjetër e botës.
+        </p>
+        <ul class="feat-bullets dark-bullets">
+          <li data-sq="✔ App falas për iOS dhe Android" data-en="✔ Free app for iOS and Android">✔ App falas për iOS dhe Android</li>
+          <li data-sq="✔ Programim javor automatik"      data-en="✔ Automatic weekly scheduling">✔ Programim javor automatik</li>
+          <li data-sq="✔ Monitorim i konsumit të energjisë" data-en="✔ Energy consumption monitoring">✔ Monitorim i konsumit të energjisë</li>
+        </ul>
+        <a href="#contact" class="btn btn-outline-dark" data-sq="Mëso Më Shumë" data-en="Learn More">Mëso Më Shumë</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature 3: Air Quality -->
+  <section class="feat-section feat-dark">
+    <div class="container feat-inner">
+      <div class="feat-img">
+        <img src="https://images.unsplash.com/photo-1483389127117-b6a2102724ae?w=600&q=80"
+             onerror="this.src='https://placehold.co/540x400/0a1628/cc0000?text=Air+Quality'"
+             alt="Air Quality" />
+      </div>
+      <div class="feat-text">
+        <span class="feat-label" data-sq="Cilësi Ajri" data-en="Air Quality">Cilësi Ajri</span>
+        <h2 data-sq-html="Ajri i pastër,<br>jeta e shëndetshme" data-en-html="Clean air,<br>healthy life">Ajri i pastër,<br>jeta e shëndetshme</h2>
+        <p data-sq="Sistemi Plasma Quad Plus dhe filtrat antibakterian të Mitsubishi Electric kapin 99.9% të baktereve, polenit dhe grimcave të pluhurit — duke kthyer shtëpinë tuaj në një oaz freskuese."
+           data-en="Mitsubishi Electric's Plasma Quad Plus system and antibacterial filters capture 99.9% of bacteria, pollen and dust particles — turning your home into a refreshing oasis.">
+          Sistemi Plasma Quad Plus dhe filtrat antibakterian të Mitsubishi Electric kapin 99.9% të baktereve, polenave dhe grimcave të pluhurit.
+        </p>
+        <ul class="feat-bullets">
+          <li data-sq="✔ Plasma Quad Plus — filtrim 4 shtresa"    data-en="✔ Plasma Quad Plus — 4-layer filtration">✔ Plasma Quad Plus — filtrim 4 shtresa</li>
+          <li data-sq="✔ Dehumidifier i integruar"                 data-en="✔ Built-in Dehumidifier">✔ Dehumidifier i integruar</li>
+          <li data-sq="✔ Heqja e 99.9% e baktereve dhe polenave"   data-en="✔ Removes 99.9% of bacteria and pollen">✔ Heqja e 99.9% e baktereve dhe polenave</li>
+        </ul>
+        <a href="#products" class="btn btn-red" data-sq="Shiko Produktet" data-en="View Products">Shiko Produktet</a>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /features -->
+
+<!-- ══ STATS BAR ══ -->
+<div class="stats-bar">
+  <div class="container stats-inner">
+    <div class="stat-item">
+      <strong>10+</strong>
+      <span data-sq="Vite Eksperiencë" data-en="Years Experience">Vite Eksperiencë</span>
+    </div>
+    <div class="stat-div"></div>
+    <div class="stat-item">
+      <strong>2 000+</strong>
+      <span data-sq="Instalime" data-en="Installations">Instalime</span>
+    </div>
+    <div class="stat-div"></div>
+    <div class="stat-item">
+      <strong>3 <span data-sq="vjet" data-en="yr">vjet</span></strong>
+      <span data-sq="Garanci Fabrike" data-en="Factory Warranty">Garanci Fabrike</span>
+    </div>
+    <div class="stat-div"></div>
+    <div class="stat-item">
+      <strong>5★</strong>
+      <span data-sq="Vlerësim Klientësh" data-en="Customer Rating">Vlerësim Klientësh</span>
+    </div>
+    <div class="stat-div"></div>
+    <div class="stat-item">
+      <strong>24h</strong>
+      <span data-sq="Mbështetje Teknike" data-en="Technical Support">Mbështetje Teknike</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══ SERVICES ══ -->
+<section class="services-section" id="services">
+  <div class="container">
+    <div class="sec-head sec-head--center">
+      <span class="sec-label" data-sq="Procesi Ynë" data-en="Our Process">Procesi Ynë</span>
+      <h2 data-sq="Shërbime nga A tek Zh" data-en="End-to-End Services">Shërbime nga A tek Zh</h2>
+    </div>
+    <div class="srv-grid">
+
+      <div class="srv-card">
+        <div class="srv-icon">🔍</div>
+        <h4 data-sq="Konsultim Falas" data-en="Free Consultation">Konsultim Falas</h4>
+        <p data-sq="Eksperi ynë vjen në vend dhe vlerëson hapësirën tuaj pa asnjë kosto."
+           data-en="Our expert visits your premises and assesses your space at no cost.">
+          Eksperi ynë vjen në vend dhe vlerëson hapësirën tuaj pa asnjë kosto.
+        </p>
+      </div>
+      <div class="srv-card">
+        <div class="srv-icon">📋</div>
+        <h4 data-sq="Ofertë Transparente" data-en="Transparent Quote">Ofertë Transparente</h4>
+        <p data-sq="Çmim i detajuar për produkt, materiale dhe instalim — pa kosto të fshehura."
+           data-en="Detailed price for product, materials and installation — no hidden costs.">
+          Çmim i detajuar për produkt, materiale dhe instalim — pa kosto të fshehura.
+        </p>
+      </div>
+      <div class="srv-card">
+        <div class="srv-icon">🔧</div>
+        <h4 data-sq="Instalim Profesional" data-en="Professional Installation">Instalim Profesional</h4>
+        <p data-sq="Teknicienë të çertifikuar Mitsubishi, instalim në 4–6 orë, garanci pune 1 vit."
+           data-en="Mitsubishi-certified technicians, installation in 4–6 hours, 1-year workmanship warranty.">
+          Teknicienë të çertifikuar Mitsubishi, instalim në 4–6 orë, garanci pune 1 vit.
+        </p>
+      </div>
+      <div class="srv-card">
+        <div class="srv-icon">🛡️</div>
+        <h4 data-sq="Mbështetje 24/7" data-en="24/7 Support">Mbështetje 24/7</h4>
+        <p data-sq="Mirëmbajtje, pastrim dhe riparim kudo në Shqipëri gjatë gjithë vitit."
+           data-en="Maintenance, cleaning and repair anywhere in Albania throughout the year.">
+          Mirëmbajtje, pastrim dhe riparim kudo në Shqipëri gjatë gjithë vitit.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ TESTIMONIALS ══ -->
+<section class="testi-section">
+  <div class="container">
+    <div class="sec-head sec-head--center">
+      <span class="sec-label" data-sq="Klientët Tanë" data-en="Our Clients">Klientët Tanë</span>
+      <h2 data-sq="Çfarë thonë ata" data-en="What they say">Çfarë thonë ata</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p data-sq="&quot;Instaluan kondicionerin brenda ditës. Puna ishte e pastër dhe tekniku shpjegoi gjithçka. Shumë profesionistë!&quot;"
+           data-en="&quot;They installed the air conditioner within the day. The work was clean and the technician explained everything. Very professional!&quot;">
+          "Instaluan kondicionerin brenda ditës. Puna ishte e pastër dhe tekniku shpjegoi gjithçka. Shumë profesionistë!"
+        </p>
+        <div class="testi-client">
+          <div class="testi-av">AG</div>
+          <div><strong>Ardian Gashi</strong><small>Tiranë</small></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p data-sq="&quot;12 kondicionerë Mitsubishi në hotelin tonë. Kursim energjie i jashtëzakonshëm dhe klima e shkëlqyer.&quot;"
+           data-en="&quot;12 Mitsubishi air conditioners in our hotel. Extraordinary energy savings and excellent climate control.&quot;">
+          "12 kondicionerë Mitsubishi në hotelin tonë. Kursim energjie i jashtëzakonshëm dhe klima e shkëlqyer."
+        </p>
+        <div class="testi-client">
+          <div class="testi-av">MB</div>
+          <div><strong>Mirlinda Basha</strong><small>Hotel Riviera, Durrës</small></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p data-sq="&quot;Cilësi e lartë japoneze me çmim të arsyeshëm. Aplikacioni MELCloud shumë i praktikshëm.&quot;"
+           data-en="&quot;High Japanese quality at a reasonable price. The MELCloud app is very practical.&quot;">
+          "Cilësi e lartë japoneze me çmim të arsyeshëm. Aplikacioni MELCloud shumë i praktikshëm."
+        </p>
+        <div class="testi-client">
+          <div class="testi-av">FK</div>
+          <div><strong>Fjorda Kola</strong><small>Vlorë</small></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONTACT ══ -->
+<section class="contact-section" id="contact">
+  <div class="container contact-grid">
+
+    <div class="contact-left">
+      <span class="sec-label light" data-sq="Na Kontaktoni" data-en="Contact Us">Na Kontaktoni</span>
+      <h2 data-sq="Flisni me ekspertin tonë sot" data-en="Speak with our expert today">Flisni me ekspertin tonë sot</h2>
+      <p data-sq="Plotësoni formularin dhe eksperti ynë do t'ju kontaktojë brenda 2 orësh."
+         data-en="Fill in the form and our expert will contact you within 2 hours.">
+        Plotësoni formularin dhe eksperti ynë do t'ju kontaktojë brenda 2 orësh.
+      </p>
+      <ul class="cinfo">
+        <li>📞 <strong>+355 69 123 4567</strong></li>
+        <li>✉ <strong>info@klima.al</strong></li>
+        <li>📍 <strong data-sq="Rruga e Kavajës Nr. 50, Tiranë" data-en="Kavaja Street No. 50, Tirana">Rruga e Kavajës Nr. 50, Tiranë</strong></li>
+        <li>🕐 <strong data-sq="Hën–Sht: 08:00–18:00" data-en="Mon–Sat: 08:00–18:00">Hën–Sht: 08:00–18:00</strong></li>
+      </ul>
+      <div class="social-links">
+        <a href="#" class="sl">Facebook</a>
+        <a href="#" class="sl">Instagram</a>
+        <a href="#" class="sl">WhatsApp</a>
+      </div>
+    </div>
+
+    <form class="contact-form" id="cForm">
+      <div class="form-row">
+        <div class="fg">
+          <label data-sq="Emri &amp; Mbiemri *" data-en="Full Name *">Emri &amp; Mbiemri *</label>
+          <input type="text" data-sq-ph="p.sh. Ardian Gashi" data-en-ph="e.g. John Smith" placeholder="p.sh. Ardian Gashi" required />
+        </div>
+        <div class="fg">
+          <label data-sq="Nr. Telefoni *" data-en="Phone Number *">Nr. Telefoni *</label>
+          <input type="tel" placeholder="+355 6X XXX XXXX" required />
+        </div>
+      </div>
+      <div class="fg">
+        <label>Email</label>
+        <input type="email" placeholder="emri@email.com" />
+      </div>
+      <div class="form-row">
+        <div class="fg">
+          <label data-sq="Produkti" data-en="Product">Produkti</label>
+          <select>
+            <option value="" data-sq="-- Zgjidh --" data-en="-- Select --">-- Zgjidh --</option>
+            <option data-sq="KIREIA Evo (nga 750 €)"        data-en="KIREIA Evo (from 750 €)">KIREIA Evo (nga 750 €)</option>
+            <option data-sq="KIREIA Mural R32 (nga 945 €)"  data-en="KIREIA Mural R32 (from 945 €)">KIREIA Mural R32 (nga 945 €)</option>
+            <option data-sq="KIREIA Smart"                  data-en="KIREIA Smart">KIREIA Smart</option>
+            <option data-sq="KIREIA Titanium (nga 1 040 €)" data-en="KIREIA Titanium (from 1 040 €)">KIREIA Titanium (nga 1 040 €)</option>
+            <option data-sq="KIREIA Plus"                   data-en="KIREIA Plus">KIREIA Plus</option>
+            <option data-sq="Primary Heating Tokësor (nga 1 250 €)" data-en="Primary Heating Floor (from 1 250 €)">Primary Heating Tokësor (nga 1 250 €)</option>
+            <option data-sq="Nuk e di akoma"                data-en="Not sure yet">Nuk e di akoma</option>
+          </select>
+        </div>
+        <div class="fg">
+          <label data-sq="Qyteti" data-en="City">Qyteti</label>
+          <select>
+            <option value="" data-sq="-- Zgjidh --" data-en="-- Select --">-- Zgjidh --</option>
+            <option>Tiranë</option><option>Durrës</option><option>Vlorë</option>
+            <option>Shkodër</option><option>Elbasan</option><option>Korçë</option>
+            <option>Fier</option><option data-sq="Tjetër" data-en="Other">Tjetër</option>
+          </select>
+        </div>
+      </div>
+      <div class="fg">
+        <label data-sq="Mesazhi" data-en="Message">Mesazhi</label>
+        <textarea rows="3"
+          data-sq-ph="Përshkruani hapësirën, numrin e dhomave…"
+          data-en-ph="Describe your space, number of rooms…"
+          placeholder="Përshkruani hapësirën, numrin e dhomave…"></textarea>
+      </div>
+      <button type="submit" class="btn btn-red btn-full"
+              data-sq="Dërgo Kërkesën →" data-en="Send Request →"
+              data-sq-loading="Duke dërguar…" data-en-loading="Sending…">
+        Dërgo Kërkesën →
+      </button>
+      <p class="fnote" data-sq="* Nuk ndajmë të dhënat tuaja me palë të treta." data-en="* We do not share your data with third parties.">* Nuk ndajmë të dhënat tuaja me palë të treta.</p>
+      <div class="fsuccess" id="fSuccess"
+           data-sq="✅ Faleminderit! Do t'ju kontaktojmë brenda 2 orësh."
+           data-en="✅ Thank you! We will contact you within 2 hours.">
+        ✅ Faleminderit! Do t'ju kontaktojmë brenda 2 orësh.
+      </div>
+    </form>
+
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer class="footer">
+  <div class="container footer-top">
+    <div class="f-brand">
+      <a href="#" class="logo logo-white">
+        <span class="logo-k">KLIMA</span><span class="logo-dot">.</span><span class="logo-al">AL</span>
+      </a>
+      <p data-sq="Distributor zyrtar Mitsubishi Heavy Industries në Shqipëri."
+         data-en="Official Mitsubishi Heavy Industries distributor in Albania.">
+        Distributor zyrtar Mitsubishi Heavy Industries në Shqipëri.
+      </p>
+    </div>
+    <div class="f-col">
+      <h5 data-sq="Produkte" data-en="Products">Produkte</h5>
+      <ul>
+        <li><a href="#products">KIREIA Evo</a></li>
+        <li><a href="#products">KIREIA Mural R32</a></li>
+        <li><a href="#products">KIREIA Smart</a></li>
+        <li><a href="#products">KIREIA Titanium</a></li>
+        <li><a href="#products">KIREIA Plus</a></li>
+        <li><a href="#products">Primary Heating Tokësor</a></li>
+      </ul>
+    </div>
+    <div class="f-col">
+      <h5 data-sq="Shërbime" data-en="Services">Shërbime</h5>
+      <ul>
+        <li><a href="#services" data-sq="Instalim"        data-en="Installation">Instalim</a></li>
+        <li><a href="#services" data-sq="Mirëmbajtje"     data-en="Maintenance">Mirëmbajtje</a></li>
+        <li><a href="#services" data-sq="Riparim"         data-en="Repair">Riparim</a></li>
+        <li><a href="#services" data-sq="Pastrim"         data-en="Cleaning">Pastrim</a></li>
+        <li><a href="#contact"  data-sq="Konsultim Falas" data-en="Free Consultation">Konsultim Falas</a></li>
+      </ul>
+    </div>
+    <div class="f-col">
+      <h5 data-sq="Kontakt" data-en="Contact">Kontakt</h5>
+      <ul>
+        <li>📞 +355 69 123 4567</li>
+        <li>✉ info@klima.al</li>
+        <li data-sq="📍 Rr. Kavajës 50, Tiranë" data-en="📍 Kavaja St. 50, Tirana">📍 Rr. Kavajës 50, Tiranë</li>
+        <li data-sq="🕐 Hën–Sht 08:00–18:00" data-en="🕐 Mon–Sat 08:00–18:00">🕐 Hën–Sht 08:00–18:00</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <span data-sq="© 2026 Klima.Al · Të gjitha të drejtat e rezervuara"
+            data-en="© 2026 Klima.Al · All rights reserved">© 2026 Klima.Al · Të gjitha të drejtat e rezervuara</span>
+      <span data-sq="Distributor Zyrtar Mitsubishi Electric"
+            data-en="Official Mitsubishi Electric Distributor">Distributor Zyrtar Mitsubishi Electric</span>
+    </div>
+  </div>
+</footer>
+
+<button class="scroll-top" id="sTop">↑</button>
+<script src="app.js"></script>
+</body>
+</html>
