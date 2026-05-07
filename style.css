@@ -859,6 +859,21 @@ button { cursor: pointer; border: none; background: none; font-family: var(--fon
   max-height: 80%;
   object-fit: contain;
 }
+.mc-img svg.mc-svg {
+  width: 60%;
+  height: 60%;
+  max-width: 80px;
+}
+.mc-img { position: relative; }
+.mc-tape-dot {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  box-shadow: 0 1px 3px rgba(0,0,0,.2);
+}
 .mc-name-big {
   width: 100%;
   aspect-ratio: 1;
