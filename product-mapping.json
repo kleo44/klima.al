@@ -1,0 +1,120 @@
+{
+  "_meta": {
+    "source_list": "Downloads/Klimalist.jpeg (rows 103-116, MHI section)",
+    "source_catalog": "https://www.albaelettrica.al (Mitsubishi Heavy Industries Residential)",
+    "generated": "2026-05-07",
+    "notes": [
+      "Klimalist rows for the same product appear multiple times (different stock batches) per user confirmation; they all map to the same SKU on albaelettrica.",
+      "P/B in klimalist = wall-mounted indoor (per-banese / for residence). P/J = multi-split outdoor + indoor combo.",
+      "FT = Ftohje (cooling), NG = Ngrohje (heating). Numbers in parentheses are peak/max values.",
+      "DYSHEME = floor-standing.",
+      "WI-FI in klimalist refers to the WF / WF-T variants which include WiFi adapter."
+    ]
+  },
+  "products": [
+    {
+      "klima_id": "kireia-2kw",
+      "klimalist_rows": [111],
+      "klimalist_description": "MHI P/B 2KW KIREIA INVERTER WI-FI R32",
+      "albaelettrica": {
+        "line": "KIREIA monosplit R32",
+        "model": "SRK 20 ZS-WF",
+        "capacity_kw": 2.0,
+        "type": "wall-mounted",
+        "url": "https://www.albaelettrica.al/kireia-monosplit-r32/",
+        "image_url": "https://www.albaelettrica.al/wp-content/uploads/2022/11/WhatsApp-Image-2022-10-29-at-9.56.41-AM.jpeg"
+      }
+    },
+    {
+      "klima_id": "kireia-2_5kw",
+      "klimalist_rows": [104, 105, 107, 108, 110],
+      "klimalist_description": "MHI P/B 2.5KW KIREIA INVERTER WI-FI R32",
+      "albaelettrica": {
+        "line": "KIREIA monosplit R32",
+        "model": "SRK 25 ZS-WF",
+        "capacity_kw": 2.5,
+        "type": "wall-mounted",
+        "url": "https://www.albaelettrica.al/kireia-monosplit-r32/",
+        "image_url": "https://www.albaelettrica.al/wp-content/uploads/2022/11/WhatsApp-Image-2022-10-29-at-9.56.41-AM.jpeg"
+      }
+    },
+    {
+      "klima_id": "kireia-3_5kw",
+      "klimalist_rows": [103, 109, 114, 115],
+      "klimalist_description": "MHI P/B 3.5KW KIREIA INVERTER WI-FI R32",
+      "albaelettrica": {
+        "line": "KIREIA monosplit R32",
+        "model": "SRK 35 ZS-WF",
+        "capacity_kw": 3.5,
+        "type": "wall-mounted",
+        "url": "https://www.albaelettrica.al/kireia-monosplit-r32/",
+        "image_url": "https://www.albaelettrica.al/wp-content/uploads/2022/11/WhatsApp-Image-2022-10-29-at-9.56.41-AM.jpeg"
+      }
+    },
+    {
+      "klima_id": "kireia-5kw",
+      "klimalist_rows": [113],
+      "klimalist_description": "MHI P/B 5KW INV.5KW FT(7.1) 6KW NG(7.5) R32",
+      "albaelettrica": {
+        "line": "KIREIA monosplit R32",
+        "model": "SRK 50 ZS-WF",
+        "capacity_kw": 5.0,
+        "cooling_max_kw": 7.1,
+        "heating_max_kw": 7.5,
+        "type": "wall-mounted",
+        "url": "https://www.albaelettrica.al/kireia-monosplit-r32/",
+        "image_url": "https://www.albaelettrica.al/wp-content/uploads/2022/11/WhatsApp-Image-2022-10-29-at-9.56.41-AM.jpeg"
+      }
+    },
+    {
+      "klima_id": "floor-3_5kw",
+      "klimalist_rows": [112],
+      "klimalist_description": "MHI P/B 3.5KW INVERTER DYSHEME R32",
+      "albaelettrica": {
+        "line": "Primary Heating Console (floor) R32",
+        "model": "SRF 35 ZS-W",
+        "capacity_kw": 3.5,
+        "type": "floor-standing",
+        "url": "https://www.albaelettrica.al/primary-heating-console-monosplit-r32/",
+        "image_url": "https://www.albaelettrica.al/wp-content/uploads/2016/05/mhi-prod-p24.jpg"
+      }
+    },
+    {
+      "klima_id": "multi-6kw-outdoor",
+      "klimalist_rows": [116],
+      "klimalist_description": "MHI P/J MULTI INV.6KW FT(7.5) 6.6KW NG(7.8) R32",
+      "albaelettrica": {
+        "line": "Multisplit Outdoor Unit (DC Inverter Hyper) 6.0 kW",
+        "outdoor_model": "SCM 60 ZS-W",
+        "capacity_kw": 6.0,
+        "cooling_max_kw": 7.5,
+        "heating_max_kw": 7.8,
+        "supports_rooms": "2-3",
+        "type": "multi-split outdoor (paired with KIREIA Plus indoor units)",
+        "url": "https://www.albaelettrica.al/dc-inverter-hyper-outdoor-units-6-0-kw/",
+        "image_url": "https://www.albaelettrica.al/wp-content/uploads/2016/04/multi-dc-inverter-hyper-esterno-40-60.jpg",
+        "indoor_unit_line_url": "https://www.albaelettrica.al/multisplit-kireia-plus-r32/",
+        "indoor_unit_image_url": "https://www.albaelettrica.al/wp-content/uploads/2022/06/multi-1.jpg"
+      }
+    },
+    {
+      "klima_id": "multi-8kw-outdoor",
+      "klimalist_rows": [106],
+      "klimalist_description": "MHI P/J MULTI INV.6KW FT(9.2), 9.3KW NG(9.8) R32",
+      "albaelettrica": {
+        "line": "Multisplit Outdoor Unit (DC Inverter Hyper) 8.0 kW",
+        "outdoor_model": "SCM 80 ZS-W",
+        "capacity_kw": 8.0,
+        "cooling_max_kw": 9.2,
+        "heating_max_kw": 9.8,
+        "type": "multi-split outdoor (paired with KIREIA Plus indoor units)",
+        "url": "https://www.albaelettrica.al/dc-inverter-hyper-outdoor-units-8-0-kw/",
+        "image_url": "https://www.albaelettrica.al/wp-content/uploads/2016/04/multi-dc-inverter-hyper-esterno-71-80.jpg",
+        "indoor_unit_line_url": "https://www.albaelettrica.al/multisplit-kireia-plus-r32/",
+        "indoor_unit_image_url": "https://www.albaelettrica.al/wp-content/uploads/2022/06/multi-1.jpg",
+        "match_confidence": "medium",
+        "match_note": "klimalist says 'INV.6KW' but the cool/heat peak values (9.2 / 9.8) match the SCM 80 ZS-W (8.0 kW) outdoor unit specs, not the 6.0 kW class. The '6KW' in the description may be a typo or reference indoor-unit-count. Please verify with your supplier."
+      }
+    }
+  ]
+}
