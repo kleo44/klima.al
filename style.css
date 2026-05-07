@@ -859,6 +859,24 @@ button { cursor: pointer; border: none; background: none; font-family: var(--fon
   max-height: 80%;
   object-fit: contain;
 }
+.mc-name-big {
+  width: 100%;
+  aspect-ratio: 1;
+  background: linear-gradient(135deg, #f9fafb 0%, #eef2f7 100%);
+  border-radius: 6px;
+  margin-bottom: 6px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--dark);
+  line-height: 1.2;
+  letter-spacing: .01em;
+  text-transform: uppercase;
+}
 .mc-name {
   font-size: .82rem;
   font-weight: 600;
