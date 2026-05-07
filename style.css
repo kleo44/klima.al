@@ -809,3 +809,56 @@ button { cursor: pointer; border: none; background: none; font-family: var(--fon
   .footer-top { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
 }
+
+/* ── Materials section (text-only product list) ──── */
+.mat-section { padding: 80px 0; background: var(--gray-lt); }
+.mat-grp {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--red);
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  margin: 36px 0 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--border-lt);
+}
+.mat-grp:first-of-type { margin-top: 32px; }
+.mat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 12px;
+}
+.mc {
+  background: #fff;
+  border: 1px solid var(--border-lt);
+  border-radius: 8px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: var(--tr);
+}
+.mc:hover {
+  border-color: var(--red);
+  box-shadow: 0 2px 12px rgba(155,27,46,.08);
+  transform: translateY(-2px);
+}
+.mc-name {
+  font-size: .82rem;
+  font-weight: 600;
+  color: var(--dark);
+  line-height: 1.35;
+  flex: 1;
+}
+.mc-price {
+  font-size: .95rem;
+  font-weight: 800;
+  color: var(--red);
+  letter-spacing: .01em;
+}
+.mat-note {
+  font-size: .8rem;
+  color: var(--gray);
+  margin-top: 32px;
+  font-style: italic;
+}
