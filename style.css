@@ -843,6 +843,22 @@ button { cursor: pointer; border: none; background: none; font-family: var(--fon
   box-shadow: 0 2px 12px rgba(155,27,46,.08);
   transform: translateY(-2px);
 }
+.mc-img {
+  width: 100%;
+  aspect-ratio: 1;
+  background: #f9fafb;
+  border-radius: 6px;
+  margin-bottom: 6px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mc-img img {
+  max-width: 80%;
+  max-height: 80%;
+  object-fit: contain;
+}
 .mc-name {
   font-size: .82rem;
   font-weight: 600;
