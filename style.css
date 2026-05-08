@@ -316,7 +316,7 @@ button { cursor: pointer; border: none; background: none; font-family: var(--fon
 
 .cat-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr 1fr;
   gap: 20px;
 }
 .cat-tile {
@@ -766,7 +766,6 @@ button { cursor: pointer; border: none; background: none; font-family: var(--fon
   .hero-right { min-height: 380px; }
   .hero-left { padding: 60px 24px; }
   .cat-grid { grid-template-columns: 1fr 1fr; }
-  .cat-tile:last-child { grid-column: 1 / -1; height: 300px; }
   .pg { grid-template-columns: 1fr 1fr; }
   .feat-inner { gap: 48px; }
   .srv-grid { grid-template-columns: 1fr 1fr; }
@@ -788,7 +787,6 @@ button { cursor: pointer; border: none; background: none; font-family: var(--fon
   .hero-right { display: none; }
   .cat-grid { grid-template-columns: 1fr; }
   .cat-tile { height: 280px; }
-  .cat-tile:last-child { grid-column: auto; height: 280px; }
   .pg { grid-template-columns: 1fr; }
   .feat-inner, .feat-inner--rev { grid-template-columns: 1fr; direction: ltr; gap: 32px; }
   .feat-img { min-height: 260px; }
@@ -910,4 +908,163 @@ button { cursor: pointer; border: none; background: none; font-family: var(--fon
   color: var(--gray);
   margin-top: 32px;
   font-style: italic;
+}
+
+/* ───────── Materiale dhe Aksesorë (text-only catalog page) ───────── */
+.cat-page {
+  padding: 80px 0 100px;
+  background: linear-gradient(180deg, #fbfaf7 0%, #ffffff 100%);
+  min-height: 70vh;
+}
+.cat-page-head {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 64px;
+  padding: 0 20px;
+}
+.cat-page-eyebrow {
+  display: inline-block;
+  font-family: 'Inter', sans-serif;
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 18px;
+}
+.cat-page-title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  font-size: clamp(2.2rem, 4.6vw, 3.2rem);
+  line-height: 1.05;
+  color: var(--dark);
+  margin: 0 0 18px;
+  letter-spacing: -.025em;
+}
+.cat-page-title em {
+  font-style: normal;
+  color: var(--red);
+  font-weight: 800;
+}
+.cat-page-sub {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.02rem;
+  color: var(--gray);
+  line-height: 1.65;
+  font-weight: 400;
+  margin: 0;
+}
+.cat-rule {
+  width: 60px;
+  height: 1px;
+  background: var(--red);
+  margin: 24px auto 0;
+  opacity: .8;
+}
+.cat-list {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.cat-group {
+  margin-bottom: 56px;
+}
+.cat-group:last-child { margin-bottom: 0; }
+.cat-group-head {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 22px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(20, 31, 46, .12);
+}
+.cat-group-num {
+  font-family: 'Inter', sans-serif;
+  font-size: .78rem;
+  color: var(--red);
+  font-weight: 700;
+  letter-spacing: .15em;
+  flex-shrink: 0;
+}
+.cat-group-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin: 0;
+  letter-spacing: -.01em;
+}
+.cat-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 14px 0;
+  border-bottom: 1px dotted rgba(20, 31, 46, .14);
+  transition: background-color .15s ease;
+}
+.cat-row:hover {
+  background: rgba(155, 27, 46, .025);
+}
+.cat-row:last-child { border-bottom: none; }
+.cat-row-name {
+  font-family: 'Inter', sans-serif;
+  font-size: .95rem;
+  font-weight: 500;
+  color: var(--dark);
+  letter-spacing: .005em;
+  line-height: 1.45;
+  flex: 0 1 auto;
+}
+.cat-row-leader {
+  flex: 1 1 auto;
+  border-bottom: 1px dotted rgba(20, 31, 46, .25);
+  margin: 0 4px 6px;
+  min-width: 24px;
+}
+.cat-row-price {
+  font-family: 'Inter', sans-serif;
+  font-size: .98rem;
+  font-weight: 700;
+  color: var(--red);
+  letter-spacing: .01em;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.cat-row-price-soft {
+  font-weight: 500;
+  font-style: italic;
+  color: var(--gray);
+  font-size: .9rem;
+}
+.cat-foot {
+  max-width: 820px;
+  margin: 64px auto 0;
+  padding: 28px 20px 0;
+  border-top: 1px solid rgba(20, 31, 46, .1);
+  text-align: center;
+}
+.cat-foot p {
+  font-family: 'Inter', sans-serif;
+  font-size: .85rem;
+  color: var(--gray);
+  font-style: italic;
+  margin: 0 0 18px;
+  line-height: 1.6;
+}
+.cat-foot .btn {
+  margin-top: 4px;
+}
+@media (max-width: 600px) {
+  .cat-page { padding: 56px 0 72px; }
+  .cat-page-head { margin-bottom: 44px; }
+  .cat-group { margin-bottom: 40px; }
+  .cat-group-title { font-size: 1.3rem; }
+  .cat-row {
+    flex-wrap: wrap;
+    padding: 12px 0;
+  }
+  .cat-row-leader { display: none; }
+  .cat-row-name { flex: 1 1 100%; margin-bottom: 4px; }
+  .cat-row-price { margin-left: 0; }
 }

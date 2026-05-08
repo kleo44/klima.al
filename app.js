@@ -26,13 +26,15 @@ document.querySelectorAll('.lb').forEach(b => b.addEventListener('click', () => 
 
 /* ── Sticky header shadow ─────────────────────────── */
 const header = document.getElementById('header');
-window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 20));
+if (header) window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 20));
 
 /* ── Hamburger ────────────────────────────────────── */
 const burger = document.getElementById('burger');
 const nav    = document.getElementById('nav');
-burger.addEventListener('click', () => { burger.classList.toggle('open'); nav.classList.toggle('open'); });
-nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { burger.classList.remove('open'); nav.classList.remove('open'); }));
+if (burger && nav) {
+  burger.addEventListener('click', () => { burger.classList.toggle('open'); nav.classList.toggle('open'); });
+  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { burger.classList.remove('open'); nav.classList.remove('open'); }));
+}
 
 /* ── Category tiles → filter products ────────────── */
 document.querySelectorAll('.cat-tile[data-filter-target]').forEach(tile => {
@@ -69,27 +71,31 @@ document.querySelectorAll('.fb').forEach(btn => {
 const form     = document.getElementById('cForm');
 const fSuccess = document.getElementById('fSuccess');
 
-form.addEventListener('submit', e => {
-  e.preventDefault();
-  const btn = form.querySelector('button[type="submit"]');
-  btn.disabled    = true;
-  btn.textContent = lang === 'sq' ? 'Duke dërguar…' : 'Sending…';
-  setTimeout(() => {
-    btn.disabled    = false;
-    btn.textContent = lang === 'sq' ? 'Dërgo Kërkesën →' : 'Send Request →';
-    form.reset();
-    fSuccess.textContent = lang === 'sq'
-      ? "✅ Faleminderit! Do t'ju kontaktojmë brenda 2 orësh."
-      : '✅ Thank you! We will contact you within 2 hours.';
-    fSuccess.classList.add('show');
-    setTimeout(() => fSuccess.classList.remove('show'), 5000);
-  }, 1200);
-});
+if (form && fSuccess) {
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const btn = form.querySelector('button[type="submit"]');
+    btn.disabled    = true;
+    btn.textContent = lang === 'sq' ? 'Duke dërguar…' : 'Sending…';
+    setTimeout(() => {
+      btn.disabled    = false;
+      btn.textContent = lang === 'sq' ? 'Dërgo Kërkesën →' : 'Send Request →';
+      form.reset();
+      fSuccess.textContent = lang === 'sq'
+        ? "✅ Faleminderit! Do t'ju kontaktojmë brenda 2 orësh."
+        : '✅ Thank you! We will contact you within 2 hours.';
+      fSuccess.classList.add('show');
+      setTimeout(() => fSuccess.classList.remove('show'), 5000);
+    }, 1200);
+  });
+}
 
 /* ── Scroll to top ────────────────────────────────── */
 const sTop = document.getElementById('sTop');
-window.addEventListener('scroll', () => sTop.classList.toggle('show', window.scrollY > 400));
-sTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+if (sTop) {
+  window.addEventListener('scroll', () => sTop.classList.toggle('show', window.scrollY > 400));
+  sTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+}
 
 /* ── Reveal on scroll ─────────────────────────────── */
 document.querySelectorAll('.pc, .srv-card, .testi-card, .cat-tile, .feat-img, .feat-text, .stat-item').forEach(el => el.classList.add('reveal'));
