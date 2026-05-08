@@ -49,10 +49,8 @@ document.querySelectorAll('.cat-tile[data-filter-target]').forEach(tile => {
 });
 
 /* ── Product filter ───────────────────────────────── */
-const cards = document.querySelectorAll('.pc');
-
 function filterCards(filter) {
-  cards.forEach(c => {
+  document.querySelectorAll('.pc').forEach(c => {
     const show = filter === 'all' || c.dataset.cat === filter;
     c.style.display = show ? '' : 'none';
     if (show) c.style.animation = 'fadeIn .35s ease forwards';
@@ -66,6 +64,83 @@ document.querySelectorAll('.fb').forEach(btn => {
     filterCards(btn.dataset.filter);
   });
 });
+
+/* ── Home product grid (from catalog.json) ─────────── */
+async function renderHomeProducts() {
+  const grid = document.getElementById('pcGrid');
+  if (!grid) return;
+  let catalog;
+  try {
+    const res = await fetch('catalog.json');
+    catalog = await res.json();
+  } catch (e) {
+    grid.innerHTML = '<p style="color:#888;text-align:center;padding:40px">Produktet nuk u ngarkuan.</p>';
+    return;
+  }
+  const products = catalog.products || [];
+  grid.innerHTML = products.map(p => productCardHTML(p)).join('');
+
+  grid.querySelectorAll('.pc-atc').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault();
+      e.stopPropagation();
+      const id = btn.dataset.id;
+      const product = products.find(x => x.id === id);
+      if (!product || typeof addToCart !== 'function') return;
+      addToCart({
+        id: product.id,
+        title: product.title,
+        subtitle: product.series_label || product.brand_label,
+        image: product.hero_image,
+        price_text: product.price_text || null
+      });
+    });
+  });
+
+  if (typeof setLang === 'function') setLang(localStorage.getItem('klima-lang') || 'sq');
+}
+
+function productCardHTML(p) {
+  const priceTxt = p.price_text || 'Me kërkesë';
+  const isOnRequest = !p.price_text;
+  const href = `product.html?id=${encodeURIComponent(p.id)}`;
+  const series = p.series_label || (p.model_code ? `${p.model_code} · R32` : '');
+  return `
+    <a class="pc" data-cat="${esc(p.category)}" data-id="${esc(p.id)}" href="${href}">
+      <div class="pc-img">
+        <img src="${esc(p.hero_image)}"
+             onerror="this.src='https://placehold.co/320x220/f5f5f5/9b1b2e?text=${encodeURIComponent(p.title)}'"
+             alt="${esc(p.title)}" loading="lazy" />
+      </div>
+      <div class="pc-body">
+        ${series ? `<p class="pc-series">${esc(series)}</p>` : ''}
+        <h3 class="pc-name">${esc(p.title)}</h3>
+        ${p.capacity_kw != null ? `
+          <div class="pc-specs">
+            <div><span data-sq="Fuqi" data-en="Capacity">Fuqi</span><strong>${p.capacity_kw} kW</strong></div>
+            <div><span>R32</span><strong>✔</strong></div>
+          </div>
+        ` : ''}
+        <div class="pc-foot">
+          <div class="pc-price">
+            <span data-sq="${isOnRequest ? '' : 'Çmim'}" data-en="${isOnRequest ? '' : 'Price'}">${isOnRequest ? '' : 'Çmim'}</span>
+            <strong${isOnRequest ? ' data-sq="Me kërkesë" data-en="On request"' : ''}>${esc(priceTxt)}</strong>
+          </div>
+          <button class="btn btn-red btn-sm pc-atc" data-id="${esc(p.id)}"
+                  data-sq="Shto në Shportë" data-en="Add to Cart">Shto në Shportë</button>
+        </div>
+      </div>
+    </a>
+  `;
+}
+
+function esc(s) {
+  return String(s ?? '')
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+}
+
+renderHomeProducts();
 
 /* ── Contact form ─────────────────────────────────── */
 const form     = document.getElementById('cForm');

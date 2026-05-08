@@ -39,6 +39,10 @@
 
     <div class="header-right">
       <a href="tel:+355672549225" class="header-phone">📞 +355 67 254 9225</a>
+      <button class="cart-btn" id="cartBtn" aria-label="Cart">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        <span class="cart-badge" id="cartBadge">0</span>
+      </button>
       <div class="lang-sw">
         <button class="lb lb-active" data-lang="sq">SQ</button>
         <span>|</span>
@@ -49,6 +53,31 @@
     <button class="burger" id="burger"><span></span><span></span><span></span></button>
   </div>
 </header>
+
+<!-- ══ CART DRAWER ══ -->
+<div class="cart-backdrop" id="cartBackdrop"></div>
+<aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart">
+  <div class="cart-head">
+    <h3 data-sq="Shporta jote" data-en="Your Cart">Shporta jote</h3>
+    <button class="cart-close" id="cartClose" aria-label="Close">×</button>
+  </div>
+  <div class="cart-body">
+    <div class="cart-list" id="cartList"></div>
+    <p class="cart-empty" id="cartEmpty" data-sq="Shporta është bosh." data-en="Your cart is empty.">Shporta është bosh.</p>
+  </div>
+  <div class="cart-foot">
+    <div class="cart-total-row">
+      <span class="cart-total-lbl" data-sq="Total" data-en="Total">Total</span>
+      <strong class="cart-total" id="cartTotal"></strong>
+    </div>
+    <button class="btn btn-red cart-checkout" id="cartCheckout" disabled
+            data-sq="Porosit me WhatsApp" data-en="Order via WhatsApp">Porosit me WhatsApp</button>
+    <p class="cart-hint" data-sq="Çmimi përfundimtar konfirmohet me ne në WhatsApp."
+       data-en="Final price will be confirmed with us via WhatsApp.">
+      Çmimi përfundimtar konfirmohet me ne në WhatsApp.
+    </p>
+  </div>
+</aside>
 
 <!-- ══ HERO (SPLIT) ══ -->
 <section class="hero" id="hero">
@@ -73,13 +102,9 @@
   </div>
   <div class="hero-right">
     <div class="hero-img-wrap">
-      <img src="https://www.albaelettrica.al/wp-content/uploads/2022/11/WhatsApp-Image-2022-10-29-at-9.56.41-AM.jpeg"
-           onerror="this.src='https://placehold.co/480x380/0e1c2f/ffffff?text=KIREIA+R32'"
-           alt="KIREIA Mural R32" class="hero-product-img" />
-      <div class="hero-chip">
-        <span data-sq="Bestseller 2026" data-en="Bestseller 2026">Bestseller 2026</span>
-        <strong>KIREIA Series</strong>
-      </div>
+      <img src="hero-mitsubishi.png"
+           onerror="this.src='https://placehold.co/480x380/0e1c2f/ffffff?text=Mitsubishi+Heavy+Industries'"
+           alt="Mitsubishi AC in light gray living room" class="hero-product-img" />
     </div>
   </div>
 </section>
@@ -156,197 +181,9 @@
       </div>
     </div>
 
-    <div class="pg">
-
-      <!-- Card 0: KIREIA 2.0 kW -->
-      <div class="pc" data-cat="residential">
-        <div class="pc-img">
-          <img src="https://www.albaelettrica.al/wp-content/uploads/2022/11/WhatsApp-Image-2022-10-29-at-9.56.41-AM.jpeg"
-               onerror="this.src='https://placehold.co/320x220/f5f5f5/9b1b2e?text=KIREIA+2kW'"
-               alt="KIREIA 2.0 kW WI-FI R32" />
-        </div>
-        <div class="pc-body">
-          <p class="pc-series">SRK 20 ZS-WF · R32</p>
-          <h3 class="pc-name" data-sq="KIREIA 2.0 kW" data-en="KIREIA 2.0 kW">KIREIA 2.0 kW</h3>
-          <div class="pc-specs">
-            <div><span data-sq="Fuqi" data-en="Capacity">Fuqi</span><strong>2.0 kW</strong></div>
-            <div><span data-sq="Klasa" data-en="Class">Klasa</span><strong>A++</strong></div>
-            <div><span>R32</span><strong>✔</strong></div>
-            <div><span>Wi-Fi</span><strong>✔</strong></div>
-          </div>
-          <div class="pc-foot">
-            <div class="pc-price"><span data-sq="Çmim" data-en="Price">Çmim</span><strong>44,300 L</strong></div>
-            <a href="#contact" class="btn btn-red btn-sm" data-sq="Porosit Tani" data-en="Order Now">Porosit Tani</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 1: KIREIA 2.5 kW -->
-      <div class="pc" data-cat="residential">
-        <div class="pc-img">
-          <img src="https://www.albaelettrica.al/wp-content/uploads/2022/11/WhatsApp-Image-2022-10-29-at-9.56.41-AM.jpeg"
-               onerror="this.src='https://placehold.co/320x220/f5f5f5/9b1b2e?text=KIREIA+2.5kW'"
-               alt="KIREIA 2.5 kW WI-FI R32" />
-        </div>
-        <div class="pc-body">
-          <p class="pc-series">SRK 25 ZS-WF · R32</p>
-          <h3 class="pc-name" data-sq="KIREIA 2.5 kW" data-en="KIREIA 2.5 kW">KIREIA 2.5 kW</h3>
-          <div class="pc-specs">
-            <div><span data-sq="Fuqi" data-en="Capacity">Fuqi</span><strong>2.5 kW</strong></div>
-            <div><span data-sq="Klasa" data-en="Class">Klasa</span><strong>A+++</strong></div>
-            <div><span>R32</span><strong>✔</strong></div>
-            <div><span>Wi-Fi</span><strong>✔</strong></div>
-          </div>
-          <div class="pc-foot">
-            <div class="pc-price"><span data-sq="Çmim" data-en="Price">Çmim</span><strong>46,400 L</strong></div>
-            <a href="#contact" class="btn btn-red btn-sm" data-sq="Porosit Tani" data-en="Order Now">Porosit Tani</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 2: KIREIA 3.5 kW -->
-      <div class="pc" data-cat="residential">
-        <div class="pc-flag bestseller" data-sq="Bestseller" data-en="Bestseller">Bestseller</div>
-        <div class="pc-img">
-          <img src="https://www.albaelettrica.al/wp-content/uploads/2022/11/WhatsApp-Image-2022-10-29-at-9.56.41-AM.jpeg"
-               onerror="this.src='https://placehold.co/320x220/f5f5f5/9b1b2e?text=KIREIA+3.5kW'"
-               alt="KIREIA 3.5 kW WI-FI R32" />
-        </div>
-        <div class="pc-body">
-          <p class="pc-series">SRK 35 ZS-WF · R32</p>
-          <h3 class="pc-name" data-sq="KIREIA 3.5 kW" data-en="KIREIA 3.5 kW">KIREIA 3.5 kW</h3>
-          <div class="pc-specs">
-            <div><span data-sq="Fuqi" data-en="Capacity">Fuqi</span><strong>3.5 kW</strong></div>
-            <div><span data-sq="Klasa" data-en="Class">Klasa</span><strong>A+++</strong></div>
-            <div><span>R32</span><strong>✔</strong></div>
-            <div><span>Wi-Fi</span><strong>✔</strong></div>
-          </div>
-          <div class="pc-foot">
-            <div class="pc-price"><span data-sq="Çmim" data-en="Price">Çmim</span><strong>51,800 L</strong></div>
-            <a href="#contact" class="btn btn-red btn-sm" data-sq="Porosit Tani" data-en="Order Now">Porosit Tani</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 3: KIREIA 5.0 kW -->
-      <div class="pc" data-cat="residential">
-        <div class="pc-img">
-          <img src="https://www.albaelettrica.al/wp-content/uploads/2022/11/WhatsApp-Image-2022-10-29-at-9.56.41-AM.jpeg"
-               onerror="this.src='https://placehold.co/320x220/f5f5f5/9b1b2e?text=KIREIA+5kW'"
-               alt="KIREIA 5.0 kW WI-FI R32" />
-        </div>
-        <div class="pc-body">
-          <p class="pc-series">SRK 50 ZS-WF · R32</p>
-          <h3 class="pc-name" data-sq="KIREIA 5.0 kW" data-en="KIREIA 5.0 kW">KIREIA 5.0 kW</h3>
-          <div class="pc-specs">
-            <div><span data-sq="Fuqi" data-en="Capacity">Fuqi</span><strong>5.0 kW</strong></div>
-            <div><span data-sq="Klasa" data-en="Class">Klasa</span><strong>A+++</strong></div>
-            <div><span>R32</span><strong>✔</strong></div>
-            <div><span>Wi-Fi</span><strong>✔</strong></div>
-          </div>
-          <div class="pc-foot">
-            <div class="pc-price"><span data-sq="Çmim" data-en="Price">Çmim</span><strong>72,400 L</strong></div>
-            <a href="#contact" class="btn btn-red btn-sm" data-sq="Porosit Tani" data-en="Order Now">Porosit Tani</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 4: KIREIA Plus -->
-      <div class="pc" data-cat="residential">
-        <div class="pc-flag popular" data-sq="Premium" data-en="Premium">Premium</div>
-        <div class="pc-img">
-          <img src="https://www.albaelettrica.al/wp-content/uploads/2022/06/kireia-plus-1-1.jpg"
-               onerror="this.src='https://placehold.co/320x220/f5f5f5/9b1b2e?text=KIREIA+Plus'"
-               alt="KIREIA Plus R32" />
-        </div>
-        <div class="pc-body">
-          <p class="pc-series">SRK ZSX-WF · R32</p>
-          <h3 class="pc-name" data-sq="KIREIA Plus" data-en="KIREIA Plus">KIREIA Plus</h3>
-          <div class="pc-specs">
-            <div><span data-sq="Fuqi" data-en="Capacity">Fuqi</span><strong>2.0–6.1 kW</strong></div>
-            <div><span data-sq="Klasa" data-en="Class">Klasa</span><strong>A+++</strong></div>
-            <div><span data-sq="Zhurmë" data-en="Noise">Zhurmë</span><strong>19 dB</strong></div>
-            <div><span>Wi-Fi</span><strong>✔</strong></div>
-          </div>
-          <div class="pc-foot">
-            <div class="pc-price"><span data-sq="Çmim" data-en="Price">Çmim</span><strong data-sq="Me kërkesë" data-en="On request">Me kërkesë</strong></div>
-            <a href="#contact" class="btn btn-red btn-sm" data-sq="Porosit Tani" data-en="Order Now">Porosit Tani</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 5a: Multi-Split 6 kW (SCM 60) -->
-      <div class="pc" data-cat="multisplit">
-        <div class="pc-flag new-flag" data-sq="Multi-Split" data-en="Multi-Split">Multi-Split</div>
-        <div class="pc-img">
-          <img src="https://www.albaelettrica.al/wp-content/uploads/2016/04/multi-dc-inverter-hyper-esterno-40-60.jpg"
-               onerror="this.src='https://placehold.co/320x220/f5f5f5/9b1b2e?text=Multi-Split+6kW'"
-               alt="MHI SCM 60 ZS-W Multi-Split outdoor" />
-        </div>
-        <div class="pc-body">
-          <p class="pc-series">SCM 60 ZS-W · R32</p>
-          <h3 class="pc-name" data-sq="Multi-Split 6 kW (2–3 Dhoma)" data-en="Multi-Split 6 kW (2–3 Rooms)">Multi-Split 6 kW (2–3 Dhoma)</h3>
-          <div class="pc-specs">
-            <div><span data-sq="Ftohje" data-en="Cooling">Ftohje</span><strong>6.0 kW</strong></div>
-            <div><span data-sq="Ngrohje" data-en="Heating">Ngrohje</span><strong>6.6 kW</strong></div>
-            <div><span data-sq="Dhoma" data-en="Rooms">Dhoma</span><strong>2–3</strong></div>
-            <div><span>R32</span><strong>✔</strong></div>
-          </div>
-          <div class="pc-foot">
-            <div class="pc-price"><span data-sq="Nga" data-en="From">Nga</span><strong>196 800 L</strong></div>
-            <a href="#contact" class="btn btn-red btn-sm" data-sq="Porosit Tani" data-en="Order Now">Porosit Tani</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 5b: Multi-Split 8 kW (SCM 80) -->
-      <div class="pc" data-cat="multisplit">
-        <div class="pc-flag popular" data-sq="Premium" data-en="Premium">Premium</div>
-        <div class="pc-img">
-          <img src="https://www.albaelettrica.al/wp-content/uploads/2016/04/multi-dc-inverter-hyper-esterno-71-80.jpg"
-               onerror="this.src='https://placehold.co/320x220/f5f5f5/9b1b2e?text=Multi-Split+8kW'"
-               alt="MHI SCM 80 ZS-W Multi-Split outdoor" />
-        </div>
-        <div class="pc-body">
-          <p class="pc-series">SCM 80 ZS-W · R32</p>
-          <h3 class="pc-name" data-sq="Multi-Split 8 kW (3–4 Dhoma)" data-en="Multi-Split 8 kW (3–4 Rooms)">Multi-Split 8 kW (3–4 Dhoma)</h3>
-          <div class="pc-specs">
-            <div><span data-sq="Ftohje" data-en="Cooling">Ftohje</span><strong>8.0 kW</strong></div>
-            <div><span data-sq="Ngrohje" data-en="Heating">Ngrohje</span><strong>9.3 kW</strong></div>
-            <div><span data-sq="Dhoma" data-en="Rooms">Dhoma</span><strong>3–4</strong></div>
-            <div><span>R32</span><strong>✔</strong></div>
-          </div>
-          <div class="pc-foot">
-            <div class="pc-price"><span data-sq="Nga" data-en="From">Nga</span><strong>72 400 L</strong></div>
-            <a href="#contact" class="btn btn-red btn-sm" data-sq="Porosit Tani" data-en="Order Now">Porosit Tani</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 6: Hyper Inverter Dysheme -->
-      <div class="pc" data-cat="floor">
-        <div class="pc-img">
-          <img src="https://www.albaelettrica.al/wp-content/uploads/2016/05/mhi-prod-p24.jpg"
-               onerror="this.src='https://placehold.co/320x220/f5f5f5/9b1b2e?text=Hyper+Inverter'"
-               alt="MHI Hyper Inverter Floor R32" />
-        </div>
-        <div class="pc-body">
-          <p class="pc-series">SRF ZS-W · R32</p>
-          <h3 class="pc-name" data-sq="Hyper Inverter Dysheme 3.5 kW" data-en="Hyper Inverter Floor 3.5 kW">Hyper Inverter Dysheme 3.5 kW</h3>
-          <div class="pc-specs">
-            <div><span data-sq="Fuqi" data-en="Capacity">Fuqi</span><strong>3.5 kW</strong></div>
-            <div><span data-sq="Klasa" data-en="Class">Klasa</span><strong>A++</strong></div>
-            <div><span data-sq="Montim" data-en="Mount">Montim</span><strong data-sq="Dysheme" data-en="Floor">Dysheme</strong></div>
-            <div><span>R32</span><strong>✔</strong></div>
-          </div>
-          <div class="pc-foot">
-            <div class="pc-price"><span data-sq="Çmim" data-en="Price">Çmim</span><strong>80,100 L</strong></div>
-            <a href="#contact" class="btn btn-red btn-sm" data-sq="Porosit Tani" data-en="Order Now">Porosit Tani</a>
-          </div>
-        </div>
-      </div>
-
-    </div><!-- /pg -->
+    <div class="pg" id="pcGrid">
+      <!-- Cards rendered from catalog.json by app.js renderHomeProducts() -->
+    </div>
   </div>
 </section>
 
@@ -390,9 +227,9 @@
   <section class="feat-section feat-dark">
     <div class="container feat-inner">
       <div class="feat-img">
-        <img src="https://images.unsplash.com/photo-1418065460487-3e41a6c84dc5?w=600&q=80"
+        <img src="https://www.mitsubishi-termal.it/wp-content/uploads/2023/04/kireia-evo-applicazione-2.jpg"
              onerror="this.src='https://placehold.co/540x400/0e1c2f/9b1b2e?text=Air+Quality'"
-             alt="Clean fresh air" />
+             alt="MHI KIREIA wall unit in minimalist living room" />
       </div>
       <div class="feat-text">
         <span class="feat-label" data-sq="Cilësi Ajri" data-en="Air Quality">Cilësi Ajri</span>
@@ -681,6 +518,7 @@
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="26" height="26"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 <button class="scroll-top" id="sTop">↑</button>
+<script src="cart.js"></script>
 <script src="app.js"></script>
 </body>
 </html>

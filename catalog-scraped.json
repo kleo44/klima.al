@@ -1,0 +1,713 @@
+{
+  "_meta": {
+    "source": "https://www.albaelettrica.al/mitsubishi-heavy-industries-residential/",
+    "scraped_at": "2026-05-08",
+    "products_count": 26
+  },
+  "products": [
+    {
+      "slug": "kireia-plus-monosplit-r32",
+      "url": "https://www.albaelettrica.al/kireia-plus-monosplit-r32/",
+      "category": "monosplit",
+      "title": "KIREIA Plus | monosplit | R32",
+      "subtitle": null,
+      "hero_image": "https://www.albaelettrica.al/wp-content/uploads/2022/06/kireia-plus-1-1.jpg",
+      "gallery_images": [],
+      "description": "Wall-mounted air conditioners available in 5 different power levels (2.00~6.10 kW). Energy Class: Cool./Heat A+++ (5.00 kW), A++ (2.00~6.10 kW). Low acoustic impact: only 19 dB(A) (2.0 kW). Antibacterial treatment on fan. Modern, elegant design. Operation in heating and cooling mode with an outdoor temperature limit of -15° C.",
+      "specs": [
+        { "model": "SRK 20~60 ZSX-WF/WFT" },
+        { "model": "SRK 20~60 ZMX-S" }
+      ],
+      "price": null,
+      "brochure_url": null,
+      "features": [
+        "Wall-mounted air conditioners available in 5 different power levels (2.00~6.10 kW)",
+        "Energy Class: Cool./Heat A+++ (5.00 kW), A++ (2.00~6.10 kW)",
+        "Low acoustic impact: only 19 dB(A) (2.0 kW)",
+        "Antibacterial treatment on fan",
+        "Modern, elegant design",
+        "Operation in heating and cooling mode with an outdoor temperature limit of -15° C"
+      ]
+    },
+    {
+      "slug": "kireia-monosplit-r32",
+      "url": "https://www.albaelettrica.al/kireia-monosplit-r32/",
+      "category": "monosplit",
+      "title": "KIREIA | monosplit | R32",
+      "subtitle": null,
+      "hero_image": "https://www.albaelettrica.al/wp-content/uploads/2022/11/WhatsApp-Image-2022-10-29-at-9.56.41-AM.jpeg",
+      "gallery_images": [],
+      "description": "Wall-mounted air conditioners available in 7 different power levels (2.00~8.00 kW). Operation in heating and cooling mode with an outdoor temperature limit of -15° C.",
+      "specs": [
+        {
+          "model": "SRK 20~50 ZS-WF/WF-T",
+          "power_levels_kw": "2.00~8.00",
+          "energy_class_cool": "A+++/A+/A+",
+          "energy_class_heat": "A++/A+/A",
+          "noise_db": "21 (2.0~2.5 kW)",
+          "max_split_distance_m": "25 (5.00 kW)"
+        }
+      ],
+      "price": null,
+      "brochure_url": null,
+      "features": [
+        "Inverter",
+        "Wall-mounted air conditioners available in 7 different power levels (2.00~8.00 kW)",
+        "Energy Class: Cool./Heat. A+++/A++ (2.00~3.50 kW), A+/A+ (7.10 kW), A+/A (8.00 kW)",
+        "Low acoustic impact: only 21 dB(A) (2.0~2.5 kW)",
+        "Antibacterial treatment on fan",
+        "Particularly high splitting distance: 25 m (5.00 kW)",
+        "SRK 71 ZM-S Model can be connected with the Outdoor Unit FDC 71VNP Conter Smart",
+        "Modern, elegant design",
+        "Operation in heating and cooling mode with an outdoor temperature limit of -15° C"
+      ]
+    },
+    {
+      "slug": "kireia-smart-monosplit-r32",
+      "url": "https://www.albaelettrica.al/kireia-smart-monosplit-r32/",
+      "category": "monosplit",
+      "title": "KIREIA SMART | monosplit | R32",
+      "subtitle": null,
+      "hero_image": "https://www.albaelettrica.al/wp-content/uploads/2022/06/Kireia_smart_r32_clima-1.jpg",
+      "gallery_images": [],
+      "description": null,
+      "specs": [
+        {
+          "model": "SRK 25~50 ZSP-W",
+          "type": "Wall type Air Conditioners",
+          "capacities_kw": "2.5~4.5 kW",
+          "energy_class_cooling": "A++/A+ (3.20 kW); A/A (2.5~4.5 kW)",
+          "energy_class_heating": "A++/A+ (3.20 kW); A/A (2.5~4.5 kW)",
+          "noise_level_db": "23 dB(A) (2.5~3.2 kW)",
+          "max_splitting_distance_m": "25 m (4.5 kW)",
+          "heating_outdoor_temp_limit_c": "-15°C"
+        }
+      ],
+      "price": null,
+      "brochure_url": null,
+      "features": [
+        "Inverter",
+        "Wall type Air Conditioners available in 3 capacities (2.5~4.5 kW)",
+        "Very silent: only 23 dB(A) (2.5~3.2 kW)",
+        "Antibacterial treatment on fan",
+        "Very high splitting distance: 25 m (4.5 kW)",
+        "Modern, elegant design",
+        "Operation in heating and cooling mode with outdoor temperature limit of -15°C"
+      ]
+    },
+    {
+      "slug": "large-comfort-monosplit-r32",
+      "url": "https://www.albaelettrica.al/large-comfort-monosplit-r32/",
+      "category": "monosplit",
+      "title": "Large Comfort | monosplit | R32",
+      "subtitle": null,
+      "hero_image": "https://www.albaelettrica.al/wp-content/uploads/2022/06/Large-comfort.jpg",
+      "gallery_images": [],
+      "description": null,
+      "specs": [
+        {
+          "model": "SRK 63~80 ZR-W",
+          "capacity_kw": "2.5~4.5",
+          "type": "Wall type Air Conditioners",
+          "energy_class_cooling": "A++ (6.30 kW); A (2.5~4.5 kW)",
+          "energy_class_heating": "A (2.5~4.5 kW)",
+          "noise_db": "23 dB(A) (2.5~3.2 kW)",
+          "splitting_distance_m": "30 (4.5 kW)",
+          "operating_temp_limit_heating": "-15°C"
+        }
+      ],
+      "price": null,
+      "brochure_url": null,
+      "features": [
+        "Inverter",
+        "Wall type Air Conditioners available in 3 capacities (2.5~4.5 kW)",
+        "Energy class in cooling mode/heating mode A++ (6.30 kW); A/A (2.5~4.5 kW)",
+        "Very silent: only 23 dB(A) (2.5~3.2 kW) (sound pressure)",
+        "Antibacterial treatment on fan",
+        "Very high splitting distance: 30 m (4.5 kW)",
+        "Modern, elegant design",
+        "Operation in heating and cooling mode with outdoor temperature limit of -15°C"
+      ]
+    },
+    {
+      "slug": "light-commercial-medium-head-ducted-monosplit-r32",
+      "url": "https://www.albaelettrica.al/light-commercial-medium-head-ducted-monosplit-r32/",
+      "category": "monosplit",
+      "title": "FDUM 40~60 VH",
+      "subtitle": "Light Commercial | Medium head ducted | monosplit | R32",
+      "hero_image": "https://www.albaelettrica.al/wp-content/uploads/2016/05/mhi-prod-p31.jpg",
+      "gallery_images": [],
+      "description": "Ducted air conditioners with medium head available in 3 different power levels (4.00~5.60 kW). Ultra-compact design: only 28 cm high. Particularly high splitting distance: 30 m. Condensate drain pump as standard. Ideal for air conditioning in small and medium environments. Operation in heating and cooling mode with an outdoor temperature limit of -15° C.",
+      "specs": [],
+      "price": null,
+      "brochure_url": null,
+      "features": [
+        "Inverter",
+        "Ducted air conditioners with medium head available in 3 different power levels (4.00~5.60 kW)",
+        "Energy Class: Cool./Heat. A++/A+ (5.60 kW), A+/A+ (4.00~5.00 kW)",
+        "Ultra-compact design: only 28 cm high",
+        "Particularly high splitting distance: 30 m",
+        "Condensate drain pump as standard",
+        "Ideal for air conditioning in small and medium environments",
+        "Operation in heating and cooling mode with an outdoor temperature limit of -15° C"
+      ]
+    },
+    {
+      "slug": "primary-heating-console-monosplit-r32",
+      "url": "https://www.albaelettrica.al/primary-heating-console-monosplit-r32/",
+      "category": "monosplit",
+      "title": "Primary Heating | Console | monosplit | R32",
+      "subtitle": null,
+      "hero_image": "https://www.albaelettrica.al/wp-content/uploads/2016/05/mhi-prod-p24.jpg",
+      "gallery_images": [],
+      "description": null,
+      "specs": [
+        {
+          "model": "SRF 25~35 ZS-W; SRF 50 ZSX-W",
+          "power_levels_kw": "2.50~5.00",
+          "energy_class_cooling": "A++ (2.50~3.50 kW), A+ (5.00 kW)",
+          "energy_class_heating": "A++ (2.50~3.50 kW), A+ (5.00 kW)",
+          "noise_level_db": "25 (2.50 kW)",
+          "operating_temperature_limit_celsius": "-15"
+        }
+      ],
+      "price": null,
+      "brochure_url": null,
+      "features": [
+        "Floor-standing air conditioners available in 3 different power levels (2.50~5.00 kW)",
+        "Energy Class: Cool./Heat. A++ (2.50~3.50 kW), A+/A+ (5.00 kW)",
+        "Low acoustic impact: only 25 dB(A) (2.50 kW)",
+        "Standard infrared remote control",
+        "Modern, elegant design",
+        "Operation in heating and cooling mode with an outdoor temperature limit of -15° C",
+        "Inverter"
+      ]
+    },
+    {
+      "slug": "light-commercial-ceiling-monosplit-r32",
+      "url": "https://www.albaelettrica.al/light-commercial-ceiling-monosplit-r32/",
+      "category": "monosplit",
+      "title": "Light Commercial | Ceiling | monosplit | R32",
+      "subtitle": null,
+      "hero_image": "https://www.albaelettrica.al/wp-content/uploads/2016/05/mhi-prod-p26.jpg",
+      "gallery_images": [],
+      "description": "Ceiling-mounted air conditioners available in 3 different power levels (4.00~5.60 kW). Particularly high splitting distance: 30 m. Ultra-thin design: only 21 cm high with a net weight of only 28 kg (4.0~5.0 kW), ensuring quick and easy installation. Ideal for very large environments, thanks to the particularly wide air flow. Operation in heating and cooling mode with an outdoor temperature limit of -15° C.",
+      "specs": [
+        {
+          "model": "FDE 40~60 VH",
+          "power_levels_kw": "4.00~5.60",
+          "energy_class_cool": "A++/A (4.00 kW), A+/A (5.00~5.60 kW)",
+          "energy_class_heat": "A",
+          "splitting_distance_m": "30",
+          "height_cm": "21",
+          "weight_kg": "28 (4.0~5.0 kW)",
+          "outdoor_temperature_limit_c": "-15"
+        }
+      ],
+      "price": null,
+      "brochure_url": null,
+      "features": [
+        "Inverter",
+        "Ceiling-mounted design",
+        "Monosplit configuration",
+        "R32 refrigerant",
+        "High splitting distance (30 m)",
+        "Ultra-thin design (21 cm)",
+        "Wide air flow",
+        "Heating and cooling operation"
+      ]
+    },
+    {
+      "slug": "light-commercial-low-head-ducted-monosplit-r32",
+      "url": "https://www.albaelettrica.al/light-commercial-low-head-ducted-monosplit-r32/",
+      "category": "monosplit",
+      "title": "SRR 25~35 ZS-W",
+      "subtitle": "Light Commercial | Low head ducted | monosplit | R32",
+      "hero_image": "https://www.albaelettrica.al/wp-content/uploads/2022/06/srr_r32.jpg",
+      "gallery_images": [],
+      "description": "Ducted air conditioners with low head available in 2 different power levels (2.50~3.50 kW). Compact size: only 23 cm high. Lower filter (standard). Standard remote control. Operation in heating and cooling mode with an outdoor temperature limit of -15° C.",
+      "specs": [
+        {
+          "model": "SRR 25~35 ZS-W",
+          "power_kw": "2.50~3.50",
+          "energy_class_cool": "A++",
+          "energy_class_heat": "A++/A",
+          "height_cm": "23",
+          "features": "Inverter, Lower filter standard, Heating/Cooling to -15°C"
+        }
+      ],
+      "price": null,
+      "brochure_url": null,
+      "features": [
+        "Inverter",
+        "Ducted air conditioners with low head available in 2 different power levels (2.50~3.50 kW)",
+        "Energy Class: Cool./Heat. A++ (3.50 kW), A++/A (2.50 kW)",
+        "Compact size: only 23 cm high",
+        "Lower filter (standard)",
+        "Standard remote control",
+        "Operation in heating and cooling mode with an outdoor temperature limit of -15° C"
+      ]
+    },
+    {
+      "slug": "light-commercial-cassette-60x60-fdtc-vh-monosplit-r32",
+      "url": "https://www.albaelettrica.al/light-commercial-cassette-60x60-fdtc-vh-monosplit-r32/",
+      "category": "monosplit",
+      "title": "Light Commercial | Cassette 60×60 FDTC VH | monosplit | R32",
+      "subtitle": null,
+      "hero_image": "https://www.albaelettrica.al/wp-content/uploads/2016/04/mhi-prod-p28.jpg",
+      "gallery_images": [],
+      "description": "4-way cassette air conditioners available in 5 different power levels (2.55~5.6 kW). Removable caps on the 4 corners for easy installation. Ideal for use on low and modular ceilings. Condensate drain pump as standard. Ultra-compact model: only 24.8 cm for building into false ceilings.",
+      "specs": [
+        {
+          "model": "FDTC 25~35 VH1; FDTC 40~60 VH",
+          "power_range_kw": "2.55~5.6",
+          "energy_class_cooling": "A++/A+/A+",
+          "energy_class_heating": "A+/A/A",
+          "height_cm": "24.8"
+        }
+      ],
+      "price": null,
+      "brochure_url": null,
+      "features": [
+        "Inverter",
+        "4-way cassette configuration",
+        "5 power levels (2.55~5.6 kW)",
+        "Energy Class: Cool./Heat. A++/A+ (2.55~3.60 kW), A++/A (4.00 kW), A+/A (5.00~5.60 kW)",
+        "Removable caps on 4 corners",
+        "Suitable for low and modular ceilings",
+        "Condensate drain pump included",
+        "Ultra-compact design (24.8 cm height)"
+      ]
+    },
+    {
+      "slug": "light-commercial-cassette-84x84-fdt-vh-monosplit-r32",
+      "url": "https://www.albaelettrica.al/light-commercial-cassette-84x84-fdt-vh-monosplit-r32/",
+      "category": "monosplit",
+      "title": "Light Commercial | Cassette 84×84 FDT VH | monosplit | R32",
+      "subtitle": null,
+      "hero_image": "https://www.albaelettrica.al/wp-content/uploads/2016/04/mhi-prod-p29.jpg",
+      "gallery_images": [],
+      "description": "4-way cassette air conditioners available in 3 different power levels (4.00~5.60 kW). Energy Class: Cool./Heat. A++/A+ (4.00~5.00 kW), A++/A (5.60 kW). RCN-T-36W-E corner kit with remote control (optional). Removable caps on the 4 corners for easy installation. Particularly high splitting distance: 30 m. Condensate drain pump as standard. Operation in heating and cooling mode with an outdoor temperature limit of -15° C.",
+      "specs": [],
+      "price": null,
+      "brochure_url": null,
+      "features": [
+        "4-way cassette air conditioners available in 3 different power levels (4.00~5.60 kW)",
+        "Energy Class: Cool./Heat. A++/A+ (4.00~5.00 kW), A++/A (5.60 kW)",
+        "RCN-T-36W-E corner kit with remote control (optional)",
+        "Removable caps on the 4 corners for easy installation",
+        "Particularly high splitting distance: 30 m",
+        "Condensate drain pump as standard",
+        "Operation in heating and cooling mode with an outdoor temperature limit of -15° C",
+        "Inverter"
+      ]
+    },
+    {
+      "slug": "multisplit-kireia-plus-r32",
+      "url": "https://www.albaelettrica.al/multisplit-kireia-plus-r32/",
+      "category": "multisplit-indoor",
+      "title": "Multisplit | KIREIA PLUS | R32",
+      "subtitle": null,
+      "hero_image": "https://www.albaelettrica.al/wp-content/uploads/2022/06/multi-1.jpg",
+      "gallery_images": [],
+      "description": null,
+      "specs": [
+        {
+          "model": "SRK 20~60 ZSX-WF(T)",
+          "power_range_kw": "2.00~6.00",
+          "noise_level_db": "19 (2.00~3.50 kW)",
+          "features": "Inverter, Wi-Fi integrated, Remote control included, Allergen clear filter"
+        }
+      ],
+      "price": null,
+      "brochure_url": null,
+      "features": [
+        "Available in 5 power sizes (2.00~6.00 kW)",
+        "Very quiet: only 19 dB(A) (2.00~3.50 kW)",
+        "Wi-Fi integrated",
+        "Remote control included",
+        "Allergen clear filter"
+      ]
+    },
+    {
+      "slug": "multisplit-wall-skm-r32",
+      "url": "https://www.albaelettrica.al/multisplit-wall-skm-r32/",
+      "category": "multisplit-indoor",
+      "title": "Multisplit | wall SKM | R32",
+      "subtitle": null,
+      "hero_image": "https://www.albaelettrica.al/wp-content/uploads/2022/06/multi-4.jpg",
+      "gallery_images": [],
+      "description": null,
+      "specs": [
+        {
+          "model": "SKM 20~35 ZSP-W",
+          "power_kw": "2.00~3.50",
+          "noise_db": "22 (at 2.00 kW)"
+        }
+      ],
+      "price": null,
+      "brochure_url": null,
+      "features": [
+        "Inverter",
+        "Available in 3 power sizes (2.00~3.50 kW)",
+        "Very quiet: only 22 dB(A) (2.00 kW)",
+        "Wi-Fi optional",
+        "Remote control included"
+      ]
+    },
+    {
+      "slug": "multisplit-medium-head-ducted-r32",
+      "url": "https://www.albaelettrica.al/multisplit-medium-head-ducted-r32/",
+      "category": "multisplit-indoor",
+      "title": "Multisplit | medium head ducted | R32",
+      "subtitle": null,
+      "hero_image": "https://www.albaelettrica.al/wp-content/uploads/2022/06/multi-7.jpg",
+      "gallery_images": [],
+      "description": null,
+      "specs": [
+        {
+          "model": "FDUM 50 VH",
+          "power_kw": "5.00",
+          "noise_db": "26"
+        }
+      ],
+      "price": null,
+      "brochure_url": null,
+      "features": [
+        "Inverter",
+        "Very quiet: only 26 dB(A)",
+        "Wi-Fi optional"
+      ]
+    },
+    {
+      "slug": "multisplit-kireia-r32",
+      "url": "https://www.albaelettrica.al/multisplit-kireia-r32/",
+      "category": "multisplit-indoor",
+      "title": "Multisplit | KIREIA | R32",
+      "subtitle": null,
+      "hero_image": "https://www.albaelettrica.al/wp-content/uploads/2022/06/kireia_r32.jpg",
+      "gallery_images": [],
+      "description": null,
+      "specs": [
+        {
+          "model": "SRK 20~50 ZS-WF(T)",
+          "power_sizes_kw": "2.00~5.00",
+          "noise_db": "19 (2.00~3.50 kW)",
+          "features": "Wi-Fi integrated, Remote control included, Allergen clear filter"
+        }
+      ],
+      "price": null,
+      "brochure_url": null,
+      "features": [
+        "Available in 4 power sizes (2.00~5.00 kW)",
+        "Very quiet: only 19 dB(A) (2.00~3.50 kW)",
+        "Wi-Fi integrated",
+        "Remote control included",
+        "Allergen clear filter"
+      ]
+    },
+    {
+      "slug": "multisplit-console-r32",
+      "url": "https://www.albaelettrica.al/multisplit-console-r32/",
+      "category": "multisplit-indoor",
+      "title": "Multisplit | console | R32",
+      "subtitle": null,
+      "hero_image": "https://www.albaelettrica.al/wp-content/uploads/2022/06/Multi-5.jpg",
+      "gallery_images": [],
+      "description": null,
+      "specs": [
+        {
+          "model": "SRF 25~35 ZS-W; SRF 50 ZSX-W",
+          "power_sizes_kw": "2.50~5.00",
+          "noise_db": "25",
+          "features": "Inverter, Wi-Fi optional, Remote control included"
+        }
+      ],
+      "price": null,
+      "brochure_url": null,
+      "features": [
+        "Available in 3 power sizes (2.50~5.00 kW)",
+        "Very quiet: only 25 dB(A) (2.50 kW)",
+        "Wi-Fi optional",
+        "Remote control included"
+      ]
+    },
+    {
+      "slug": "multisplit-ceiling-r32",
+      "url": "https://www.albaelettrica.al/multisplit-ceiling-r32/",
+      "category": "multisplit-indoor",
+      "title": "FDE 50 VH",
+      "subtitle": "Multisplit | ceiling | R32",
+      "hero_image": "https://www.albaelettrica.al/wp-content/uploads/2022/06/multi-8.jpg",
+      "gallery_images": [],
+      "description": null,
+      "specs": [
+        {
+          "model": "FDE 50 VH",
+          "power_size_kw": "5.00",
+          "noise_level_db": "31"
+        }
+      ],
+      "price": null,
+      "brochure_url": null,
+      "features": [
+        "Inverter",
+        "Very quiet: only 31 dB(A)",
+        "Wi-Fi optional"
+      ]
+    },
+    {
+      "slug": "multisplit-wall-srk-r32",
+      "url": "https://www.albaelettrica.al/multisplit-wall-srk-r32/",
+      "category": "multisplit-indoor",
+      "title": "Multisplit | wall SRK | R32",
+      "subtitle": null,
+      "hero_image": "https://www.albaelettrica.al/wp-content/uploads/2022/06/multi-3.jpg",
+      "gallery_images": [],
+      "description": null,
+      "specs": [
+        {
+          "model": "SRK 71-80 ZR-W",
+          "power_sizes_kw": "7.10 and 8.00",
+          "noise_level_db": "25 (7.10 kW)"
+        }
+      ],
+      "price": null,
+      "brochure_url": null,
+      "features": [
+        "Inverter",
+        "Available in 2 power sizes (7.10 and 8.00 kW)",
+        "Very quiet: only 25 dB(A) (7.10 kW)",
+        "Wi-Fi optional",
+        "Remote control included"
+      ]
+    },
+    {
+      "slug": "multisplit-low-head-ducted-r32-2",
+      "url": "https://www.albaelettrica.al/multisplit-low-head-ducted-r32-2/",
+      "category": "multisplit-indoor",
+      "title": "Multisplit | low head ducted | R32",
+      "subtitle": null,
+      "hero_image": "https://www.albaelettrica.al/wp-content/uploads/2022/06/multi-6.jpg",
+      "gallery_images": [],
+      "description": null,
+      "specs": [
+        {
+          "model": "SRR 25~60 ZS-W",
+          "power_range_kw": "2.50~6.00",
+          "noise_level_db": "24 (at 2.50 kW)"
+        }
+      ],
+      "price": null,
+      "brochure_url": null,
+      "features": [
+        "Inverter",
+        "Available in 4 power sizes (2.50~6.00 kW)",
+        "Very quiet: only 24 dB(A) (2.50 kW)",
+        "Wi-Fi optional",
+        "Remote control included"
+      ]
+    },
+    {
+      "slug": "multisplit-compact-cassette-60x60-r32",
+      "url": "https://www.albaelettrica.al/multisplit-compact-cassette-60x60-r32/",
+      "category": "multisplit-indoor",
+      "title": "Multisplit | compact cassette 60×60 | R32",
+      "subtitle": null,
+      "hero_image": "https://www.albaelettrica.al/wp-content/uploads/2022/06/multi-9.jpg",
+      "gallery_images": [],
+      "description": null,
+      "specs": [
+        {
+          "model": "FDTC 25~35 VH1; FDTC 50~60 VH",
+          "power_sizes_kw": "2.50~6.00",
+          "noise_db": "27 (at 2.50 and 5.00 kW)",
+          "panel_options": "Standard and antidraft panels, honeycomb or linear",
+          "wifi": "optional"
+        }
+      ],
+      "price": null,
+      "brochure_url": null,
+      "features": [
+        "Inverter",
+        "Available in 4 power sizes (2.50~6.00 kW)",
+        "Very quiet: only 27 dB(A) (2.50 and 5.00 kW)",
+        "Standard and antidraft panels, honeycomb or linear",
+        "Wi-Fi optional"
+      ]
+    },
+    {
+      "slug": "dc-inverter-hyper-outdoor-units-4-0-kw",
+      "url": "https://www.albaelettrica.al/dc-inverter-hyper-outdoor-units-4-0-kw/",
+      "category": "outdoor-unit",
+      "title": "DC INVERTER HYPER – OUTDOOR UNITS 4.0 kW",
+      "subtitle": "RESIDENTIAL MULTISPLIT R32 – OUTDOOR UNITS 4.0 kW",
+      "hero_image": "https://www.albaelettrica.al/wp-content/uploads/2016/04/multi-dc-inverter-hyper-esterno-40-60.jpg",
+      "gallery_images": [],
+      "description": "Inverter outdoor unit available in 1 power level (4.00 kW), suitable for 2+ room systems.\n\nOperation in heating and cooling mode with an outdoor temperature limit of -15° C",
+      "specs": [
+        {
+          "model": "SCM 40 ZS-W",
+          "power_level_kw": "4.00",
+          "min_rooms": "2",
+          "heating_mode": "Yes",
+          "cooling_mode": "Yes",
+          "min_outdoor_temp_celsius": "-15"
+        }
+      ],
+      "price": null,
+      "brochure_url": null,
+      "features": [
+        "Inverter technology",
+        "Heating and cooling operation",
+        "Low temperature outdoor operation (-15°C)"
+      ]
+    },
+    {
+      "slug": "dc-inverter-hyper-outdoor-units-4-5-kw",
+      "url": "https://www.albaelettrica.al/dc-inverter-hyper-outdoor-units-4-5-kw/",
+      "category": "outdoor-unit",
+      "title": "RESIDENTIAL MULTISPLIT R32 – OUTDOOR UNITS 4.5 kW",
+      "subtitle": "SCM 45 ZS-W",
+      "hero_image": "https://www.albaelettrica.al/wp-content/uploads/2016/04/multi-dc-inverter-hyper-esterno-40-60.jpg",
+      "gallery_images": [],
+      "description": "Outdoor units available in 1 power level (4.50 kW), from 2 rooms\n\nOperation in heating and cooling mode with an outdoor temperature limit of -15° C",
+      "specs": [
+        {
+          "model": "SCM 45 ZS-W",
+          "power_kw": "4.5",
+          "rooms": "from 2",
+          "modes": "heating and cooling",
+          "min_outdoor_temp_c": "-15"
+        }
+      ],
+      "price": null,
+      "brochure_url": null,
+      "features": [
+        "Inverter",
+        "Operation in heating and cooling mode with outdoor temperature limit of -15° C",
+        "Available from 2 rooms"
+      ]
+    },
+    {
+      "slug": "dc-inverter-hyper-outdoor-units-5-0-kw",
+      "url": "https://www.albaelettrica.al/dc-inverter-hyper-outdoor-units-5-0-kw/",
+      "category": "outdoor-unit",
+      "title": "RESIDENTIAL MULTISPLIT R32 – OUTDOOR UNITS 5.0 kW",
+      "subtitle": null,
+      "hero_image": "https://www.albaelettrica.al/wp-content/uploads/2016/04/multi-dc-inverter-hyper-esterno-40-60.jpg",
+      "gallery_images": [],
+      "description": "Mitsubishi Heavy Industries DC Inverter Hyper outdoor unit model SCM 50 ZS-W. Outdoor units available in 1 power level (5.00 kW), suitable for 2 to 3 rooms. Operation in heating and cooling mode with an outdoor temperature limit of -15° C.",
+      "specs": [
+        {
+          "model": "SCM 50 ZS-W",
+          "power_level_kw": "5.0",
+          "rooms": "2 to 3"
+        }
+      ],
+      "price": null,
+      "brochure_url": null,
+      "features": [
+        "Inverter technology",
+        "Heating and cooling mode capability",
+        "Operation down to -15°C outdoor temperature"
+      ]
+    },
+    {
+      "slug": "dc-inverter-hyper-outdoor-units-6-0-kw",
+      "url": "https://www.albaelettrica.al/dc-inverter-hyper-outdoor-units-6-0-kw/",
+      "category": "outdoor-unit",
+      "title": "RESIDENTIAL MULTISPLIT R32 – OUTDOOR UNITS 6.0 kW",
+      "subtitle": null,
+      "hero_image": "https://www.albaelettrica.al/wp-content/uploads/2016/04/multi-dc-inverter-hyper-esterno-40-60.jpg",
+      "gallery_images": [],
+      "description": "DC Inverter Hyper outdoor unit by Mitsubishi Heavy Industries. Model SCM 60 ZS-W with 6.0 kW capacity suitable for 2 to 3 room residential multisplit systems. Features inverter technology with operation in both heating and cooling modes, maintaining functionality at outdoor temperatures as low as -15°C.",
+      "specs": [
+        {
+          "model": "SCM 60 ZS-W",
+          "power_level_kw": "6.00",
+          "room_capacity": "2 to 3 rooms",
+          "operating_modes": "Heating and cooling",
+          "min_outdoor_temperature_c": "-15"
+        }
+      ],
+      "price": null,
+      "brochure_url": null,
+      "features": [
+        "Inverter technology",
+        "6.0 kW outdoor unit capacity",
+        "Heating and cooling operation",
+        "Outdoor temperature limit of -15°C",
+        "Suitable for 2 to 3 room installations"
+      ]
+    },
+    {
+      "slug": "dc-inverter-hyper-outdoor-units-7-1-kw",
+      "url": "https://www.albaelettrica.al/dc-inverter-hyper-outdoor-units-7-1-kw/",
+      "category": "outdoor-unit",
+      "title": "RESIDENTIAL MULTISPLIT R32 – OUTDOOR UNITS 7.1 kW",
+      "subtitle": "SCM 71 ZS-W",
+      "hero_image": "https://www.albaelettrica.al/wp-content/uploads/2016/04/multi-dc-inverter-hyper-esterno-71-80.jpg",
+      "gallery_images": [],
+      "description": "Outdoor units available in 1 power level (7.10 kW), from 2 to 4 rooms.\n\nOperation in heating and cooling mode with an outdoor temperature limit of -15° C",
+      "specs": [],
+      "price": null,
+      "brochure_url": null,
+      "features": [
+        "Inverter",
+        "DC Inverter Hyper technology"
+      ]
+    },
+    {
+      "slug": "dc-inverter-hyper-outdoor-units-8-0-kw",
+      "url": "https://www.albaelettrica.al/dc-inverter-hyper-outdoor-units-8-0-kw/",
+      "category": "outdoor-unit",
+      "title": "RESIDENTIAL MULTISPLIT R32 – OUTDOOR UNITS 8.0 kW",
+      "subtitle": null,
+      "hero_image": "https://www.albaelettrica.al/wp-content/uploads/2016/04/multi-dc-inverter-hyper-esterno-71-80.jpg",
+      "gallery_images": [],
+      "description": "Outdoor units available in 1 power level (8.00 kW), from 2 to 4 rooms. Operation in heating and cooling mode with an outdoor temperature limit of -15° C.",
+      "specs": [
+        {
+          "model": "SCM 80 ZS-W",
+          "power_kw": "8.0",
+          "rooms": "2 to 4"
+        }
+      ],
+      "price": null,
+      "brochure_url": null,
+      "features": [
+        "Inverter",
+        "Heating and cooling mode",
+        "Outdoor temperature operation down to -15° C",
+        "Suitable for 2 to 4 rooms"
+      ]
+    },
+    {
+      "slug": "dc-inverter-hyper-outdoor-units-10-0-kw",
+      "url": "https://www.albaelettrica.al/dc-inverter-hyper-outdoor-units-10-0-kw/",
+      "category": "outdoor-unit",
+      "title": "RESIDENTIAL MULTISPLIT R32 – OUTDOOR UNITS 10.0 kW",
+      "subtitle": null,
+      "hero_image": "https://www.albaelettrica.al/wp-content/uploads/2016/05/multi-dc-inverter-hyper-esterno-100-125.jpg",
+      "gallery_images": [],
+      "description": "Mitsubishi Heavy Industries SCM 100 ZS-W DC Inverter Hyper outdoor unit system designed for residential multisplit applications with R32 refrigerant.",
+      "specs": [
+        {
+          "model": "SCM 100 ZS-W",
+          "power_level_kw": "10.00",
+          "room_capacity": "4 to 5 rooms",
+          "heating_cooling_mode": "Yes",
+          "outdoor_temperature_limit_celsius": "-15"
+        }
+      ],
+      "price": null,
+      "brochure_url": null,
+      "features": [
+        "Inverter technology",
+        "Operation in heating and cooling mode with outdoor temperature limit of -15°C",
+        "Suitable for 4 to 5 room installations"
+      ]
+    }
+  ]
+}
