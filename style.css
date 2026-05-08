@@ -1179,6 +1179,47 @@ button { cursor: pointer; border: none; background: none; font-family: var(--fon
 .cat-row-name { padding-right: 0; }
 .atc-btn svg { width: 13px; height: 13px; }
 
+/* ───────── Category listing page (produkte.html) ───────── */
+.category-page {
+  padding: 110px 0 80px;
+  background: #fff;
+  min-height: 70vh;
+}
+.category-head {
+  margin-bottom: 36px;
+  text-align: left;
+  max-width: 760px;
+}
+.category-head .sec-label {
+  display: inline-block;
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 10px;
+}
+.category-head h1 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.9rem, 3.6vw, 2.6rem);
+  color: var(--dark);
+  line-height: 1.1;
+  margin: 0 0 10px;
+  letter-spacing: -.02em;
+}
+.category-sub {
+  color: var(--gray);
+  font-size: .98rem;
+  margin: 0;
+}
+.category-empty {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--gray);
+}
+.category-empty p { margin-bottom: 18px; }
+
 /* ───────── Product detail page ───────── */
 .product-page {
   padding: 110px 0 80px;

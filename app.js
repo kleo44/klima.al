@@ -36,36 +36,18 @@ if (burger && nav) {
   nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { burger.classList.remove('open'); nav.classList.remove('open'); }));
 }
 
-/* ── Category tiles → filter products ────────────── */
-document.querySelectorAll('.cat-tile[data-filter-target]').forEach(tile => {
-  tile.addEventListener('click', e => {
-    e.preventDefault();
-    const target = tile.dataset.filterTarget;
-    // Activate the matching filter button
-    document.querySelectorAll('.fb').forEach(b => b.classList.toggle('fb-active', b.dataset.filter === target));
-    filterCards(target);
-    document.getElementById('products').scrollIntoView({ behavior: 'smooth' });
-  });
-});
-
-/* ── Product filter ───────────────────────────────── */
-function filterCards(filter) {
-  document.querySelectorAll('.pc').forEach(c => {
-    const show = filter === 'all' || c.dataset.cat === filter;
-    c.style.display = show ? '' : 'none';
-    if (show) c.style.animation = 'fadeIn .35s ease forwards';
-  });
-}
-
 document.querySelectorAll('.fb').forEach(btn => {
   btn.addEventListener('click', () => {
     document.querySelectorAll('.fb').forEach(b => b.classList.remove('fb-active'));
     btn.classList.add('fb-active');
-    filterCards(btn.dataset.filter);
+    document.querySelectorAll('.pc').forEach(c => {
+      const show = btn.dataset.filter === 'all' || c.dataset.cat === btn.dataset.filter;
+      c.style.display = show ? '' : 'none';
+    });
   });
 });
 
-/* ── Home product grid (from catalog.json) ─────────── */
+/* ── Product grid (from catalog.json) ─────────────── */
 async function renderHomeProducts() {
   const grid = document.getElementById('pcGrid');
   if (!grid) return;
@@ -77,7 +59,34 @@ async function renderHomeProducts() {
     grid.innerHTML = '<p style="color:#888;text-align:center;padding:40px">Produktet nuk u ngarkuan.</p>';
     return;
   }
-  const products = catalog.products || [];
+
+  const allProducts = catalog.products || [];
+  const cat = new URLSearchParams(location.search).get('cat');
+  const products = cat ? allProducts.filter(p => p.category === cat) : allProducts;
+
+  // Category-page chrome (only present on produkte.html)
+  if (cat && catalog.categories && catalog.categories[cat]) {
+    const meta = catalog.categories[cat];
+    const titleEl  = document.getElementById('catTitle');
+    const crumbEl  = document.getElementById('catCrumb');
+    const subEl    = document.getElementById('catSub');
+    if (titleEl)  { titleEl.dataset.sq = meta.label_sq;  titleEl.dataset.en = meta.label_en;  titleEl.textContent = meta.label_sq; }
+    if (crumbEl)  { crumbEl.dataset.sq = meta.label_sq;  crumbEl.dataset.en = meta.label_en;  crumbEl.textContent = meta.label_sq; }
+    if (subEl) {
+      const subSq = `${products.length} produkte në këtë kategori`;
+      const subEn = `${products.length} products in this category`;
+      subEl.dataset.sq = subSq; subEl.dataset.en = subEn; subEl.textContent = subSq;
+    }
+    document.title = `${meta.label_sq} – Klima.Al`;
+  }
+
+  if (products.length === 0) {
+    grid.style.display = 'none';
+    const emptyEl = document.getElementById('catEmpty');
+    if (emptyEl) emptyEl.style.display = 'block';
+    return;
+  }
+
   grid.innerHTML = products.map(p => productCardHTML(p)).join('');
 
   grid.querySelectorAll('.pc-atc').forEach(btn => {

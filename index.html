@@ -22,12 +22,11 @@
       <ul class="nav-list">
         <li><a class="nav-link" href="#hero"     data-sq="Kreu"          data-en="Home">Kreu</a></li>
         <li class="has-drop">
-          <a class="nav-link" href="#products"   data-sq="Produkte"      data-en="Products">Produkte</a>
+          <a class="nav-link" href="#cat" data-sq="Produkte" data-en="Products">Produkte</a>
           <ul class="drop">
-            <li><a href="#products"  data-sq="Të gjitha modelet"     data-en="All models">Të gjitha modelet</a></li>
-            <li><a href="#cat"       data-sq="Kondicionerë Mural"    data-en="Wall Units">Kondicionerë Mural</a></li>
-            <li><a href="#cat"       data-sq="Sisteme Multi-Split"   data-en="Multi-Split">Sisteme Multi-Split</a></li>
-            <li><a href="#cat"       data-sq="Hyper Inverter Dysheme" data-en="Floor Units">Hyper Inverter Dysheme</a></li>
+            <li><a href="produkte.html?cat=residential" data-sq="Kondicionerë Mural"    data-en="Wall Units">Kondicionerë Mural</a></li>
+            <li><a href="produkte.html?cat=multisplit"  data-sq="Sisteme Multi-Split"   data-en="Multi-Split">Sisteme Multi-Split</a></li>
+            <li><a href="produkte.html?cat=floor"       data-sq="Hyper Inverter Dysheme" data-en="Floor Units">Hyper Inverter Dysheme</a></li>
           </ul>
         </li>
         <li><a class="nav-link" href="materiale.html" data-sq="Materiale dhe Aksesorë" data-en="Materials & Accessories">Materiale dhe Aksesorë</a></li>
@@ -89,7 +88,7 @@
       Kondicionerë inverter japonezë me efiçiencë maksimale. Instalim profesional. Garanci 3 vjet.
     </p>
     <div class="hero-btns">
-      <a href="#products" class="btn btn-red"          data-sq="Shfleto Produktet" data-en="Browse Products">Shfleto Produktet</a>
+      <a href="#cat" class="btn btn-red"               data-sq="Shfleto Produktet" data-en="Browse Products">Shfleto Produktet</a>
       <a href="#contact"  class="btn btn-ghost-white"  data-sq="Porosit Tani"     data-en="Order Now">Porosit Tani</a>
     </div>
     <div class="hero-meta">
@@ -117,7 +116,7 @@
     </div>
     <div class="cat-grid">
 
-      <a href="#products" class="cat-tile" data-filter-target="residential"
+      <a href="produkte.html?cat=residential" class="cat-tile"
          style="--bg:url('https://www.albaelettrica.al/wp-content/uploads/2022/11/WhatsApp-Image-2022-10-29-at-9.56.41-AM.jpeg')">
         <div class="cat-overlay"></div>
         <div class="cat-body">
@@ -128,7 +127,7 @@
         </div>
       </a>
 
-      <a href="#products" class="cat-tile" data-filter-target="multisplit"
+      <a href="produkte.html?cat=multisplit" class="cat-tile"
          style="--bg:url('https://www.mitsubishi-termal.it/wp-content/uploads/2023/04/esterne-multisplit-r32-700x370.jpg')">
         <div class="cat-overlay"></div>
         <div class="cat-body">
@@ -139,7 +138,7 @@
         </div>
       </a>
 
-      <a href="#products" class="cat-tile" data-filter-target="floor"
+      <a href="produkte.html?cat=floor" class="cat-tile"
          style="--bg:url('https://www.albaelettrica.al/wp-content/uploads/2016/05/mhi-prod-p24.jpg')">
         <div class="cat-overlay"></div>
         <div class="cat-body">
@@ -161,28 +160,6 @@
         </div>
       </a>
 
-    </div>
-  </div>
-</section>
-
-<!-- ══ PRODUCTS ══ -->
-<section class="products-section" id="products">
-  <div class="container">
-    <div class="sec-head">
-      <div>
-        <span class="sec-label" style="font-size:.85rem" data-sq="Linja Jonë" data-en="Our Range">Linja Jonë</span>
-        <h2 data-sq="Të gjitha modelet MHI" data-en="All MHI Models">Të gjitha modelet MHI</h2>
-      </div>
-      <div class="filter-row">
-        <button class="fb fb-active" data-filter="all"         data-sq="Të Gjitha"   data-en="All">Të Gjitha</button>
-        <button class="fb"           data-filter="residential" data-sq="Mural"        data-en="Wall">Mural</button>
-        <button class="fb"           data-filter="multisplit"  data-sq="Multi-Split"  data-en="Multi-Split">Multi-Split</button>
-        <button class="fb"           data-filter="floor"       data-sq="Dysheme"      data-en="Floor">Dysheme</button>
-      </div>
-    </div>
-
-    <div class="pg" id="pcGrid">
-      <!-- Cards rendered from catalog.json by app.js renderHomeProducts() -->
     </div>
   </div>
 </section>
@@ -243,7 +220,7 @@
           <li data-sq="✔ Dehumidifier i integruar"                 data-en="✔ Built-in Dehumidifier">✔ Dehumidifier i integruar</li>
           <li data-sq="✔ Heqja e 99.9% e baktereve dhe polenave"   data-en="✔ Removes 99.9% of bacteria and pollen">✔ Heqja e 99.9% e baktereve dhe polenave</li>
         </ul>
-        <a href="#products" class="btn btn-red" data-sq="Shiko Produktet" data-en="View Products">Shiko Produktet</a>
+        <a href="#cat" class="btn btn-red" data-sq="Shiko Produktet" data-en="View Products">Shiko Produktet</a>
       </div>
     </div>
   </section>
@@ -473,14 +450,13 @@
     <div class="f-col">
       <h5 data-sq="Produkte" data-en="Products">Produkte</h5>
       <ul>
-        <li><a href="#products">KIREIA 2.0 kW</a></li>
-        <li><a href="#products">KIREIA 2.5 kW</a></li>
-        <li><a href="#products">KIREIA 3.5 kW</a></li>
-        <li><a href="#products">KIREIA 5.0 kW</a></li>
-        <li><a href="#products">KIREIA Plus</a></li>
-        <li><a href="#products" data-sq="Multi-Split 6 kW" data-en="Multi-Split 6 kW">Multi-Split 6 kW</a></li>
-        <li><a href="#products" data-sq="Multi-Split 8 kW" data-en="Multi-Split 8 kW">Multi-Split 8 kW</a></li>
-        <li><a href="#products" data-sq="Hyper Inverter Dysheme" data-en="Hyper Inverter Floor">Hyper Inverter Dysheme</a></li>
+        <li><a href="product.html?id=kireia-2kw">KIREIA 2.0 kW</a></li>
+        <li><a href="product.html?id=kireia-2_5kw">KIREIA 2.5 kW</a></li>
+        <li><a href="product.html?id=kireia-3_5kw">KIREIA 3.5 kW</a></li>
+        <li><a href="product.html?id=kireia-5kw">KIREIA 5.0 kW</a></li>
+        <li><a href="product.html?id=kireia-plus">KIREIA Plus</a></li>
+        <li><a href="produkte.html?cat=multisplit" data-sq="Sisteme Multi-Split" data-en="Multi-Split Systems">Sisteme Multi-Split</a></li>
+        <li><a href="product.html?id=floor-3_5kw" data-sq="Hyper Inverter Dysheme" data-en="Hyper Inverter Floor">Hyper Inverter Dysheme</a></li>
         <li><a href="materiale.html" data-sq="Materiale dhe Aksesorë" data-en="Materials &amp; Accessories">Materiale dhe Aksesorë</a></li>
       </ul>
     </div>

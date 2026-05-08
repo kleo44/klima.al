@@ -61,7 +61,7 @@ function renderProduct(p, catalog) {
     <nav class="prod-crumbs" aria-label="Breadcrumb">
       <a href="index.html">Kreu</a>
       <span>›</span>
-      <a href="index.html#products">${escapeHtml(breadcrumbCat)}</a>
+      <a href="produkte.html?cat=${encodeURIComponent(p.category)}">${escapeHtml(breadcrumbCat)}</a>
       <span>›</span>
       <span class="crumb-current">${escapeHtml(p.title)}</span>
     </nav>
@@ -141,7 +141,7 @@ function renderProduct(p, catalog) {
     ${Array.isArray(p.specs) && p.specs.length ? renderSpecsTable(p.specs) : ''}
 
     <div class="prod-back">
-      <a href="index.html#products">← <span data-sq="Kthehu te produktet" data-en="Back to products">Kthehu te produktet</span></a>
+      <a href="produkte.html?cat=${encodeURIComponent(p.category)}">← <span data-sq="Kthehu te kategoria" data-en="Back to category">Kthehu te kategoria</span></a>
     </div>
   `;
 }
