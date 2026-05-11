@@ -10,7 +10,7 @@ const bySlug = Object.fromEntries(scraped.products.map(p => [p.slug, p]));
 const categories = {
   residential: { label_sq: 'Kondicionerë Mural', label_en: 'Wall Units' },
   multisplit:  { label_sq: 'Sisteme Multi-Split', label_en: 'Multi-Split Systems' },
-  floor:       { label_sq: 'Pajisje Dysheme',     label_en: 'Floor Units' },
+  floor:       { label_sq: 'Sisteme Dysheme',    label_en: 'Floor Systems' },
   materiale:   { label_sq: 'Materiale dhe Aksesorë', label_en: 'Materials & Accessories' }
 };
 
