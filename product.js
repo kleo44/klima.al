@@ -24,22 +24,104 @@
   loadingEl.style.display = 'none';
   detailEl.style.display = 'block';
   document.title = `${product.title} – Klima.Al`;
+  updateMeta(product);
 
-  detailEl.innerHTML = renderProduct(product, catalog);
-  wireGallery();
-  wireAddToCart(product);
-  wireSizeSelector(product);
-
-  // Re-apply language
-  if (typeof setLang === 'function') {
-    setLang(localStorage.getItem('klima-lang') || 'sq');
+  function renderAll() {
+    detailEl.innerHTML = renderProduct(product, catalog);
+    wireGallery();
+    wireAddToCart(product);
+    wireSizeSelector(product);
+    renderStickyCta(product);
+    if (typeof setLang === 'function') setLang(localStorage.getItem('klima-lang') || 'sq');
   }
+  renderAll();
+  document.querySelectorAll('.lb').forEach(b => b.addEventListener('click', () => setTimeout(renderAll, 0)));
 
   function showError() {
     loadingEl.style.display = 'none';
     errorEl.style.display = 'block';
   }
 })();
+
+function renderStickyCta(product) {
+  document.getElementById('prodStickyCta')?.remove();
+  const priceText = product.price_text || product.price || 'Me kërkesë';
+  const isOnRequest = !product.price_text && !product.price;
+  const bar = document.createElement('div');
+  bar.id = 'prodStickyCta';
+  bar.className = 'prod-sticky-cta';
+  bar.innerHTML = `
+    <div class="psc-price">
+      <span class="psc-price-lbl" data-sq="Çmim" data-en="Price">Çmim</span>
+      <strong class="psc-price-val ${isOnRequest ? 'on-request' : ''}"${isOnRequest ? ' data-sq="Me kërkesë" data-en="On request"' : ''}>${escapeHtml(priceText)}</strong>
+    </div>
+    <button class="btn btn-red" id="prodStickyAtc" data-sq="Shto në Shportë" data-en="Add to Cart">Shto në Shportë</button>
+  `;
+  document.body.appendChild(bar);
+  bar.querySelector('#prodStickyAtc').addEventListener('click', () => {
+    document.getElementById('prodAtc')?.click();
+  });
+}
+
+function updateMeta(product) {
+  const desc = (product.description_sq || product.description || '').slice(0, 200) ||
+               `${product.title} — Mitsubishi Heavy Industries. Çmim dhe specifikime në Klima.Al.`;
+  const img = product.hero_image || 'https://klima-al.vercel.app/hero-mitsubishi.jpg';
+  const title = `${product.title} – Klima.Al`;
+  const url = `https://klima-al.vercel.app/product.html?id=${encodeURIComponent(product.id)}`;
+  setMeta('name', 'description', desc);
+  setMeta('property', 'og:title', title);
+  setMeta('property', 'og:description', desc);
+  setMeta('property', 'og:image', img);
+  setMeta('property', 'og:url', url);
+  setMeta('name', 'twitter:title', title);
+  setMeta('name', 'twitter:description', desc);
+  setMeta('name', 'twitter:image', img);
+  const canon = document.getElementById('prodCanonical');
+  if (canon) canon.setAttribute('href', url);
+  injectProductJsonLd(product, url, img, desc);
+}
+
+function injectProductJsonLd(product, url, img, desc) {
+  document.getElementById('productJsonLd')?.remove();
+  const data = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: product.title,
+    image: img,
+    description: desc,
+    sku: product.model_code || product.id,
+    brand: { '@type': 'Brand', name: product.brand_label || 'Mitsubishi Heavy Industries' },
+    category: product.category
+  };
+  if (product.model_code) data.mpn = product.model_code;
+  // Only emit Offer when a real price exists. For "Me kërkesë" products,
+  // emit no offer at all rather than a fake $0/InStock which Google flags as Free.
+  if (product.price_text) {
+    data.offers = {
+      '@type': 'Offer',
+      priceCurrency: /€/.test(product.price_text) ? 'EUR' : 'ALL',
+      price: String(product.price_text).replace(/[^\d.]/g, ''),
+      availability: 'https://schema.org/InStock',
+      url
+    };
+  }
+  const s = document.createElement('script');
+  s.id = 'productJsonLd';
+  s.type = 'application/ld+json';
+  s.textContent = JSON.stringify(data);
+  document.head.appendChild(s);
+}
+
+function setMeta(attr, value, content) {
+  let el = document.querySelector(`meta[${attr}="${value}"]`);
+  if (!el) {
+    el = document.createElement('meta');
+    el.setAttribute(attr, value);
+    document.head.appendChild(el);
+  }
+  el.setAttribute('content', content);
+}
 
 function escapeHtml(s) {
   return String(s ?? '')
@@ -52,6 +134,11 @@ function renderProduct(p, catalog) {
   const hasMulti = images.length > 1;
   const priceText = p.price_text || p.price || 'Me kërkesë';
   const isOnRequest = !p.price_text && !p.price;
+  const lang = localStorage.getItem('klima-lang') || 'sq';
+  const description = (lang === 'sq' ? (p.description_sq || p.description_en) : (p.description_en || p.description_sq)) || p.description;
+  const features    = (lang === 'sq' ? (p.features_sq    || p.features_en)    : (p.features_en    || p.features_sq))    || p.features || [];
+  const descSq      = p.description_sq || description;
+  const descEn      = p.description_en || description;
 
   const sizes = p.sizes || (Array.isArray(p.specs) && p.specs.length > 1 ? p.specs.map(s => ({ label: (s.capacity_kw ? s.capacity_kw + ' kW' : s.model) || '', model: s.model })) : null);
 
@@ -89,9 +176,9 @@ function renderProduct(p, catalog) {
         <h1 class="prod-title">${escapeHtml(p.title)}</h1>
         ${p.subtitle ? `<p class="prod-sub">${escapeHtml(p.subtitle)}</p>` : ''}
 
-        ${p.features && p.features.length ? `
+        ${features && features.length ? `
           <ul class="prod-features">
-            ${p.features.slice(0, 5).map(f => `<li>${escapeHtml(f)}</li>`).join('')}
+            ${features.slice(0, 5).map(f => `<li>${escapeHtml(f)}</li>`).join('')}
           </ul>
         ` : ''}
 
@@ -131,10 +218,10 @@ function renderProduct(p, catalog) {
       </div>
     </div>
 
-    ${p.description ? `
+    ${description ? `
       <section class="prod-section">
         <h2 data-sq="Përshkrimi" data-en="Description">Përshkrimi</h2>
-        <div class="prod-desc">${p.description.split(/\n\n+/).map(para => `<p>${escapeHtml(para)}</p>`).join('')}</div>
+        <div class="prod-desc">${description.split(/\n\n+/).map(para => `<p>${escapeHtml(para)}</p>`).join('')}</div>
       </section>
     ` : ''}
 

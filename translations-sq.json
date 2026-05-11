@@ -1,0 +1,290 @@
+{
+  "_meta": {
+    "purpose": "Albanian (sq) translations for product descriptions and feature bullets, keyed by scraped slug. Applied by build-catalog.js as description_sq / features_sq overrides on every product derived from the matching slug.",
+    "language": "sq-AL"
+  },
+  "kireia-monosplit-r32": {
+    "description_sq": "Kondicionerë muralë me teknologji Inverter, të disponueshëm në 7 fuqi (2.00–8.00 kW). Funksionim në modalitet ngrohjeje dhe ftohjeje me kufi temperature të jashtme deri në -15 °C.",
+    "features_sq": [
+      "Teknologji Inverter për kursim energjie",
+      "I disponueshëm në 7 fuqi (2.00–8.00 kW)",
+      "Klasa energjie: A+++ / A++ (deri 3.5 kW), A+ / A (5.0–8.0 kW)",
+      "Zhurmë minimale: vetëm 21 dB(A) për modelin 2.0–2.5 kW",
+      "Trajtim antibakterial në ventilator",
+      "Distancë lidhjeje deri 25 m (modeli 5.0 kW)",
+      "Wi-Fi i integruar (variantet WF / WF-T)",
+      "Dizajn modern dhe elegant",
+      "Funksionim deri në -15 °C jashtë"
+    ]
+  },
+  "kireia-plus-monosplit-r32": {
+    "description_sq": "Kondicionerë muralë premium KIREIA Plus, të disponueshëm në 5 fuqi (2.00–6.10 kW). Modeli më i qetë në kategori — vetëm 19 dB(A) — me efikasitet maksimal dhe dizajn elegant.",
+    "features_sq": [
+      "5 fuqi në dispozicion (2.00–6.10 kW)",
+      "Klasa energjie A+++ (5.0 kW) / A++ (2.0–6.1 kW) për ftohje dhe ngrohje",
+      "Akustikë e shkëlqyer: vetëm 19 dB(A) (2.0 kW)",
+      "Trajtim antibakterial në ventilator",
+      "Wi-Fi i integruar dhe filtër kundër alergeneve",
+      "Dizajn modern dhe elegant",
+      "Funksionim deri në -15 °C jashtë"
+    ]
+  },
+  "kireia-smart-monosplit-r32": {
+    "description_sq": "Seria KIREIA SMART — kondicionerë muralë me Inverter, 3 fuqi (2.5–4.5 kW). Zgjedhje e zgjuar për dhoma të vogla dhe mesatare, me funksionim shumë të qetë.",
+    "features_sq": [
+      "Teknologji Inverter",
+      "3 fuqi (2.5–4.5 kW)",
+      "Shumë i qetë: vetëm 23 dB(A) (2.5–3.2 kW)",
+      "Trajtim antibakterial në ventilator",
+      "Distancë lidhjeje deri 25 m (4.5 kW)",
+      "Dizajn modern dhe elegant",
+      "Funksionim deri në -15 °C jashtë"
+    ]
+  },
+  "large-comfort-monosplit-r32": {
+    "description_sq": "Seria Large Comfort — kondicionerë muralë për ambiente të mëdha. 3 fuqi (2.5–4.5 kW), distancë lidhjeje deri 30 m dhe funksionim i qetë.",
+    "features_sq": [
+      "Teknologji Inverter",
+      "3 fuqi në dispozicion (2.5–4.5 kW)",
+      "Klasa energjie A++ (6.30 kW), A (2.5–4.5 kW)",
+      "Shumë i qetë: vetëm 23 dB(A) (2.5–3.2 kW)",
+      "Trajtim antibakterial në ventilator",
+      "Distancë lidhjeje deri 30 m (4.5 kW)",
+      "Dizajn modern dhe elegant",
+      "Funksionim deri në -15 °C jashtë"
+    ]
+  },
+  "light-commercial-medium-head-ducted-monosplit-r32": {
+    "description_sq": "Kondicionerë me kanale (ducted) me prevalencë mesatare, të disponueshëm në 3 fuqi (4.0–5.6 kW). Dizajn ultra-kompakt me lartësi vetëm 28 cm — ideal për ambiente të vogla dhe mesatare.",
+    "features_sq": [
+      "Teknologji Inverter",
+      "3 fuqi (4.0–5.6 kW)",
+      "Klasa energjie A++ / A+ (5.6 kW), A+ / A+ (4.0–5.0 kW)",
+      "Dizajn ultra-kompakt: vetëm 28 cm lartësi",
+      "Distancë lidhjeje deri 30 m",
+      "Pompë kullimi kondensati si standarde",
+      "Ideal për ambiente të vogla dhe mesatare",
+      "Funksionim deri në -15 °C jashtë"
+    ]
+  },
+  "primary-heating-console-monosplit-r32": {
+    "description_sq": "Kondicionerë dysheme (console) për ngrohje kryesore, të disponueshëm në 3 fuqi (2.5–5.0 kW). Zëvendësues efikas i radiatorëve me funksionim Inverter dhe akustikë të ulët.",
+    "features_sq": [
+      "Teknologji Inverter",
+      "3 fuqi në dispozicion (2.5–5.0 kW)",
+      "Klasa energjie A++ (2.5–3.5 kW), A+ / A+ (5.0 kW)",
+      "Zhurmë minimale: vetëm 25 dB(A) (2.5 kW)",
+      "Telekomandë infrakuqe standarde",
+      "Dizajn modern dhe elegant",
+      "Funksionim deri në -15 °C jashtë"
+    ]
+  },
+  "light-commercial-ceiling-monosplit-r32": {
+    "description_sq": "Kondicionerë të montuar në tavan, 3 fuqi (4.0–5.6 kW). Dizajn ultra-i hollë (vetëm 21 cm) dhe peshë e lehtë — instalim i shpejtë. Flukse të gjerë ajri për ambiente shumë të mëdha.",
+    "features_sq": [
+      "Teknologji Inverter",
+      "Montim në tavan",
+      "Konfigurim monosplit, refrigerant R32",
+      "Distancë lidhjeje deri 30 m",
+      "Dizajn ultra-i hollë (21 cm), peshë vetëm 28 kg (4.0–5.0 kW)",
+      "Flukse të gjerë ajri për ambiente të mëdha",
+      "Funksionim ngrohje dhe ftohje deri në -15 °C jashtë"
+    ]
+  },
+  "light-commercial-low-head-ducted-monosplit-r32": {
+    "description_sq": "Kondicionerë me kanale me prevalencë të ulët, 2 fuqi (2.5–3.5 kW). Madhësi kompakte (vetëm 23 cm e lartë) me filtër inferior standard dhe telekomandë.",
+    "features_sq": [
+      "Teknologji Inverter",
+      "2 fuqi (2.5–3.5 kW)",
+      "Klasa energjie A++ (3.5 kW), A++ / A (2.5 kW)",
+      "Madhësi kompakte: vetëm 23 cm e lartë",
+      "Filtër inferior standard",
+      "Telekomandë e përfshirë",
+      "Funksionim deri në -15 °C jashtë"
+    ]
+  },
+  "light-commercial-cassette-60x60-fdtc-vh-monosplit-r32": {
+    "description_sq": "Kondicionerë kasetë me 4 drejtime, 5 fuqi (2.55–5.6 kW). Kapakët e këndeve të çmontueshëm për instalim të shpejtë. Ideal për tavane modulare të ulëta.",
+    "features_sq": [
+      "Teknologji Inverter",
+      "Konfigurim kasetë me 4 drejtime",
+      "5 fuqi (2.55–5.6 kW)",
+      "Klasa energjie A++ / A+ (2.55–3.6 kW), A++ / A (4.0 kW), A+ / A (5.0–5.6 kW)",
+      "Kapakë të çmontueshëm në 4 kënde",
+      "Përshtatet me tavane të ulëta dhe modulare",
+      "Pompë kullimi kondensati e përfshirë",
+      "Dizajn ultra-kompakt (24.8 cm lartësi)"
+    ]
+  },
+  "light-commercial-cassette-84x84-fdt-vh-monosplit-r32": {
+    "description_sq": "Kondicionerë kasetë me 4 drejtime (84×84 cm), 3 fuqi (4.0–5.6 kW). Distancë lidhjeje deri 30 m. Pompë kullimi kondensati standarde.",
+    "features_sq": [
+      "Teknologji Inverter",
+      "Konfigurim kasetë me 4 drejtime (84×84 cm)",
+      "3 fuqi (4.0–5.6 kW)",
+      "Klasa energjie A++ / A+ (4.0–5.0 kW), A++ / A (5.6 kW)",
+      "Kit këndi RCN-T-36W-E me telekomandë (opsional)",
+      "Kapakë të çmontueshëm në 4 kënde",
+      "Distancë lidhjeje deri 30 m",
+      "Pompë kullimi kondensati si standarde",
+      "Funksionim deri në -15 °C jashtë"
+    ]
+  },
+  "multisplit-kireia-plus-r32": {
+    "description_sq": "Njësi e brendshme KIREIA Plus për sisteme Multi-Split. 5 fuqi (2.0–6.0 kW), Wi-Fi i integruar dhe filtër kundër alergeneve. Modeli më i qetë i serisë me vetëm 19 dB(A).",
+    "features_sq": [
+      "5 fuqi (2.0–6.0 kW)",
+      "Shumë i qetë: vetëm 19 dB(A) (2.0–3.5 kW)",
+      "Wi-Fi i integruar",
+      "Telekomandë e përfshirë",
+      "Filtër kundër alergeneve"
+    ]
+  },
+  "multisplit-wall-skm-r32": {
+    "description_sq": "Njësi e brendshme murale e serisë SKM për Multi-Split. 3 fuqi (2.0–3.5 kW) me funksionim shumë të qetë (22 dB(A)) dhe Wi-Fi opsional.",
+    "features_sq": [
+      "Teknologji Inverter",
+      "3 fuqi (2.0–3.5 kW)",
+      "Shumë i qetë: vetëm 22 dB(A) (2.0 kW)",
+      "Wi-Fi opsional",
+      "Telekomandë e përfshirë"
+    ]
+  },
+  "multisplit-medium-head-ducted-r32": {
+    "description_sq": "Njësi e brendshme me kanale (prevalencë mesatare) për sisteme Multi-Split. Fuqi 5.0 kW, akustikë e ulët dhe Wi-Fi opsional.",
+    "features_sq": [
+      "Teknologji Inverter",
+      "Fuqi 5.0 kW",
+      "Shumë i qetë: vetëm 26 dB(A)",
+      "Wi-Fi opsional"
+    ]
+  },
+  "multisplit-kireia-r32": {
+    "description_sq": "Njësi e brendshme KIREIA për sisteme Multi-Split. 4 fuqi (2.0–5.0 kW), Wi-Fi i integruar dhe filtër kundër alergeneve.",
+    "features_sq": [
+      "4 fuqi (2.0–5.0 kW)",
+      "Shumë i qetë: vetëm 19 dB(A) (2.0–3.5 kW)",
+      "Wi-Fi i integruar",
+      "Telekomandë e përfshirë",
+      "Filtër kundër alergeneve"
+    ]
+  },
+  "multisplit-console-r32": {
+    "description_sq": "Njësi e brendshme dysheme (console) për sisteme Multi-Split. 3 fuqi (2.5–5.0 kW) — zëvendësues elegant i radiatorëve.",
+    "features_sq": [
+      "Teknologji Inverter",
+      "3 fuqi (2.5–5.0 kW)",
+      "Shumë i qetë: vetëm 25 dB(A) (2.5 kW)",
+      "Wi-Fi opsional",
+      "Telekomandë e përfshirë"
+    ]
+  },
+  "multisplit-ceiling-r32": {
+    "description_sq": "Njësi e brendshme në tavan FDE 50 VH për Multi-Split. Fuqi 5.0 kW dhe funksionim i qetë (31 dB(A)).",
+    "features_sq": [
+      "Teknologji Inverter",
+      "Fuqi 5.0 kW",
+      "Shumë i qetë: vetëm 31 dB(A)",
+      "Wi-Fi opsional"
+    ]
+  },
+  "multisplit-wall-srk-r32": {
+    "description_sq": "Njësi e brendshme murale SRK 71–80 ZR-W për Multi-Split me fuqi të lartë (7.1 dhe 8.0 kW). Ideal për dhoma të mëdha.",
+    "features_sq": [
+      "Teknologji Inverter",
+      "2 fuqi (7.10 dhe 8.00 kW)",
+      "Shumë i qetë: vetëm 25 dB(A) (7.1 kW)",
+      "Wi-Fi opsional",
+      "Telekomandë e përfshirë"
+    ]
+  },
+  "multisplit-low-head-ducted-r32-2": {
+    "description_sq": "Njësi e brendshme me kanale (prevalencë e ulët) për Multi-Split. 4 fuqi (2.5–6.0 kW) — fshehet brenda tavanit për një estetikë të pastër.",
+    "features_sq": [
+      "Teknologji Inverter",
+      "4 fuqi (2.5–6.0 kW)",
+      "Shumë i qetë: vetëm 24 dB(A) (2.5 kW)",
+      "Wi-Fi opsional",
+      "Telekomandë e përfshirë"
+    ]
+  },
+  "multisplit-compact-cassette-60x60-r32": {
+    "description_sq": "Njësi e brendshme kasetë kompakte 60×60 cm për Multi-Split. 4 fuqi (2.5–6.0 kW) me panele standarde ose anti-rrymë.",
+    "features_sq": [
+      "Teknologji Inverter",
+      "4 fuqi (2.5–6.0 kW)",
+      "Shumë i qetë: vetëm 27 dB(A) (2.5 dhe 5.0 kW)",
+      "Panele standarde dhe anti-rrymë (mjaltë ose lineare)",
+      "Wi-Fi opsional"
+    ]
+  },
+  "dc-inverter-hyper-outdoor-units-4-0-kw": {
+    "description_sq": "Njësi e jashtme DC Inverter Hyper SCM 40 ZS-W, 4.0 kW. E përshtatshme për sisteme nga 2+ dhoma. Funksionim ngrohjeje dhe ftohjeje deri në -15 °C jashtë.",
+    "features_sq": [
+      "Teknologji DC Inverter Hyper",
+      "Fuqi 4.0 kW",
+      "Për 2+ dhoma",
+      "Funksionim ngrohjeje dhe ftohjeje",
+      "Funksionim deri në -15 °C jashtë"
+    ]
+  },
+  "dc-inverter-hyper-outdoor-units-4-5-kw": {
+    "description_sq": "Njësi e jashtme SCM 45 ZS-W, 4.5 kW. Për sisteme nga 2 dhoma e lart. Funksionim Inverter me kufi temperature -15 °C.",
+    "features_sq": [
+      "Teknologji DC Inverter Hyper",
+      "Fuqi 4.5 kW",
+      "Për 2+ dhoma",
+      "Funksionim deri në -15 °C jashtë"
+    ]
+  },
+  "dc-inverter-hyper-outdoor-units-5-0-kw": {
+    "description_sq": "Njësi e jashtme Mitsubishi Heavy Industries SCM 50 ZS-W, 5.0 kW. E përshtatshme për sisteme me 2 deri në 3 dhoma. Funksionim Inverter deri në -15 °C.",
+    "features_sq": [
+      "Teknologji DC Inverter Hyper",
+      "Fuqi 5.0 kW",
+      "Për 2 deri në 3 dhoma",
+      "Funksionim ngrohjeje dhe ftohjeje",
+      "Funksionim deri në -15 °C jashtë"
+    ]
+  },
+  "dc-inverter-hyper-outdoor-units-6-0-kw": {
+    "description_sq": "Njësi e jashtme SCM 60 ZS-W me fuqi 6.0 kW, e dizajnuar për sisteme Multi-Split rezidenciale me 2 deri në 3 dhoma. Teknologjia DC Inverter Hyper ruan efikasitetin edhe në -15 °C.",
+    "features_sq": [
+      "Teknologji DC Inverter Hyper",
+      "Fuqi 6.0 kW",
+      "Për 2 deri në 3 dhoma",
+      "Funksionim ngrohjeje dhe ftohjeje",
+      "Funksionim deri në -15 °C jashtë"
+    ]
+  },
+  "dc-inverter-hyper-outdoor-units-7-1-kw": {
+    "description_sq": "Njësi e jashtme SCM 71 ZS-W, 7.1 kW. E përshtatshme për sisteme nga 2 deri në 4 dhoma. Funksionim ngrohjeje dhe ftohjeje me Inverter.",
+    "features_sq": [
+      "Teknologji DC Inverter Hyper",
+      "Fuqi 7.1 kW",
+      "Për 2 deri në 4 dhoma",
+      "Funksionim ngrohjeje dhe ftohjeje",
+      "Funksionim deri në -15 °C jashtë"
+    ]
+  },
+  "dc-inverter-hyper-outdoor-units-8-0-kw": {
+    "description_sq": "Njësi e jashtme SCM 80 ZS-W, 8.0 kW. Për sisteme nga 2 deri në 4 dhoma. Funksionim ngrohjeje dhe ftohjeje deri në -15 °C jashtë.",
+    "features_sq": [
+      "Teknologji DC Inverter Hyper",
+      "Fuqi 8.0 kW",
+      "Për 2 deri në 4 dhoma",
+      "Funksionim ngrohjeje dhe ftohjeje",
+      "Funksionim deri në -15 °C jashtë"
+    ]
+  },
+  "dc-inverter-hyper-outdoor-units-10-0-kw": {
+    "description_sq": "Njësi e jashtme SCM 100 ZS-W me fuqi 10.0 kW, e dizajnuar për sisteme Multi-Split rezidenciale me 4 deri në 5 dhoma. Refrigerant R32 dhe funksionim ngrohjeje/ftohjeje.",
+    "features_sq": [
+      "Teknologji DC Inverter Hyper",
+      "Fuqi 10.0 kW",
+      "Për 4 deri në 5 dhoma",
+      "Funksionim ngrohjeje dhe ftohjeje",
+      "Funksionim deri në -15 °C jashtë"
+    ]
+  }
+}

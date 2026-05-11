@@ -1,0 +1,21 @@
+{
+  "name": "Klima.Al — Kondicionerë Mitsubishi Heavy Industries",
+  "short_name": "Klima.Al",
+  "description": "Distributor zyrtar Mitsubishi Heavy Industries në Shqipëri. Kondicionerë inverter R32 dhe instalim profesional.",
+  "lang": "sq-AL",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0e1c2f",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["shopping", "lifestyle"]
+}

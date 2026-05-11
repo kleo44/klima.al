@@ -25,7 +25,33 @@ function addToCart(item) {
   else items.push({ ...item, qty: 1 });
   saveCart(items);
   flashCartBadge();
-  openCartDrawer();
+  showCartToast(item);
+}
+
+function showCartToast(item) {
+  const lang = localStorage.getItem('klima-lang') || 'sq';
+  let toast = document.getElementById('cartToast');
+  if (!toast) {
+    toast = document.createElement('div');
+    toast.id = 'cartToast';
+    toast.className = 'cart-toast';
+    document.body.appendChild(toast);
+  }
+  toast.innerHTML = `
+    <div class="cart-toast-icon">✓</div>
+    <div class="cart-toast-body">
+      <div class="cart-toast-line1">${lang === 'sq' ? 'Shtuar në shportë' : 'Added to cart'}</div>
+      <div class="cart-toast-line2">${escapeHtml(item.title)}</div>
+    </div>
+    <button class="cart-toast-view" type="button">${lang === 'sq' ? 'Shiko' : 'View'}</button>
+  `;
+  toast.querySelector('.cart-toast-view').onclick = () => { hideCartToast(); openCartDrawer(); };
+  toast.classList.add('show');
+  clearTimeout(showCartToast._t);
+  showCartToast._t = setTimeout(hideCartToast, 2800);
+}
+function hideCartToast() {
+  document.getElementById('cartToast')?.classList.remove('show');
 }
 
 function removeFromCart(id) {

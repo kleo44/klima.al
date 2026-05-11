@@ -32,8 +32,13 @@ if (header) window.addEventListener('scroll', () => header.classList.toggle('scr
 const burger = document.getElementById('burger');
 const nav    = document.getElementById('nav');
 if (burger && nav) {
-  burger.addEventListener('click', () => { burger.classList.toggle('open'); nav.classList.toggle('open'); });
-  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { burger.classList.remove('open'); nav.classList.remove('open'); }));
+  const setNavState = open => {
+    burger.classList.toggle('open', open);
+    nav.classList.toggle('open', open);
+    burger.setAttribute('aria-expanded', String(open));
+  };
+  burger.addEventListener('click', () => setNavState(!nav.classList.contains('open')));
+  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setNavState(false)));
 }
 
 document.querySelectorAll('.fb').forEach(btn => {
@@ -48,9 +53,14 @@ document.querySelectorAll('.fb').forEach(btn => {
 });
 
 /* ── Product grid (from catalog.json) ─────────────── */
+function skeletonCardHTML() {
+  return `<div class="pc-skeleton"><div class="skl-img"></div><div class="skl-body"><div class="skl-line short"></div><div class="skl-line med"></div><div class="skl-line"></div><div class="skl-line tall"></div></div></div>`;
+}
+
 async function renderHomeProducts() {
   const grid = document.getElementById('pcGrid');
   if (!grid) return;
+  grid.innerHTML = Array.from({ length: 6 }, skeletonCardHTML).join('');
   let catalog;
   try {
     const res = await fetch('catalog.json');
@@ -78,6 +88,8 @@ async function renderHomeProducts() {
       subEl.dataset.sq = subSq; subEl.dataset.en = subEn; subEl.textContent = subSq;
     }
     document.title = `${meta.label_sq} – Klima.Al`;
+    const canon = document.getElementById('catCanonical');
+    if (canon) canon.setAttribute('href', `https://klima-al.vercel.app/produkte.html?cat=${cat}`);
   }
 
   if (products.length === 0) {
@@ -88,6 +100,7 @@ async function renderHomeProducts() {
   }
 
   grid.innerHTML = products.map(p => productCardHTML(p)).join('');
+  injectCollectionJsonLd(cat, products, catalog);
 
   grid.querySelectorAll('.pc-atc').forEach(btn => {
     btn.addEventListener('click', e => {
@@ -156,21 +169,41 @@ const form     = document.getElementById('cForm');
 const fSuccess = document.getElementById('fSuccess');
 
 if (form && fSuccess) {
-  form.addEventListener('submit', e => {
+  form.addEventListener('submit', async e => {
     e.preventDefault();
     const btn = form.querySelector('button[type="submit"]');
+    const originalBtn = btn.textContent;
     btn.disabled    = true;
     btn.textContent = lang === 'sq' ? 'Duke dërguar…' : 'Sending…';
-    setTimeout(() => {
-      btn.disabled    = false;
-      btn.textContent = lang === 'sq' ? 'Dërgo Kërkesën →' : 'Send Request →';
+
+    const data = Object.fromEntries(new FormData(form).entries());
+    try {
+      const r = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+      const json = await r.json().catch(() => ({}));
+      if (!r.ok || !json.ok) throw new Error(json.error || 'Send failed');
+
       form.reset();
+      fSuccess.classList.remove('error');
       fSuccess.textContent = lang === 'sq'
         ? "✅ Faleminderit! Do t'ju kontaktojmë brenda 2 orësh."
         : '✅ Thank you! We will contact you within 2 hours.';
       fSuccess.classList.add('show');
       setTimeout(() => fSuccess.classList.remove('show'), 5000);
-    }, 1200);
+    } catch (err) {
+      fSuccess.classList.add('error');
+      fSuccess.textContent = lang === 'sq'
+        ? `⚠️ Dërgimi dështoi. Na telefono te +355 67 254 9225.`
+        : `⚠️ Send failed. Please call us at +355 67 254 9225.`;
+      fSuccess.classList.add('show');
+      setTimeout(() => fSuccess.classList.remove('show'), 6000);
+    } finally {
+      btn.disabled = false;
+      btn.textContent = originalBtn;
+    }
   });
 }
 
@@ -195,3 +228,100 @@ document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
 /* ── Apply saved language ─────────────────────────── */
 setLang(lang);
+
+/* ── Sticky category header (produkte.html) ───────── */
+(function () {
+  const head = document.querySelector('.category-page .category-head');
+  if (!head) return;
+  const baseTop = head.getBoundingClientRect().top + window.scrollY;
+  window.addEventListener('scroll', () => {
+    head.classList.toggle('is-sticky', window.scrollY > baseTop + 40);
+  }, { passive: true });
+})();
+
+/* ── PWA service worker registration ──────────────── */
+if ('serviceWorker' in navigator && location.protocol !== 'file:') {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js').catch(() => {});
+  });
+}
+
+/* ── Lazy-load .cat-tile backgrounds ──────────────── */
+(function () {
+  const tiles = document.querySelectorAll('.cat-tile[data-bg]');
+  if (!tiles.length) return;
+  if (!('IntersectionObserver' in window)) {
+    tiles.forEach(t => { t.style.setProperty('--bg', `url('${t.dataset.bg}')`); t.classList.add('bg-ready'); });
+    return;
+  }
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const t = e.target;
+      const url = t.dataset.bg;
+      const fallback = t.dataset.bgFallback;
+      if (!url) { io.unobserve(t); return; }
+      const apply = src => {
+        t.style.setProperty('--bg', `url('${src}')`);
+        t.classList.add('bg-ready');
+      };
+      const img = new Image();
+      img.onload = () => apply(url);
+      img.onerror = () => fallback ? apply(fallback) : null;
+      img.src = url;
+      io.unobserve(t);
+    });
+  }, { rootMargin: '200px 0px' });
+  tiles.forEach(t => io.observe(t));
+})();
+
+/* ── Inject CollectionPage / ItemList JSON-LD on category pages ── */
+function injectCollectionJsonLd(cat, products, catalog) {
+  if (!cat || !catalog.categories?.[cat]) return;
+  document.getElementById('collectionJsonLd')?.remove();
+  const meta = catalog.categories[cat];
+  const data = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: `${meta.label_sq} – Klima.Al`,
+    url: `https://klima-al.vercel.app/produkte.html?cat=${cat}`,
+    inLanguage: 'sq-AL',
+    mainEntity: {
+      '@type': 'ItemList',
+      numberOfItems: products.length,
+      itemListElement: products.map((p, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        url: `https://klima-al.vercel.app/product.html?id=${encodeURIComponent(p.id)}`,
+        name: p.title,
+        image: p.hero_image
+      }))
+    }
+  };
+  const s = document.createElement('script');
+  s.id = 'collectionJsonLd';
+  s.type = 'application/ld+json';
+  s.textContent = JSON.stringify(data);
+  document.head.appendChild(s);
+}
+
+/* ── Mark current-page nav link with aria-current ──── */
+(function () {
+  const path = location.pathname.replace(/^\/+/, '').split('?')[0] || 'index.html';
+  const query = location.search;
+  document.querySelectorAll('.nav-link, .nav .drop a').forEach(a => {
+    const href = a.getAttribute('href') || '';
+    const hrefPath = href.replace(/^\/+/, '').split('?')[0];
+    if (!hrefPath || hrefPath.startsWith('#')) return;
+    if (hrefPath === path || (path === 'produkte.html' && href === 'produkte.html' + query)) {
+      a.setAttribute('aria-current', 'page');
+    }
+  });
+})();
+
+/* ── Esc-to-close cart drawer ────────────────────── */
+document.addEventListener('keydown', e => {
+  if (e.key !== 'Escape') return;
+  const drawer = document.getElementById('cartDrawer');
+  if (drawer?.classList.contains('open') && typeof closeCartDrawer === 'function') closeCartDrawer();
+});

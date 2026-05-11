@@ -5,6 +5,7 @@ const path = require('path');
 
 const ROOT = __dirname;
 const scraped = JSON.parse(fs.readFileSync(path.join(ROOT, 'catalog-scraped.json'), 'utf8'));
+const tr = JSON.parse(fs.readFileSync(path.join(ROOT, 'translations-sq.json'), 'utf8'));
 const bySlug = Object.fromEntries(scraped.products.map(p => [p.slug, p]));
 
 const categories = {
@@ -18,6 +19,7 @@ const categories = {
 function from(slug, overrides = {}) {
   const src = bySlug[slug];
   if (!src) throw new Error(`Missing scraped slug: ${slug}`);
+  const sq = tr[slug] || {};
   return {
     id: overrides.id || slug,
     slug,
@@ -29,11 +31,15 @@ function from(slug, overrides = {}) {
     subtitle: overrides.subtitle ?? src.subtitle ?? null,
     hero_image: overrides.hero_image || src.hero_image,
     gallery_images: src.gallery_images || [],
-    description: overrides.description ?? src.description,
+    description:    overrides.description    ?? src.description ?? null,
+    description_sq: overrides.description_sq ?? sq.description_sq ?? null,
+    description_en: overrides.description_en ?? src.description  ?? null,
     specs: overrides.specs ?? src.specs ?? [],
     price_text: overrides.price_text ?? null,
     brochure_url: src.brochure_url ?? null,
-    features: src.features || [],
+    features:    src.features || [],
+    features_sq: sq.features_sq || null,
+    features_en: src.features || [],
     brand_label: 'Mitsubishi Heavy Industries',
     capacity_kw: overrides.capacity_kw ?? null,
     model_code: overrides.model_code ?? null,
@@ -56,14 +62,9 @@ const products = [
   from('kireia-monosplit-r32', { id: 'kireia-5kw',   title: 'KIREIA 5.0 kW', model_code: 'SRK 50 ZS-WF', capacity_kw: 5.0, series_label: 'SRK 50 ZS-WF · R32', price_text: '72 400 L' }),
   // KIREIA Plus
   from('kireia-plus-monosplit-r32', { id: 'kireia-plus', title: 'KIREIA Plus', model_code: 'SRK ZSX-WF', series_label: 'SRK ZSX-WF · R32' }),
-  // NEW residential
+  // NEW residential (wall-mounted only — Light Commercial cassette/ceiling/ducted removed per spec)
   from('kireia-smart-monosplit-r32',                        { id: 'kireia-smart',   title: 'KIREIA SMART', model_code: 'SRK ZSP-W', series_label: 'SRK ZSP-W · R32' }),
   from('large-comfort-monosplit-r32',                       { id: 'large-comfort',  title: 'Large Comfort', series_label: 'Wall · R32' }),
-  from('light-commercial-medium-head-ducted-monosplit-r32', { id: 'lc-medium-ducted',   title: 'Light Commercial — Medium Ducted', series_label: 'FDUM · R32' }),
-  from('light-commercial-ceiling-monosplit-r32',            { id: 'lc-ceiling',         title: 'Light Commercial — Ceiling', series_label: 'FDE · R32' }),
-  from('light-commercial-low-head-ducted-monosplit-r32',    { id: 'lc-low-ducted',      title: 'Light Commercial — Low Ducted', series_label: 'SRR · R32' }),
-  from('light-commercial-cassette-60x60-fdtc-vh-monosplit-r32', { id: 'lc-cassette-60', title: 'Light Commercial — Cassette 60×60', series_label: 'FDTC VH · R32' }),
-  from('light-commercial-cassette-84x84-fdt-vh-monosplit-r32',  { id: 'lc-cassette-84', title: 'Light Commercial — Cassette 84×84', series_label: 'FDT VH · R32' }),
 
   // ── Floor (Console) ──────────────────────────────────────────
   from('primary-heating-console-monosplit-r32', { id: 'floor-3_5kw', title: 'Hyper Inverter Dysheme 3.5 kW', model_code: 'SRF 35 ZS-W', capacity_kw: 3.5, series_label: 'SRF 35 ZS-W · R32', category: 'floor', price_text: '80 100 L' }),
@@ -102,3 +103,31 @@ const out = {
 fs.writeFileSync(path.join(ROOT, 'catalog.json'), JSON.stringify(out, null, 2));
 console.log(`Wrote catalog.json — ${products.length} products`);
 console.log('By category:', products.reduce((acc, p) => { acc[p.category] = (acc[p.category] || 0) + 1; return acc; }, {}));
+
+// Generate sitemap.xml
+const SITE = 'https://klima-al.vercel.app';
+const today = new Date().toISOString().slice(0, 10);
+const staticPages = [
+  { loc: '/',              prio: '1.0', freq: 'weekly' },
+  { loc: '/produkte.html?cat=residential', prio: '0.9', freq: 'weekly' },
+  { loc: '/produkte.html?cat=multisplit',  prio: '0.9', freq: 'weekly' },
+  { loc: '/produkte.html?cat=floor',       prio: '0.9', freq: 'weekly' },
+  { loc: '/materiale.html', prio: '0.7', freq: 'monthly' }
+];
+const productUrls = products.map(p => ({
+  loc: `/product.html?id=${encodeURIComponent(p.id)}`,
+  prio: '0.8',
+  freq: 'monthly'
+}));
+const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${[...staticPages, ...productUrls].map(u => `  <url>
+    <loc>${SITE}${u.loc}</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>${u.freq}</changefreq>
+    <priority>${u.prio}</priority>
+  </url>`).join('\n')}
+</urlset>
+`;
+fs.writeFileSync(path.join(ROOT, 'sitemap.xml'), sitemap);
+console.log(`Wrote sitemap.xml — ${staticPages.length + productUrls.length} URLs`);
