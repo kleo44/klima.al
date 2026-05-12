@@ -248,12 +248,16 @@ function showCheckoutSuccess(lang) {
   const list = document.getElementById('cartList');
   const empty = document.getElementById('cartEmpty');
   if (empty) empty.style.display = 'none';
+  const isSq = lang === 'sq';
+  const heading = isSq ? 'Mesazhi u dërgua' : 'Message sent';
+  const body    = isSq ? "Do t'ju kontaktojmë në WhatsApp brenda pak minutash. Faleminderit!" : "We'll reply on WhatsApp shortly. Thank you!";
+  const cta     = isSq ? 'Vazhdo blerjet' : 'Continue shopping';
   if (list) list.innerHTML = `
     <div class="cart-success" role="status" aria-live="polite">
       <div class="cart-success-icon">✓</div>
-      <h4>${lang === 'sq' ? 'Mesazhi u dërgua' : 'Message sent'}</h4>
-      <p>${lang === 'sq' ? 'Do t\\'ju kontaktojmë në WhatsApp brenda pak minutash. Faleminderit!' : 'We\\'ll reply on WhatsApp shortly. Thank you!'}</p>
-      <a href="index.html#cat" class="btn btn-red">${lang === 'sq' ? 'Vazhdo blerjet' : 'Continue shopping'}</a>
+      <h4>${heading}</h4>
+      <p>${body}</p>
+      <a href="index.html#cat" class="btn btn-red">${cta}</a>
     </div>
   `;
 }

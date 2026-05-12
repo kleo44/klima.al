@@ -126,7 +126,7 @@ async function renderHomeProducts() {
   });
 
   grid.querySelectorAll('.pc-fav').forEach(btn => {
-    btn.addEventListener('click', e => {
+    const handler = e => {
       e.preventDefault();
       e.stopPropagation();
       const id = btn.dataset.id;
@@ -138,7 +138,9 @@ async function renderHomeProducts() {
         image: product.hero_image,
         price_text: product.price_text || null
       });
-    });
+    };
+    btn.addEventListener('click', handler);
+    btn.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') handler(e); });
   });
 
   if (typeof setLang === 'function') setLang(localStorage.getItem('klima-lang') || 'sq');
@@ -152,9 +154,9 @@ function productCardHTML(p) {
   const series = p.series_label || (p.model_code ? `${p.model_code} · R32` : '');
   return `
     <a class="pc" data-cat="${esc(p.category)}" data-id="${esc(p.id)}" href="${href}">
-      <button class="pc-fav" type="button" data-id="${esc(p.id)}" aria-label="Shto te të preferuarat" aria-pressed="false">
+      <span class="pc-fav" role="button" tabindex="0" data-id="${esc(p.id)}" aria-label="Shto te të preferuarat" aria-pressed="false">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-      </button>
+      </span>
       <div class="pc-img">
         <img src="${esc(p.hero_image)}"
              onerror="this.src='https://placehold.co/320x220/f5f5f5/9b1b2e?text=${encodeURIComponent(p.title)}'"

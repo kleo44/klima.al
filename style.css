@@ -22,9 +22,22 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  background: var(--black);
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+}
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-body { font-family: var(--font); color: var(--dark); background: var(--white); line-height: 1.6; overflow-x: hidden; }
+body {
+  font-family: var(--font);
+  color: var(--dark);
+  background: var(--white);
+  line-height: 1.6;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+}
 img  { display: block; max-width: 100%; }
 a    { text-decoration: none; color: inherit; }
 ul   { list-style: none; }
@@ -2441,4 +2454,27 @@ input:focus-visible, select:focus-visible, textarea:focus-visible {
 @media (max-width: 768px) {
   body:has(.prod-sticky-cta) .whatsapp-float { bottom: 112px; }
   body:has(.prod-sticky-cta) .scroll-top     { bottom: 168px; }
+}
+
+/* ───────── Mobile edge & overflow hardening ───────── */
+@media (max-width: 768px) {
+  html, body { overflow-x: hidden; max-width: 100vw; }
+  header, section, footer, main, .stats-bar { max-width: 100vw; overflow-x: clip; }
+  /* Prevent long words / numbers blowing horizontal layout */
+  h1, h2, h3, h4, .pc-name, .prod-title, .cat-page-title, .category-head h1, .cmp-title {
+    overflow-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
+  }
+  /* Tame iPhone notch landscape — symmetric padding only */
+  .container {
+    padding-left: max(16px, env(safe-area-inset-left));
+    padding-right: max(16px, env(safe-area-inset-right));
+  }
+  /* Keep hero CTAs above the fold on small screens */
+  .hero { min-height: auto; }
+  .hero-left { padding: 48px 16px; }
+  .hero-left h1 { font-size: clamp(2.1rem, 9vw, 3rem); }
+  /* Avoid huge feature paddings that push CTAs out */
+  .feat-section { padding: 64px 0; }
 }
