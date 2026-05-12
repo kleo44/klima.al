@@ -2478,3 +2478,12 @@ input:focus-visible, select:focus-visible, textarea:focus-visible {
   /* Avoid huge feature paddings that push CTAs out */
   .feat-section { padding: 64px 0; }
 }
+
+/* iOS rubber-band fix: hide off-screen drawers/modals so they don't
+   register as scrollable territory to the right of the viewport. */
+.cart-drawer { visibility: hidden; }
+.cart-drawer.open { visibility: visible; }
+.fav-drawer  { visibility: hidden; }
+.fav-drawer.open  { visibility: visible; }
+.search-modal { visibility: hidden; }
+.search-modal.open { visibility: visible; }
