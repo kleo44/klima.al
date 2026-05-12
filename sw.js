@@ -1,6 +1,10 @@
-/* KLIMA.AL — service worker (cache-first for static, network-first for HTML) */
+/* KLIMA.AL — service worker
+   HTML: network-first
+   CSS / JS / JSON: stale-while-revalidate (fast paint + auto-refresh next load)
+   Images: cache-first (immutable assets)
+*/
 
-const VERSION = 'klima-v2-2026-05-11';
+const VERSION = 'klima-v3-2026-05-12';
 const CORE = [
   '/',
   '/index.html',
