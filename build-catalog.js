@@ -55,11 +55,24 @@ function mapCategory(scrapedCat) {
 
 const products = [
   // ── Residential / Wall ────────────────────────────────────────
-  // KIREIA mono — 4 size variants share the same detail content
-  from('kireia-monosplit-r32', { id: 'kireia-2kw',   title: 'KIREIA 2.0 kW', model_code: 'SRK 20 ZS-WF', capacity_kw: 2.0, series_label: 'SRK 20 ZS-WF · R32', price_text: '44 300 L' }),
-  from('kireia-monosplit-r32', { id: 'kireia-2_5kw', title: 'KIREIA 2.5 kW', model_code: 'SRK 25 ZS-WF', capacity_kw: 2.5, series_label: 'SRK 25 ZS-WF · R32', price_text: '46 400 L' }),
-  from('kireia-monosplit-r32', { id: 'kireia-3_5kw', title: 'KIREIA 3.5 kW', model_code: 'SRK 35 ZS-WF', capacity_kw: 3.5, series_label: 'SRK 35 ZS-WF · R32', price_text: '51 800 L' }),
-  from('kireia-monosplit-r32', { id: 'kireia-5kw',   title: 'KIREIA 5.0 kW', model_code: 'SRK 50 ZS-WF', capacity_kw: 5.0, series_label: 'SRK 50 ZS-WF · R32', price_text: '72 400 L' }),
+  // KIREIA mono — 4 size variants share the family detail content
+  // but each has size-specific description_sq/title to avoid duplicate-content penalty.
+  from('kireia-monosplit-r32', { id: 'kireia-2kw',   title: 'KIREIA 2.0 kW', model_code: 'SRK 20 ZS-WF', capacity_kw: 2.0, series_label: 'SRK 20 ZS-WF · R32', price_text: '44 300 L',
+    description_sq: 'Kondicioneri më kompakt i serisë KIREIA — fuqi 2.0 kW (≈ 7000 BTU), ideal për dhoma 12–18 m² si dhoma gjumi ose zyrë e vogël. Inverter R32 me Wi-Fi të integruar dhe nivel zhurme vetëm 21 dB(A) — më e qetë se një bisedë e ngadaltë.',
+    description_en: 'The smallest model in the KIREIA range — 2.0 kW (~7000 BTU) for rooms of 12–18 m² such as bedrooms or small offices. R32 inverter with integrated Wi-Fi and just 21 dB(A) of sound — quieter than a whispered conversation.'
+  }),
+  from('kireia-monosplit-r32', { id: 'kireia-2_5kw', title: 'KIREIA 2.5 kW', model_code: 'SRK 25 ZS-WF', capacity_kw: 2.5, series_label: 'SRK 25 ZS-WF · R32', price_text: '46 400 L',
+    description_sq: 'Modeli më i shitur i KIREIA-s. Fuqi 2.5 kW (≈ 9000 BTU) për dhoma 18–25 m². Klasa energjie A+++ në ftohje, ngrohje deri −15 °C dhe Wi-Fi i integruar për kontroll nga aplikacioni Smart M-Air.',
+    description_en: 'The KIREIA bestseller. 2.5 kW (~9000 BTU) for rooms of 18–25 m². A+++ cooling class, heating down to −15 °C and integrated Wi-Fi for Smart M-Air app control.'
+  }),
+  from('kireia-monosplit-r32', { id: 'kireia-3_5kw', title: 'KIREIA 3.5 kW', model_code: 'SRK 35 ZS-WF', capacity_kw: 3.5, series_label: 'SRK 35 ZS-WF · R32', price_text: '51 800 L',
+    description_sq: 'Fuqi 3.5 kW (≈ 12000 BTU) për dhoma 25–35 m² si dhoma ndenjeje ose kuzhina të mëdha. Klasa A+++/A++ në ftohje/ngrohje dhe distancë lidhjeje deri 25 m midis njësive.',
+    description_en: 'A 3.5 kW (~12000 BTU) unit for rooms of 25–35 m² such as living rooms or larger kitchens. A+++/A++ class for cool/heat and up to 25 m of piping between indoor and outdoor units.'
+  }),
+  from('kireia-monosplit-r32', { id: 'kireia-5kw',   title: 'KIREIA 5.0 kW', model_code: 'SRK 50 ZS-WF', capacity_kw: 5.0, series_label: 'SRK 50 ZS-WF · R32', price_text: '72 400 L',
+    description_sq: 'Modeli më i madh monosplit i KIREIA-s. Fuqi 5.0 kW (≈ 18000 BTU) për hapësira të hapura 35–50 m². Pika kulmore deri 7.1 kW në ftohje dhe 7.5 kW në ngrohje për ditë ekstreme.',
+    description_en: 'The largest KIREIA monosplit. 5.0 kW (~18000 BTU) for open spaces of 35–50 m². Peaks at 7.1 kW cooling / 7.5 kW heating for the hottest and coldest days.'
+  }),
   // KIREIA Plus
   from('kireia-plus-monosplit-r32', { id: 'kireia-plus', title: 'KIREIA Plus', model_code: 'SRK ZSX-WF', series_label: 'SRK ZSX-WF · R32' }),
   // NEW residential (wall-mounted only — Light Commercial cassette/ceiling/ducted removed per spec)

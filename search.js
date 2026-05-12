@@ -73,7 +73,9 @@ function renderResults(products) {
   `).join('');
 }
 
+let __searchLastFocus = null;
 function openSearch() {
+  __searchLastFocus = document.activeElement;
   document.getElementById('searchModal')?.classList.add('open');
   document.getElementById('searchBackdrop')?.classList.add('show');
   setTimeout(() => document.getElementById('searchInput')?.focus(), 50);
@@ -84,6 +86,9 @@ function closeSearch() {
   const input = document.getElementById('searchInput');
   if (input) input.value = '';
   renderResults([]);
+  if (__searchLastFocus && typeof __searchLastFocus.focus === 'function') {
+    setTimeout(() => __searchLastFocus.focus(), 50);
+  }
 }
 
 function injectSearchUI() {
@@ -107,6 +112,9 @@ function injectSearchUI() {
   const modal = document.createElement('div');
   modal.id = 'searchModal';
   modal.className = 'search-modal';
+  modal.setAttribute('role', 'dialog');
+  modal.setAttribute('aria-modal', 'true');
+  modal.setAttribute('aria-label', 'Kërko');
   modal.innerHTML = `
     <div class="search-box">
       <div class="search-bar">

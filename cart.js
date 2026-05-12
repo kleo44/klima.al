@@ -35,6 +35,8 @@ function showCartToast(item) {
     toast = document.createElement('div');
     toast.id = 'cartToast';
     toast.className = 'cart-toast';
+    toast.setAttribute('role', 'status');
+    toast.setAttribute('aria-live', 'polite');
     document.body.appendChild(toast);
   }
   toast.innerHTML = `
@@ -84,16 +86,41 @@ function flashCartBadge() {
   badge.classList.add('flash');
 }
 
+let __cartLastFocus = null;
 function openCartDrawer() {
-  document.getElementById('cartDrawer')?.classList.add('open');
+  __cartLastFocus = document.activeElement;
+  const d = document.getElementById('cartDrawer');
+  d?.classList.add('open');
   document.getElementById('cartBackdrop')?.classList.add('show');
   document.body.style.overflow = 'hidden';
+  setTimeout(() => document.getElementById('cartClose')?.focus(), 50);
 }
 function closeCartDrawer() {
   document.getElementById('cartDrawer')?.classList.remove('open');
   document.getElementById('cartBackdrop')?.classList.remove('show');
   document.body.style.overflow = '';
+  if (__cartLastFocus && typeof __cartLastFocus.focus === 'function') {
+    setTimeout(() => __cartLastFocus.focus(), 50);
+  }
 }
+
+// Focus trap inside the cart drawer
+document.addEventListener('keydown', e => {
+  if (e.key !== 'Tab') return;
+  const drawer = document.getElementById('cartDrawer');
+  if (!drawer?.classList.contains('open')) return;
+  const focusable = drawer.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+  if (focusable.length === 0) return;
+  const first = focusable[0];
+  const last = focusable[focusable.length - 1];
+  if (e.shiftKey && document.activeElement === first) {
+    e.preventDefault();
+    last.focus();
+  } else if (!e.shiftKey && document.activeElement === last) {
+    e.preventDefault();
+    first.focus();
+  }
+});
 
 function priceToNumber(priceText) {
   if (!priceText) return null;
@@ -151,11 +178,11 @@ function renderCartDrawer() {
         <div class="cart-item-price">${escapeHtml(it.price_text || 'Me kërkesë')}</div>
       </div>
       <div class="cart-item-qty">
-        <button class="cart-qty-btn" data-act="dec" aria-label="-">−</button>
+        <button class="cart-qty-btn" data-act="dec" aria-label="Zvogëlo sasinë">−</button>
         <span class="cart-qty-num">${it.qty || 1}</span>
-        <button class="cart-qty-btn" data-act="inc" aria-label="+">+</button>
+        <button class="cart-qty-btn" data-act="inc" aria-label="Rrit sasinë">+</button>
       </div>
-      <button class="cart-item-rm" data-act="rm" aria-label="Remove">×</button>
+      <button class="cart-item-rm" data-act="rm" aria-label="Hiq nga shporta">×</button>
     </div>
   `).join('');
 
@@ -210,6 +237,25 @@ function checkoutWhatsApp() {
   const msg = [greeting, '', ...lines, '', totalLine].join('\n');
   const url = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`;
   window.open(url, '_blank');
+  // Clear cart + show success state so the user knows the order was sent
+  clearCart();
+  showCheckoutSuccess(lang);
+}
+
+function showCheckoutSuccess(lang) {
+  const drawer = document.getElementById('cartDrawer');
+  if (!drawer) return;
+  const list = document.getElementById('cartList');
+  const empty = document.getElementById('cartEmpty');
+  if (empty) empty.style.display = 'none';
+  if (list) list.innerHTML = `
+    <div class="cart-success" role="status" aria-live="polite">
+      <div class="cart-success-icon">✓</div>
+      <h4>${lang === 'sq' ? 'Mesazhi u dërgua' : 'Message sent'}</h4>
+      <p>${lang === 'sq' ? 'Do t\\'ju kontaktojmë në WhatsApp brenda pak minutash. Faleminderit!' : 'We\\'ll reply on WhatsApp shortly. Thank you!'}</p>
+      <a href="index.html#cat" class="btn btn-red">${lang === 'sq' ? 'Vazhdo blerjet' : 'Continue shopping'}</a>
+    </div>
+  `;
 }
 
 function wireMaterialeRows() {

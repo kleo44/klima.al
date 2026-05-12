@@ -7,7 +7,7 @@
   const errorEl = document.getElementById('productError');
   const detailEl = document.getElementById('productDetail');
 
-  if (!id) return showError();
+  if (!id) { setNoIndex(); return showError(); }
 
   let catalog;
   try {
@@ -19,7 +19,7 @@
   }
 
   const product = catalog.products?.find(p => p.id === id || p.slug === id);
-  if (!product) return showError();
+  if (!product) { setNoIndex(); return showError(); }
 
   loadingEl.style.display = 'none';
   detailEl.style.display = 'block';
@@ -111,6 +111,41 @@ function injectProductJsonLd(product, url, img, desc) {
   s.type = 'application/ld+json';
   s.textContent = JSON.stringify(data);
   document.head.appendChild(s);
+
+  injectBreadcrumb(product);
+}
+
+function injectBreadcrumb(product) {
+  document.getElementById('breadcrumbJsonLd')?.remove();
+  const catLabels = {
+    residential: 'Kondicionerë Mural',
+    multisplit:  'Sisteme Multi-Split',
+    floor:       'Hyper Inverter Dysheme'
+  };
+  const data = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type':'ListItem', position:1, name:'Kreu',      item:'https://klima-al.vercel.app/' },
+      { '@type':'ListItem', position:2, name:catLabels[product.category] || 'Produkte', item:`https://klima-al.vercel.app/produkte.html?cat=${product.category}` },
+      { '@type':'ListItem', position:3, name:product.title }
+    ]
+  };
+  const s = document.createElement('script');
+  s.id = 'breadcrumbJsonLd';
+  s.type = 'application/ld+json';
+  s.textContent = JSON.stringify(data);
+  document.head.appendChild(s);
+}
+
+function setNoIndex() {
+  let m = document.querySelector('meta[name="robots"]');
+  if (!m) {
+    m = document.createElement('meta');
+    m.setAttribute('name', 'robots');
+    document.head.appendChild(m);
+  }
+  m.setAttribute('content', 'noindex,nofollow');
 }
 
 function setMeta(attr, value, content) {
@@ -208,6 +243,9 @@ function renderProduct(p, catalog) {
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="margin-right:8px;vertical-align:-3px"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
             Shto në Shportë
           </button>
+          <button class="prod-fav" type="button" data-id="${escapeHtml(p.id)}" aria-label="Shto te të preferuarat" aria-pressed="false" title="Krahaso">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </button>
         </div>
 
         ${p.brochure_url ? `
@@ -300,6 +338,19 @@ function wireSizeSelector(product) {
 }
 
 function wireAddToCart(product) {
+  const favBtn = document.querySelector('.prod-fav');
+  if (favBtn && typeof toggleFav === 'function') {
+    favBtn.addEventListener('click', () => {
+      toggleFav(product.id, {
+        title: product.title,
+        subtitle: product.series_label || product.brand_label,
+        image: product.hero_image,
+        price_text: product.price_text || null
+      });
+    });
+  }
+  if (typeof syncFavHearts === 'function') syncFavHearts();
+
   const btn = document.getElementById('prodAtc');
   if (!btn) return;
   btn.addEventListener('click', () => {
