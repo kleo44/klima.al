@@ -98,7 +98,7 @@ function injectSearchUI() {
   const btn = document.createElement('button');
   btn.id = 'searchBtn';
   btn.className = 'search-btn';
-  btn.setAttribute('aria-label', 'Search');
+  btn.setAttribute('aria-label', 'Kërko');
   btn.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>';
   const cartBtn = document.getElementById('cartBtn');
   if (cartBtn) headerRight.insertBefore(btn, cartBtn);
@@ -121,7 +121,7 @@ function injectSearchUI() {
         <svg class="search-bar-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
         <input id="searchInput" type="search" autocomplete="off" placeholder="Kërko produkte..."
                data-sq-ph="Kërko produkte..." data-en-ph="Search products..." />
-        <button class="search-close" id="searchClose" aria-label="Close">×</button>
+        <button class="search-close" id="searchClose" aria-label="Mbyll">×</button>
       </div>
       <div class="search-body">
         <div class="search-results" id="searchResults"></div>
@@ -140,6 +140,17 @@ function injectSearchUI() {
     if ((e.key === 'k' || e.key === 'K') && (e.metaKey || e.ctrlKey)) {
       e.preventDefault();
       openSearch();
+    }
+    if (e.key === 'Tab' && modal.classList.contains('open')) {
+      const focusable = modal.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+      if (focusable.length === 0) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault(); last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault(); first.focus();
+      }
     }
   });
 

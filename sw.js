@@ -4,7 +4,7 @@
    Images: cache-first (immutable assets)
 */
 
-const VERSION = 'klima-v3-2026-05-12';
+const VERSION = 'klima-v4-2026-05-13';
 const CORE = [
   '/',
   '/index.html',
@@ -62,10 +62,27 @@ self.addEventListener('fetch', event => {
     return;
   }
 
-  // Cache-first for static assets (CSS/JS/JSON/images)
+  // Stale-while-revalidate for CSS / JS / JSON — fast paint, async refresh
+  const isSWR = /\.(css|js|json)$/i.test(url.pathname);
+  if (isSWR) {
+    event.respondWith(
+      caches.match(req).then(hit => {
+        const fresh = fetch(req).then(res => {
+          if (res && res.status === 200 && res.type === 'basic') {
+            const copy = res.clone();
+            caches.open(VERSION).then(cache => cache.put(req, copy));
+          }
+          return res;
+        }).catch(() => hit);
+        return hit || fresh;
+      })
+    );
+    return;
+  }
+
+  // Cache-first for everything else (images, fonts, icons)
   event.respondWith(
     caches.match(req).then(hit => hit || fetch(req).then(res => {
-      // Only cache successful basic responses
       if (res && res.status === 200 && res.type === 'basic') {
         const copy = res.clone();
         caches.open(VERSION).then(cache => cache.put(req, copy));

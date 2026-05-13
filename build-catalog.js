@@ -99,7 +99,7 @@ const products = [
   from('dc-inverter-hyper-outdoor-units-5-0-kw',  { id: 'multi-5kw-outdoor',   title: 'Multi-Split 5.0 kW',  model_code: 'SCM 50 ZS-W',  capacity_kw: 5.0, series_label: 'SCM 50 ZS-W · R32' }),
   from('dc-inverter-hyper-outdoor-units-6-0-kw',  { id: 'multi-6kw-outdoor',   title: 'Multi-Split 6 kW (2–3 Dhoma)', model_code: 'SCM 60 ZS-W', capacity_kw: 6.0, series_label: 'SCM 60 ZS-W · R32', price_text: '196 800 L' }),
   from('dc-inverter-hyper-outdoor-units-7-1-kw',  { id: 'multi-7_1kw-outdoor', title: 'Multi-Split 7.1 kW',  model_code: 'SCM 71 ZS-W',  capacity_kw: 7.1, series_label: 'SCM 71 ZS-W · R32' }),
-  from('dc-inverter-hyper-outdoor-units-8-0-kw',  { id: 'multi-8kw-outdoor',   title: 'Multi-Split 8 kW (3–4 Dhoma)', model_code: 'SCM 80 ZS-W', capacity_kw: 8.0, series_label: 'SCM 80 ZS-W · R32', price_text: '72 400 L' }),
+  from('dc-inverter-hyper-outdoor-units-8-0-kw',  { id: 'multi-8kw-outdoor',   title: 'Multi-Split 8 kW (3–4 Dhoma)', model_code: 'SCM 80 ZS-W', capacity_kw: 8.0, series_label: 'SCM 80 ZS-W · R32' }),
   from('dc-inverter-hyper-outdoor-units-10-0-kw', { id: 'multi-10kw-outdoor',  title: 'Multi-Split 10 kW',   model_code: 'SCM 100 ZS-W', capacity_kw: 10.0, series_label: 'SCM 100 ZS-W · R32' })
 ];
 

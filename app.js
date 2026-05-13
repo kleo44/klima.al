@@ -18,6 +18,12 @@ function setLang(l) {
     el.placeholder = l === 'sq' ? el.dataset.sqPh : el.dataset.enPh;
   });
   document.querySelectorAll('.lb').forEach(b => b.classList.toggle('lb-active', b.dataset.lang === l));
+  // <title> can also be language-aware via data-sq-title / data-en-title
+  const titleEl = document.querySelector('title');
+  if (titleEl) {
+    const tv = l === 'sq' ? titleEl.dataset.sqTitle : titleEl.dataset.enTitle;
+    if (tv) titleEl.textContent = tv;
+  }
   localStorage.setItem('klima-lang', l);
 }
 
@@ -87,7 +93,12 @@ async function renderHomeProducts() {
       const subEn = `${products.length} products in this category`;
       subEl.dataset.sq = subSq; subEl.dataset.en = subEn; subEl.textContent = subSq;
     }
-    document.title = `${meta.label_sq} – Klima.Al`;
+    const docTitle = document.querySelector('title');
+    if (docTitle) {
+      docTitle.dataset.sqTitle = `${meta.label_sq} – Klima.Al`;
+      docTitle.dataset.enTitle = `${meta.label_en} – Klima.Al`;
+    }
+    document.title = `${(lang === 'sq' ? meta.label_sq : meta.label_en)} – Klima.Al`;
     const canon = document.getElementById('catCanonical');
     if (canon) canon.setAttribute('href', `https://klima-al.vercel.app/produkte.html?cat=${cat}`);
   }
@@ -339,8 +350,11 @@ function injectCollectionJsonLd(cat, products, catalog) {
   const query = location.search;
   document.querySelectorAll('.nav-link, .nav .drop a').forEach(a => {
     const href = a.getAttribute('href') || '';
+    // Ignore in-page anchors (e.g. href="#cat") so the parent Produkte
+    // doesn't get marked active on the home page.
+    if (href.startsWith('#')) return;
     const hrefPath = href.replace(/^\/+/, '').split('?')[0];
-    if (!hrefPath || hrefPath.startsWith('#')) return;
+    if (!hrefPath) return;
     if (hrefPath === path || (path === 'produkte.html' && href === 'produkte.html' + query)) {
       a.setAttribute('aria-current', 'page');
     }

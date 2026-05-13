@@ -194,7 +194,19 @@ function injectFavUI() {
     if (url) location.href = url;
   });
   document.addEventListener('keydown', e => {
-    if (e.key === 'Escape' && drawer.classList.contains('open')) closeFavDrawer();
+    if (!drawer.classList.contains('open')) return;
+    if (e.key === 'Escape') closeFavDrawer();
+    if (e.key === 'Tab') {
+      const focusable = drawer.querySelectorAll('button, [href], input, [tabindex]:not([tabindex="-1"])');
+      if (focusable.length === 0) return;
+      const first = focusable[0];
+      const last  = focusable[focusable.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault(); last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault(); first.focus();
+      }
+    }
   });
 
   updateFavBadge();
