@@ -7,19 +7,19 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://klima-al.vercel.app/produkte.html?cat=residential</loc>
+    <loc>https://klima-al.vercel.app/produkte/residential.html</loc>
     <lastmod>2026-05-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://klima-al.vercel.app/produkte.html?cat=multisplit</loc>
+    <loc>https://klima-al.vercel.app/produkte/multisplit.html</loc>
     <lastmod>2026-05-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://klima-al.vercel.app/produkte.html?cat=floor</loc>
+    <loc>https://klima-al.vercel.app/produkte/floor.html</loc>
     <lastmod>2026-05-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -31,145 +31,145 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://klima-al.vercel.app/product.html?id=kireia-2kw</loc>
+    <loc>https://klima-al.vercel.app/product/kireia-2kw.html</loc>
     <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klima-al.vercel.app/product.html?id=kireia-2_5kw</loc>
+    <loc>https://klima-al.vercel.app/product/kireia-2_5kw.html</loc>
     <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klima-al.vercel.app/product.html?id=kireia-3_5kw</loc>
+    <loc>https://klima-al.vercel.app/product/kireia-3_5kw.html</loc>
     <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klima-al.vercel.app/product.html?id=kireia-5kw</loc>
+    <loc>https://klima-al.vercel.app/product/kireia-5kw.html</loc>
     <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klima-al.vercel.app/product.html?id=kireia-plus</loc>
+    <loc>https://klima-al.vercel.app/product/kireia-plus.html</loc>
     <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klima-al.vercel.app/product.html?id=kireia-smart</loc>
+    <loc>https://klima-al.vercel.app/product/kireia-smart.html</loc>
     <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klima-al.vercel.app/product.html?id=large-comfort</loc>
+    <loc>https://klima-al.vercel.app/product/large-comfort.html</loc>
     <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klima-al.vercel.app/product.html?id=floor-3_5kw</loc>
+    <loc>https://klima-al.vercel.app/product/floor-3_5kw.html</loc>
     <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klima-al.vercel.app/product.html?id=mi-kireia-plus</loc>
+    <loc>https://klima-al.vercel.app/product/mi-kireia-plus.html</loc>
     <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klima-al.vercel.app/product.html?id=mi-kireia</loc>
+    <loc>https://klima-al.vercel.app/product/mi-kireia.html</loc>
     <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klima-al.vercel.app/product.html?id=mi-wall-skm</loc>
+    <loc>https://klima-al.vercel.app/product/mi-wall-skm.html</loc>
     <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klima-al.vercel.app/product.html?id=mi-wall-srk</loc>
+    <loc>https://klima-al.vercel.app/product/mi-wall-srk.html</loc>
     <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klima-al.vercel.app/product.html?id=mi-console</loc>
+    <loc>https://klima-al.vercel.app/product/mi-console.html</loc>
     <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klima-al.vercel.app/product.html?id=mi-ceiling</loc>
+    <loc>https://klima-al.vercel.app/product/mi-ceiling.html</loc>
     <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klima-al.vercel.app/product.html?id=mi-medium-ducted</loc>
+    <loc>https://klima-al.vercel.app/product/mi-medium-ducted.html</loc>
     <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klima-al.vercel.app/product.html?id=mi-low-ducted</loc>
+    <loc>https://klima-al.vercel.app/product/mi-low-ducted.html</loc>
     <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klima-al.vercel.app/product.html?id=mi-cassette-60</loc>
+    <loc>https://klima-al.vercel.app/product/mi-cassette-60.html</loc>
     <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klima-al.vercel.app/product.html?id=multi-4kw-outdoor</loc>
+    <loc>https://klima-al.vercel.app/product/multi-4kw-outdoor.html</loc>
     <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klima-al.vercel.app/product.html?id=multi-4_5kw-outdoor</loc>
+    <loc>https://klima-al.vercel.app/product/multi-4_5kw-outdoor.html</loc>
     <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klima-al.vercel.app/product.html?id=multi-5kw-outdoor</loc>
+    <loc>https://klima-al.vercel.app/product/multi-5kw-outdoor.html</loc>
     <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klima-al.vercel.app/product.html?id=multi-6kw-outdoor</loc>
+    <loc>https://klima-al.vercel.app/product/multi-6kw-outdoor.html</loc>
     <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klima-al.vercel.app/product.html?id=multi-7_1kw-outdoor</loc>
+    <loc>https://klima-al.vercel.app/product/multi-7_1kw-outdoor.html</loc>
     <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klima-al.vercel.app/product.html?id=multi-8kw-outdoor</loc>
+    <loc>https://klima-al.vercel.app/product/multi-8kw-outdoor.html</loc>
     <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klima-al.vercel.app/product.html?id=multi-10kw-outdoor</loc>
+    <loc>https://klima-al.vercel.app/product/multi-10kw-outdoor.html</loc>
     <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

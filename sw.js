@@ -4,7 +4,7 @@
    Images: cache-first (immutable assets)
 */
 
-const VERSION = 'klima-v4-2026-05-13';
+const VERSION = 'klima-v5-2026-05-13';
 const CORE = [
   '/',
   '/index.html',

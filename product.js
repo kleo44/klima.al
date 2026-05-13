@@ -1,12 +1,34 @@
-/* KLIMA.AL — Product detail page renderer */
+/* KLIMA.AL — Product detail page renderer + hydrator.
+   Two modes:
+   (a) PRE-RENDERED — when /product/<slug>.html exists, it ships with all
+       content already in the HTML + a <script id="productData"> JSON block.
+       We just attach interactive handlers.
+   (b) DYNAMIC — legacy /product.html?id=<slug>; we fetch catalog.json
+       and render the article from scratch. */
 
 (async function () {
+  const loadingEl = document.getElementById('productLoading');
+  const errorEl   = document.getElementById('productError');
+  const detailEl  = document.getElementById('productDetail');
+  const dataEl    = document.getElementById('productData');
+
+  // PRE-RENDERED mode: product data baked into the page
+  if (dataEl && detailEl && !detailEl.innerHTML.trim().startsWith('<')) {
+    // detailEl exists but empty — fall through to dynamic path
+  }
+  if (dataEl) {
+    try {
+      const product = JSON.parse(dataEl.textContent);
+      hydratePrerendered(product);
+      return;
+    } catch (e) {
+      console.warn('Bad productData JSON, falling back', e);
+    }
+  }
+
+  // DYNAMIC mode
   const params = new URLSearchParams(location.search);
   const id = params.get('id');
-  const loadingEl = document.getElementById('productLoading');
-  const errorEl = document.getElementById('productError');
-  const detailEl = document.getElementById('productDetail');
-
   if (!id) { setNoIndex(); return showError(); }
 
   let catalog;
@@ -21,8 +43,8 @@
   const product = catalog.products?.find(p => p.id === id || p.slug === id);
   if (!product) { setNoIndex(); return showError(); }
 
-  loadingEl.style.display = 'none';
-  detailEl.style.display = 'block';
+  loadingEl && (loadingEl.style.display = 'none');
+  detailEl && (detailEl.style.display = 'block');
   const titleEl = document.querySelector('title');
   if (titleEl) {
     titleEl.dataset.sqTitle = `${product.title} – Klima.Al`;
@@ -43,10 +65,19 @@
   document.querySelectorAll('.lb').forEach(b => b.addEventListener('click', () => setTimeout(renderAll, 0)));
 
   function showError() {
-    loadingEl.style.display = 'none';
-    errorEl.style.display = 'block';
+    loadingEl && (loadingEl.style.display = 'none');
+    errorEl   && (errorEl.style.display = 'block');
   }
 })();
+
+function hydratePrerendered(product) {
+  wireGallery();
+  wireAddToCart(product);
+  wireSizeSelector(product);
+  renderStickyCta(product);
+  if (typeof syncFavHearts === 'function') syncFavHearts();
+  if (typeof setLang === 'function') setLang(localStorage.getItem('klima-lang') || 'sq');
+}
 
 function renderStickyCta(product) {
   document.getElementById('prodStickyCta')?.remove();
@@ -73,7 +104,7 @@ function updateMeta(product) {
                `${product.title} — Mitsubishi Heavy Industries. Çmim dhe specifikime në Klima.Al.`;
   const img = product.hero_image || 'https://klima-al.vercel.app/hero-mitsubishi.jpg';
   const title = `${product.title} – Klima.Al`;
-  const url = `https://klima-al.vercel.app/product.html?id=${encodeURIComponent(product.id)}`;
+  const url = `https://klima-al.vercel.app/product/${encodeURIComponent(product.id)}.html`;
   setMeta('name', 'description', desc);
   setMeta('property', 'og:title', title);
   setMeta('property', 'og:description', desc);
@@ -132,7 +163,7 @@ function injectBreadcrumb(product) {
     '@type': 'BreadcrumbList',
     itemListElement: [
       { '@type':'ListItem', position:1, name:'Kreu',      item:'https://klima-al.vercel.app/' },
-      { '@type':'ListItem', position:2, name:catLabels[product.category] || 'Produkte', item:`https://klima-al.vercel.app/produkte.html?cat=${product.category}` },
+      { '@type':'ListItem', position:2, name:catLabels[product.category] || 'Produkte', item:`https://klima-al.vercel.app/produkte/${product.category}.html` },
       { '@type':'ListItem', position:3, name:product.title }
     ]
   };
@@ -188,7 +219,7 @@ function renderProduct(p, catalog) {
     <nav class="prod-crumbs" aria-label="Breadcrumb">
       <a href="index.html">Kreu</a>
       <span>›</span>
-      <a href="produkte.html?cat=${encodeURIComponent(p.category)}">${escapeHtml(breadcrumbCat)}</a>
+      <a href="produkte/${encodeURIComponent(p.category)}.html">${escapeHtml(breadcrumbCat)}</a>
       <span>›</span>
       <span class="crumb-current">${escapeHtml(p.title)}</span>
     </nav>
@@ -271,7 +302,7 @@ function renderProduct(p, catalog) {
     ${Array.isArray(p.specs) && p.specs.length ? renderSpecsTable(p.specs) : ''}
 
     <div class="prod-back">
-      <a href="produkte.html?cat=${encodeURIComponent(p.category)}">← <span data-sq="Kthehu te kategoria" data-en="Back to category">Kthehu te kategoria</span></a>
+      <a href="produkte/${encodeURIComponent(p.category)}.html">← <span data-sq="Kthehu te kategoria" data-en="Back to category">Kthehu te kategoria</span></a>
     </div>
   `;
 }

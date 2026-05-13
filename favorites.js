@@ -106,7 +106,7 @@ function renderFavDrawer() {
     const p = cache[id] || { title: id };
     return `
       <div class="fav-item" data-id="${escFav(id)}">
-        <a class="fav-item-link" href="product.html?id=${encodeURIComponent(id)}">
+        <a class="fav-item-link" href="product/${encodeURIComponent(id)}.html">
           <div class="fav-item-img">
             ${p.image ? `<img src="${escFav(p.image)}" alt="" loading="lazy" />` : ''}
           </div>

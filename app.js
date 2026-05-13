@@ -66,6 +66,13 @@ function skeletonCardHTML() {
 async function renderHomeProducts() {
   const grid = document.getElementById('pcGrid');
   if (!grid) return;
+
+  // PRE-RENDERED: cards baked in by build-catalog.js
+  if (grid.dataset.prerendered === 'true') {
+    hydratePrerenderedCategory();
+    return;
+  }
+
   grid.innerHTML = Array.from({ length: 6 }, skeletonCardHTML).join('');
   let catalog;
   try {
@@ -100,7 +107,7 @@ async function renderHomeProducts() {
     }
     document.title = `${(lang === 'sq' ? meta.label_sq : meta.label_en)} – Klima.Al`;
     const canon = document.getElementById('catCanonical');
-    if (canon) canon.setAttribute('href', `https://klima-al.vercel.app/produkte.html?cat=${cat}`);
+    if (canon) canon.setAttribute('href', `https://klima-al.vercel.app/produkte/${cat}.html`);
   }
 
   if (products.length === 0) {
@@ -161,7 +168,7 @@ async function renderHomeProducts() {
 function productCardHTML(p) {
   const priceTxt = p.price_text || 'Me kërkesë';
   const isOnRequest = !p.price_text;
-  const href = `product.html?id=${encodeURIComponent(p.id)}`;
+  const href = `product/${encodeURIComponent(p.id)}.html`;
   const series = p.series_label || (p.model_code ? `${p.model_code} · R32` : '');
   return `
     <a class="pc" data-cat="${esc(p.category)}" data-id="${esc(p.id)}" href="${href}">
@@ -323,7 +330,7 @@ function injectCollectionJsonLd(cat, products, catalog) {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
     name: `${meta.label_sq} – Klima.Al`,
-    url: `https://klima-al.vercel.app/produkte.html?cat=${cat}`,
+    url: `https://klima-al.vercel.app/produkte/${cat}.html`,
     inLanguage: 'sq-AL',
     mainEntity: {
       '@type': 'ItemList',
@@ -331,7 +338,7 @@ function injectCollectionJsonLd(cat, products, catalog) {
       itemListElement: products.map((p, i) => ({
         '@type': 'ListItem',
         position: i + 1,
-        url: `https://klima-al.vercel.app/product.html?id=${encodeURIComponent(p.id)}`,
+        url: `https://klima-al.vercel.app/product/${encodeURIComponent(p.id)}.html`,
         name: p.title,
         image: p.hero_image
       }))
@@ -367,3 +374,46 @@ document.addEventListener('keydown', e => {
   const drawer = document.getElementById('cartDrawer');
   if (drawer?.classList.contains('open') && typeof closeCartDrawer === 'function') closeCartDrawer();
 });
+
+/* ── Hydrate pre-rendered category page ──────────────── */
+async function hydratePrerenderedCategory() {
+  const grid = document.getElementById('pcGrid');
+  if (!grid) return;
+  let catalog;
+  try {
+    const res = await fetch('catalog.json');
+    catalog = await res.json();
+  } catch { catalog = { products: [] }; }
+  const map = Object.fromEntries((catalog.products || []).map(p => [p.id, p]));
+  grid.querySelectorAll('.pc-atc').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault(); e.stopPropagation();
+      const p = map[btn.dataset.id];
+      if (!p || typeof addToCart !== 'function') return;
+      addToCart({
+        id: p.id, title: p.title,
+        subtitle: p.series_label || p.brand_label,
+        image: p.hero_image,
+        price_text: p.price_text || null
+      });
+    });
+  });
+  grid.querySelectorAll('.pc-fav').forEach(btn => {
+    const handler = e => {
+      e.preventDefault(); e.stopPropagation();
+      const p = map[btn.dataset.id];
+      if (!p || typeof toggleFav !== 'function') return;
+      toggleFav(p.id, {
+        title: p.title,
+        subtitle: p.series_label || p.brand_label,
+        image: p.hero_image,
+        price_text: p.price_text || null
+      });
+    };
+    btn.addEventListener('click', handler);
+    btn.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') handler(e); });
+  });
+  if (typeof syncFavHearts === 'function') syncFavHearts();
+  if (typeof setLang === 'function') setLang(localStorage.getItem('klima-lang') || 'sq');
+  window.dispatchEvent(new Event('klima-products-rendered'));
+}

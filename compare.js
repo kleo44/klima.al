@@ -63,7 +63,7 @@
 
     const cardCols = products.map(p => `
       <div class="cmp-col">
-        <a class="cmp-card" href="product.html?id=${encodeURIComponent(p.id)}">
+        <a class="cmp-card" href="product/${encodeURIComponent(p.id)}.html">
           <div class="cmp-img">
             <img src="${esc(p.hero_image)}" alt="${esc(p.title)}" loading="lazy"
                  onerror="this.src='https://placehold.co/300x220/f5f5f5/9b1b2e?text=${encodeURIComponent(p.title)}'" />

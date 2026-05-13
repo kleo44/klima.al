@@ -60,7 +60,7 @@ function renderResults(products) {
   }
   empty.style.display = 'none';
   list.innerHTML = products.map(p => `
-    <a class="search-result" href="product.html?id=${encodeURIComponent(p.id)}">
+    <a class="search-result" href="product/${encodeURIComponent(p.id)}.html">
       <div class="search-result-img">
         ${p.hero_image ? `<img src="${escSearch(p.hero_image)}" alt="" loading="lazy" onerror="this.style.display='none'" />` : ''}
       </div>
