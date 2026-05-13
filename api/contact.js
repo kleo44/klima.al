@@ -68,7 +68,7 @@ export default async function handler(req, res) {
     ${city    ? `<tr><td style="color:#6b7280"><strong>Qyteti</strong></td><td>${esc(city)}</td></tr>` : ''}
   </table>
   ${message ? `<h3 style="margin:20px 0 8px;color:#141f2e">Mesazhi</h3><p style="background:#f9fafb;padding:14px;border-radius:8px;white-space:pre-wrap;margin:0">${esc(message)}</p>` : ''}
-  <p style="margin:24px 0 0;font-size:12px;color:#9ca3af">Dërguar nga formulari i kontaktit në klima-al.vercel.app</p>
+  <p style="margin:24px 0 0;font-size:12px;color:#9ca3af">Dërguar nga formulari i kontaktit në klimaal.com</p>
 </body></html>`;
 
   try {

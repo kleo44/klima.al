@@ -102,9 +102,9 @@ function renderStickyCta(product) {
 function updateMeta(product) {
   const desc = (product.description_sq || product.description || '').slice(0, 200) ||
                `${product.title} — Mitsubishi Heavy Industries. Çmim dhe specifikime në Klima.Al.`;
-  const img = product.hero_image || 'https://klima-al.vercel.app/hero-mitsubishi.jpg';
+  const img = product.hero_image || 'https://klimaal.com/hero-mitsubishi.jpg';
   const title = `${product.title} – Klima.Al`;
-  const url = `https://klima-al.vercel.app/product/${encodeURIComponent(product.id)}.html`;
+  const url = `https://klimaal.com/product/${encodeURIComponent(product.id)}.html`;
   setMeta('name', 'description', desc);
   setMeta('property', 'og:title', title);
   setMeta('property', 'og:description', desc);
@@ -162,8 +162,8 @@ function injectBreadcrumb(product) {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type':'ListItem', position:1, name:'Kreu',      item:'https://klima-al.vercel.app/' },
-      { '@type':'ListItem', position:2, name:catLabels[product.category] || 'Produkte', item:`https://klima-al.vercel.app/produkte/${product.category}.html` },
+      { '@type':'ListItem', position:1, name:'Kreu',      item:'https://klimaal.com/' },
+      { '@type':'ListItem', position:2, name:catLabels[product.category] || 'Produkte', item:`https://klimaal.com/produkte/${product.category}.html` },
       { '@type':'ListItem', position:3, name:product.title }
     ]
   };

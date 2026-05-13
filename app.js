@@ -107,7 +107,7 @@ async function renderHomeProducts() {
     }
     document.title = `${(lang === 'sq' ? meta.label_sq : meta.label_en)} – Klima.Al`;
     const canon = document.getElementById('catCanonical');
-    if (canon) canon.setAttribute('href', `https://klima-al.vercel.app/produkte/${cat}.html`);
+    if (canon) canon.setAttribute('href', `https://klimaal.com/produkte/${cat}.html`);
   }
 
   if (products.length === 0) {
@@ -330,7 +330,7 @@ function injectCollectionJsonLd(cat, products, catalog) {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
     name: `${meta.label_sq} – Klima.Al`,
-    url: `https://klima-al.vercel.app/produkte/${cat}.html`,
+    url: `https://klimaal.com/produkte/${cat}.html`,
     inLanguage: 'sq-AL',
     mainEntity: {
       '@type': 'ItemList',
@@ -338,7 +338,7 @@ function injectCollectionJsonLd(cat, products, catalog) {
       itemListElement: products.map((p, i) => ({
         '@type': 'ListItem',
         position: i + 1,
-        url: `https://klima-al.vercel.app/product/${encodeURIComponent(p.id)}.html`,
+        url: `https://klimaal.com/product/${encodeURIComponent(p.id)}.html`,
         name: p.title,
         image: p.hero_image
       }))

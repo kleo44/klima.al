@@ -118,7 +118,7 @@ console.log(`Wrote catalog.json — ${products.length} products`);
 console.log('By category:', products.reduce((acc, p) => { acc[p.category] = (acc[p.category] || 0) + 1; return acc; }, {}));
 
 // ── Pre-render product + category pages ──────────────────
-const SITE = 'https://klima-al.vercel.app';
+const SITE = 'https://klimaal.com';
 const today = new Date().toISOString().slice(0, 10);
 
 function esc(s) {
@@ -522,21 +522,170 @@ for (const catKey of ['residential','multisplit','floor']) {
 }
 console.log(`Wrote 3 category pages to /produkte/`);
 
+// ── Programmatic per-city × per-room-size landing pages ────────
+const CITIES = [
+  { slug: 'tirane',  sq: 'Tiranë',  en: 'Tirana'  },
+  { slug: 'durres',  sq: 'Durrës',  en: 'Durrës'  },
+  { slug: 'vlore',   sq: 'Vlorë',   en: 'Vlorë'   },
+  { slug: 'shkoder', sq: 'Shkodër', en: 'Shkodër' },
+  { slug: 'elbasan', sq: 'Elbasan', en: 'Elbasan' }
+];
+
+// (room size m² → recommended SKU + capacity sentence)
+const SIZES = [
+  { m2: 10, rec_id: 'kireia-2kw',   kw: 2.0, btu: '7 000',  use: 'dhomë gjumi e vogël' },
+  { m2: 15, rec_id: 'kireia-2kw',   kw: 2.0, btu: '7 000',  use: 'dhomë gjumi standarde, zyrë' },
+  { m2: 20, rec_id: 'kireia-2_5kw', kw: 2.5, btu: '9 000',  use: 'dhomë gjumi master, dhomë ndenjeje e vogël' },
+  { m2: 25, rec_id: 'kireia-3_5kw', kw: 3.5, btu: '12 000', use: 'dhomë ndenjeje, kuzhinë e madhe' },
+  { m2: 30, rec_id: 'kireia-3_5kw', kw: 3.5, btu: '12 000', use: 'dhomë ndenjeje e madhe, garsoniere' },
+  { m2: 40, rec_id: 'kireia-5kw',   kw: 5.0, btu: '18 000', use: 'sallon i hapur, hapësirë e bashkuar' },
+  { m2: 50, rec_id: 'multi-6kw-outdoor', kw: 6.0, btu: '21 000', use: 'apartament 2 dhoma me Multi-Split' },
+  { m2: 60, rec_id: 'multi-8kw-outdoor', kw: 8.0, btu: '27 000', use: 'apartament 3–4 dhoma me Multi-Split' }
+];
+
+const KOND_DIR = path.join(ROOT, 'kondicioner');
+if (!fs.existsSync(KOND_DIR)) fs.mkdirSync(KOND_DIR);
+
+function localFaqJsonLd(city, size, recProduct) {
+  return JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      { '@type':'Question', name: `Sa kW kondicioner më duhet për dhomë ${size.m2} m² në ${city.sq}?`, acceptedAnswer:{ '@type':'Answer', text: `Si rregull i thjeshtë: 100 W/m². Për ${size.m2} m² ju duhen rreth ${size.kw} kW (≈ ${size.btu} BTU). Rekomandojmë ${recProduct.title} (${recProduct.model_code || recProduct.id}).` } },
+      { '@type':'Question', name: `Sa kushton instalimi në ${city.sq}?`, acceptedAnswer:{ '@type':'Answer', text: `Instalimi standard në ${city.sq} kushton 8 000 – 15 000 L sipas vështirësisë. Vizita në vend është falas.` } },
+      { '@type':'Question', name: `A funksionon në dimrin e ${city.sq}?`, acceptedAnswer:{ '@type':'Answer', text: 'Po. Modeli MHI DC Inverter Hyper ruan funksionimin e plotë në ngrohje deri −15 °C — mbi minimumin historik për Shqipërinë.' } }
+    ]
+  });
+}
+
+function localBusinessJsonLd(city) {
+  return JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    '@id': `${SITE}/#business`,
+    name: 'Klima.Al',
+    url: SITE + '/',
+    telephone: '+355672549225',
+    email: 'klima.al@klima-info.com',
+    areaServed: { '@type':'City', name: city.sq, addressCountry: 'AL' },
+    address: { '@type':'PostalAddress', streetAddress:'Rr. Jordan Misja', addressLocality:'Tiranë', addressCountry:'AL' }
+  });
+}
+
+function cityPageBody(city, size, recProduct) {
+  const priceTxt = recProduct.price_text || 'Me kërkesë';
+  return `<div class="local-page">
+  <div class="container">
+    <nav class="prod-crumbs" aria-label="Breadcrumb">
+      <a href="../index.html">Kreu</a>
+      <span>›</span>
+      <a href="../produkte/residential.html">Kondicionerë</a>
+      <span>›</span>
+      <span class="crumb-current">${city.sq} · ${size.m2} m²</span>
+    </nav>
+    <header class="category-head">
+      <span class="sec-label">Udhëzues lokal</span>
+      <h1>Kondicioner për dhomë ${size.m2} m² në ${esc(city.sq)}</h1>
+      <p class="category-sub">Çfarë fuqie ju duhet, sa kushton, dhe modeli i rekomanduar Mitsubishi Heavy Industries — me instalim në ${esc(city.sq)}.</p>
+    </header>
+
+    <section class="local-rec">
+      <div class="local-rec-grid">
+        <div class="local-rec-text">
+          <h2>Fuqia e duhur: ${size.kw} kW (${size.btu} BTU)</h2>
+          <p>Për një hapësirë <strong>${size.m2} m²</strong> në ${esc(city.sq)} (${size.use}), si rregull i përgjithshëm <strong>100 W/m²</strong> jep një kondicioner ${size.kw} kW. Ky është një vlerësim i sigurt për tavanet 2.6–2.8 m, izolim normal dhe një orientim diellor mesatar. Për dhoma me drita të mëdha jugore, kuzhinë me sobë të nxehtë, ose tavanet mbi 3 m, hipni një hap.</p>
+          <a href="../product/${recProduct.id}.html" class="btn btn-red">Shiko ${esc(recProduct.title)}</a>
+          <a href="https://wa.me/355672549225?text=${encodeURIComponent('Përshëndetje, dua një kondicioner për dhomë ' + size.m2 + ' m² në ' + city.sq + '. Cila është oferta?')}" target="_blank" class="btn btn-ghost-dark">Pyet me WhatsApp</a>
+        </div>
+        <a class="local-rec-card" href="../product/${recProduct.id}.html">
+          <div class="local-rec-img"><img src="${esc(recProduct.hero_image)}" alt="${esc(recProduct.title)}" loading="lazy" /></div>
+          <div class="local-rec-body">
+            <p class="pc-series">${esc(recProduct.series_label || recProduct.model_code || 'Mitsubishi Heavy Industries')}</p>
+            <h3>${esc(recProduct.title)}</h3>
+            <div class="pc-price"><span>Çmim</span><strong>${esc(priceTxt)}</strong></div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section class="local-faq">
+      <h2>Pyetje për blerës në ${esc(city.sq)}</h2>
+      <details class="faq-item"><summary>Sa kushton instalimi në ${esc(city.sq)}?</summary><div class="faq-a">Instalimi standard në ${esc(city.sq)} kushton tipikisht <strong>8 000 – 15 000 L</strong> (1 njësi e brendshme + 1 e jashtme, deri 4 m gypa). Vizita në vend është falas. ${city.slug === 'tirane' ? '' : 'Përfshin udhëtimin nga Tirana në ' + city.sq + '.'}</div></details>
+      <details class="faq-item"><summary>A keni instalues lokal në ${esc(city.sq)}?</summary><div class="faq-a">Po. Ekipi ynë mbulon ${esc(city.sq)} ${city.slug === 'tirane' ? 'çdo ditë jave' : 'me planifikim 2–3 ditë përpara'}. Garancia 3-vjeçare e MHI vlen kudo në Shqipëri.</div></details>
+      <details class="faq-item"><summary>Sa zgjat instalimi?</summary><div class="faq-a">Një kondicioner monosplit zakonisht <strong>4–6 orë</strong>. Multi-Split (për 50+ m²) merr 8–12 orë.</div></details>
+      <details class="faq-item"><summary>A funksionon në dimrin e ${esc(city.sq)}?</summary><div class="faq-a">Po. ${esc(recProduct.title)} ka teknologji <strong>DC Inverter Hyper</strong> që ruan funksionimin e plotë në ngrohje deri −15 °C — mbi minimumin historik për ${esc(city.sq)}.</div></details>
+    </section>
+
+    <section class="local-other">
+      <h2>Madhësi të tjera dhomash</h2>
+      <div class="local-other-grid">
+        ${SIZES.filter(s => s.m2 !== size.m2).map(s => `
+          <a href="../kondicioner/${s.m2}m2-${city.slug}.html" class="local-other-tile">
+            <strong>${s.m2} m²</strong>
+            <span>${s.kw} kW · ${s.btu} BTU</span>
+          </a>
+        `).join('')}
+      </div>
+    </section>
+
+    <section class="local-other">
+      <h2>Tjera qytete</h2>
+      <div class="local-other-grid">
+        ${CITIES.filter(c => c.slug !== city.slug).map(c => `
+          <a href="../kondicioner/${size.m2}m2-${c.slug}.html" class="local-other-tile">
+            <strong>${esc(c.sq)}</strong>
+            <span>${size.m2} m² · ${size.kw} kW</span>
+          </a>
+        `).join('')}
+      </div>
+    </section>
+  </div>
+</div>`;
+}
+
+let cityPagesWritten = 0;
+for (const city of CITIES) {
+  for (const size of SIZES) {
+    const rec = products.find(p => p.id === size.rec_id) || products[0];
+    const html = pageShell({
+      title: `Kondicioner për dhomë ${size.m2} m² në ${city.sq} — ${rec.title} | Klima.Al`,
+      description: `${size.kw} kW (${size.btu} BTU) ${rec.title} për dhomë ${size.m2} m² në ${city.sq}. Mitsubishi Heavy Industries, instalim profesional, garanci 3 vjet, R32.`,
+      ogImage: rec.hero_image,
+      canonical: `${SITE}/kondicioner/${size.m2}m2-${city.slug}.html`,
+      jsonLdScripts: [
+        `<script type="application/ld+json">${localBusinessJsonLd(city)}</script>`,
+        `<script type="application/ld+json">${localFaqJsonLd(city, size, rec)}</script>`
+      ],
+      bodyContent: cityPageBody(city, size, rec)
+    });
+    fs.writeFileSync(path.join(KOND_DIR, `${size.m2}m2-${city.slug}.html`), html);
+    cityPagesWritten++;
+  }
+}
+console.log(`Wrote ${cityPagesWritten} local landing pages to /kondicioner/`);
+
 const staticPages = [
   { loc: '/',                            prio: '1.0', freq: 'weekly' },
   { loc: '/produkte/residential.html',   prio: '0.9', freq: 'weekly' },
   { loc: '/produkte/multisplit.html',    prio: '0.9', freq: 'weekly' },
   { loc: '/produkte/floor.html',         prio: '0.9', freq: 'weekly' },
-  { loc: '/materiale.html',              prio: '0.7', freq: 'monthly' }
+  { loc: '/materiale.html',              prio: '0.7', freq: 'monthly' },
+  { loc: '/faq.html',                    prio: '0.8', freq: 'monthly' }
 ];
+const localPageUrls = CITIES.flatMap(c => SIZES.map(s => ({
+  loc: `/kondicioner/${s.m2}m2-${c.slug}.html`,
+  prio: '0.6',
+  freq: 'monthly'
+})));
 const productUrls = products.map(p => ({
   loc: `/product/${encodeURIComponent(p.id)}.html`,
   prio: '0.8',
   freq: 'monthly'
 }));
+const allUrls = [...staticPages, ...productUrls, ...localPageUrls];
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${[...staticPages, ...productUrls].map(u => `  <url>
+${allUrls.map(u => `  <url>
     <loc>${SITE}${u.loc}</loc>
     <lastmod>${today}</lastmod>
     <changefreq>${u.freq}</changefreq>
@@ -545,4 +694,4 @@ ${[...staticPages, ...productUrls].map(u => `  <url>
 </urlset>
 `;
 fs.writeFileSync(path.join(ROOT, 'sitemap.xml'), sitemap);
-console.log(`Wrote sitemap.xml — ${staticPages.length + productUrls.length} URLs`);
+console.log(`Wrote sitemap.xml — ${allUrls.length} URLs`);
