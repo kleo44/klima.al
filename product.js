@@ -13,9 +13,6 @@
   const dataEl    = document.getElementById('productData');
 
   // PRE-RENDERED mode: product data baked into the page
-  if (dataEl && detailEl && !detailEl.innerHTML.trim().startsWith('<')) {
-    // detailEl exists but empty — fall through to dynamic path
-  }
   if (dataEl) {
     try {
       const product = JSON.parse(dataEl.textContent);
@@ -33,7 +30,7 @@
 
   let catalog;
   try {
-    const res = await fetch('catalog.json');
+    const res = await fetch('/catalog.json');
     if (!res.ok) throw new Error('catalog ' + res.status);
     catalog = await res.json();
   } catch (e) {
@@ -57,7 +54,7 @@
     detailEl.innerHTML = renderProduct(product, catalog);
     wireGallery();
     wireAddToCart(product);
-    wireSizeSelector(product);
+    wireSizeSelector();
     renderStickyCta(product);
     if (typeof setLang === 'function') setLang(localStorage.getItem('klima-lang') || 'sq');
   }
@@ -71,9 +68,14 @@
 })();
 
 function hydratePrerendered(product) {
+  const titleEl = document.querySelector('title');
+  if (titleEl) {
+    titleEl.dataset.sqTitle = `${product.title} – Klima.Al`;
+    titleEl.dataset.enTitle = `${product.title} – Klima.Al`;
+  }
   wireGallery();
   wireAddToCart(product);
-  wireSizeSelector(product);
+  wireSizeSelector();
   renderStickyCta(product);
   if (typeof syncFavHearts === 'function') syncFavHearts();
   if (typeof setLang === 'function') setLang(localStorage.getItem('klima-lang') || 'sq');
@@ -102,9 +104,9 @@ function renderStickyCta(product) {
 function updateMeta(product) {
   const desc = (product.description_sq || product.description || '').slice(0, 200) ||
                `${product.title} — Mitsubishi Heavy Industries. Çmim dhe specifikime në Klima.Al.`;
-  const img = product.hero_image || 'https://klimaal.com/hero-mitsubishi.jpg';
+  const img = product.hero_image || 'https://klima-al.com/hero-mitsubishi.jpg';
   const title = `${product.title} – Klima.Al`;
-  const url = `https://klimaal.com/product/${encodeURIComponent(product.id)}.html`;
+  const url = `https://klima-al.com/product/${encodeURIComponent(product.id)}.html`;
   setMeta('name', 'description', desc);
   setMeta('property', 'og:title', title);
   setMeta('property', 'og:description', desc);
@@ -162,8 +164,8 @@ function injectBreadcrumb(product) {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type':'ListItem', position:1, name:'Kreu',      item:'https://klimaal.com/' },
-      { '@type':'ListItem', position:2, name:catLabels[product.category] || 'Produkte', item:`https://klimaal.com/produkte/${product.category}.html` },
+      { '@type':'ListItem', position:1, name:'Kreu',      item:'https://klima-al.com/' },
+      { '@type':'ListItem', position:2, name:catLabels[product.category] || 'Produkte', item:`https://klima-al.com/produkte/${product.category}.html` },
       { '@type':'ListItem', position:3, name:product.title }
     ]
   };
@@ -362,7 +364,7 @@ function wireGallery() {
   });
 }
 
-function wireSizeSelector(product) {
+function wireSizeSelector() {
   const btns = document.querySelectorAll('.prod-size-btn');
   if (!btns.length) return;
   btns.forEach(btn => {
