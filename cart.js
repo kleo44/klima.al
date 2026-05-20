@@ -4,8 +4,16 @@ const CART_KEY = 'klima-cart';
 const WA_NUMBER = '355672549225';
 
 function loadCart() {
-  try { return JSON.parse(localStorage.getItem(CART_KEY)) || []; }
-  catch { return []; }
+  try {
+    const raw = JSON.parse(localStorage.getItem(CART_KEY)) || [];
+    if (!Array.isArray(raw)) return [];
+    return raw
+      .filter(it => it && typeof it === 'object' && typeof it.id === 'string')
+      .map(it => {
+        const q = Math.floor(Number(it.qty));
+        return { ...it, qty: Number.isFinite(q) && q > 0 ? Math.min(q, 99) : 1 };
+      });
+  } catch { return []; }
 }
 
 function saveCart(items) {
@@ -64,8 +72,10 @@ function setQty(id, qty) {
   const items = loadCart();
   const item = items.find(it => it.id === id);
   if (!item) return;
-  if (qty <= 0) removeFromCart(id);
-  else { item.qty = qty; saveCart(items); }
+  const n = Math.floor(Number(qty));
+  if (!Number.isFinite(n) || n <= 0) return removeFromCart(id);
+  item.qty = Math.min(n, 99);
+  saveCart(items);
 }
 
 function clearCart() { saveCart([]); }
@@ -275,6 +285,7 @@ function wireMaterialeRows() {
       .replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 60);
 
     const btn = document.createElement('button');
+    btn.type = 'button';
     btn.className = 'atc-btn atc-sm cat-row-atc';
     btn.setAttribute('data-sq', '+ Shportë');
     btn.setAttribute('data-en', '+ Cart');

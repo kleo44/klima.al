@@ -118,7 +118,7 @@ console.log(`Wrote catalog.json — ${products.length} products`);
 console.log('By category:', products.reduce((acc, p) => { acc[p.category] = (acc[p.category] || 0) + 1; return acc; }, {}));
 
 // ── Pre-render product + category pages ──────────────────
-const SITE = 'https://klimaal.com';
+const SITE = 'https://klima-al.com';
 const today = new Date().toISOString().slice(0, 10);
 
 function esc(s) {
@@ -213,7 +213,7 @@ const FOOTER_HTML = `<footer class="footer">
       <h5 data-sq="Kontakt" data-en="Contact">Kontakt</h5>
       <ul>
         <li>📞 +355 67 254 9225</li>
-        <li>✉ klima.al@klima-info.com</li>
+        <li>✉ klimapolaral@gmail.com</li>
         <li>📍 Rr. Jordan Misja, Tiranë</li>
         <li data-sq="🕐 Hën–Sht 10:00–18:00" data-en="🕐 Mon–Sat 10:00–18:00">🕐 Hën–Sht 10:00–18:00</li>
       </ul>
@@ -222,7 +222,7 @@ const FOOTER_HTML = `<footer class="footer">
   <div class="footer-bottom">
     <div class="container">
       <span data-sq="© 2026 Klima.Al · Të gjitha të drejtat e rezervuara"
-            data-en="© 2026 Klima.Al · All rights reserved">© 2026 Klima.Al · Të gjitha të drejtat e rezervuara</span>
+            data-en="© 2026 Klima.Al · All rights reserved">© 2026 Klima.Al · Të gjitha të drejtat e rezervuara</span> · <a href="../privatesia.html" data-sq="Privatësia" data-en="Privacy">Privatësia</a> · <a href="../kushte-perdorimi.html" data-sq="Kushtet" data-en="Terms">Kushtet</a>
       <span data-sq="Distributor Zyrtar Mitsubishi Heavy Industries"
             data-en="Official Mitsubishi Heavy Industries Distributor">Distributor Zyrtar Mitsubishi Heavy Industries</span>
     </div>
@@ -233,13 +233,16 @@ const FOOTER_HTML = `<footer class="footer">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="26" height="26"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>`;
 
-function pageShell({ title, description, ogImage, canonical, jsonLdScripts = [], dataScript = '', bodyContent }) {
+function pageShell({ title, titleSq, titleEn, description, ogImage, canonical, jsonLdScripts = [], dataScript = '', bodyContent }) {
+  const sqT = titleSq || title || '';
+  const enT = titleEn || title || '';
+  const ogT = title || sqT;
   return `<!DOCTYPE html>
 <html lang="sq">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>${esc(title)}</title>
+  <title data-sq-title="${esc(sqT)}" data-en-title="${esc(enT)}">${esc(sqT)}</title>
   <meta name="description" content="${esc(description)}" />
   <meta name="theme-color" content="#0e1c2f" />
   <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
@@ -249,15 +252,23 @@ function pageShell({ title, description, ogImage, canonical, jsonLdScripts = [],
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Klima.Al" />
   <meta property="og:locale" content="sq_AL" />
+  <meta property="og:locale:alternate" content="en_AL" />
   <meta property="og:url" content="${esc(canonical)}" />
-  <meta property="og:title" content="${esc(title)}" />
+  <meta property="og:title" content="${esc(ogT)}" />
   <meta property="og:description" content="${esc(description)}" />
   <meta property="og:image" content="${esc(ogImage)}" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="${esc(title)}" />
+  <meta name="twitter:title" content="${esc(ogT)}" />
   <meta name="twitter:description" content="${esc(description)}" />
   <meta name="twitter:image" content="${esc(ogImage)}" />
+
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="1000" />
+  <meta property="article:modified_time" content="${today}" />
+  <meta name="last-modified" content="${today}" />
+  <link rel="alternate" hreflang="sq-AL" href="${esc(canonical)}" />
+  <link rel="alternate" hreflang="x-default" href="${esc(canonical)}" />
 
   <link rel="manifest" href="../manifest.webmanifest" />
   <link rel="stylesheet" href="../style.css" />
@@ -265,7 +276,9 @@ function pageShell({ title, description, ogImage, canonical, jsonLdScripts = [],
   <link rel="preconnect" href="https://www.mitsubishi-termal.it" crossorigin />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" media="print" onload="this.media=&#39;all&#39;" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" /></noscript>
 ${jsonLdScripts.join('\n')}
 ${dataScript}
 </head>
@@ -284,6 +297,8 @@ ${FOOTER_HTML}
 <script src="../cart.js" defer></script>
 <script src="../app.js" defer></script>
 <script src="../product.js" defer></script>
+<script defer src="/_vercel/insights/script.js"></script>
+<script defer src="/_vercel/speed-insights/script.js"></script>
 </body>
 </html>
 `;
@@ -387,7 +402,9 @@ function productJsonLd(p) {
     description: (p.description_sq || p.description || '').slice(0, 500) || p.title,
     sku: p.model_code || p.id,
     brand: { '@type': 'Brand', name: 'Mitsubishi Heavy Industries' },
-    category: p.category
+    manufacturer: { '@type': 'Organization', name: 'Mitsubishi Heavy Industries Thermal Systems', url: 'https://www.mitsubishi-termal.it/' },
+    category: p.category,
+    dateModified: today
   };
   if (p.model_code) data.mpn = p.model_code;
   if (p.price_text) {
@@ -424,6 +441,7 @@ function categoryJsonLd(catKey, list) {
     name: `${catLabels[catKey]} – Klima.Al`,
     url: `${SITE}/produkte/${catKey}.html`,
     inLanguage: 'sq-AL',
+    dateModified: today,
     mainEntity: {
       '@type': 'ItemList',
       numberOfItems: list.length,
@@ -511,7 +529,8 @@ for (const catKey of ['residential','multisplit','floor']) {
   const list = products.filter(p => p.category === catKey);
   const labels = categories[catKey];
   const html = pageShell({
-    title: `${labels.label_sq} – Klima.Al`,
+    titleSq: `${labels.label_sq} – Klima.Al`,
+    titleEn: `${labels.label_en} – Klima.Al`,
     description: `${list.length} kondicionerë Mitsubishi Heavy Industries në kategorinë ${labels.label_sq}. R32, garanci 3 vjet, instalim profesional.`,
     ogImage: `${SITE}/hero-mitsubishi.jpg`,
     canonical: `${SITE}/produkte/${catKey}.html`,
@@ -565,10 +584,34 @@ function localBusinessJsonLd(city) {
     '@id': `${SITE}/#business`,
     name: 'Klima.Al',
     url: SITE + '/',
+    logo: `${SITE}/favicon.svg`,
+    image: `${SITE}/hero-mitsubishi.jpg`,
+    description: `Distributor zyrtar Mitsubishi Heavy Industries në Shqipëri me shërbim instalimi në ${city.sq} dhe gjithë vendin.`,
     telephone: '+355672549225',
-    email: 'klima.al@klima-info.com',
-    areaServed: { '@type':'City', name: city.sq, addressCountry: 'AL' },
-    address: { '@type':'PostalAddress', streetAddress:'Rr. Jordan Misja', addressLocality:'Tiranë', addressCountry:'AL' }
+    email: 'klimapolaral@gmail.com',
+    priceRange: '€€',
+    areaServed: [
+      { '@type':'City', name: 'Tiranë', addressCountry: 'AL' },
+      { '@type':'City', name: 'Durrës', addressCountry: 'AL' },
+      { '@type':'City', name: 'Vlorë',  addressCountry: 'AL' },
+      { '@type':'City', name: 'Shkodër', addressCountry: 'AL' },
+      { '@type':'City', name: 'Elbasan', addressCountry: 'AL' },
+      { '@type':'Country', name: 'Albania' }
+    ],
+    address: { '@type':'PostalAddress', streetAddress:'Rr. Jordan Misja', addressLocality:'Tiranë', addressRegion:'Tiranë', postalCode:'1001', addressCountry:'AL' },
+    geo: { '@type':'GeoCoordinates', latitude: 41.3343, longitude: 19.8240 },
+    openingHoursSpecification: [{
+      '@type':'OpeningHoursSpecification',
+      dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'],
+      opens: '10:00', closes: '18:00'
+    }],
+    aggregateRating: { '@type':'AggregateRating', ratingValue:'5.0', bestRating:'5', ratingCount:'3', reviewCount:'3' },
+    sameAs: [
+      'https://wa.me/355672549225',
+      'https://www.instagram.com/klima.all/',
+      'https://www.facebook.com/profile.php?id=61589934023018',
+      'https://www.tiktok.com/@klima.al0'
+    ]
   });
 }
 
@@ -648,7 +691,8 @@ for (const city of CITIES) {
   for (const size of SIZES) {
     const rec = products.find(p => p.id === size.rec_id) || products[0];
     const html = pageShell({
-      title: `Kondicioner për dhomë ${size.m2} m² në ${city.sq} — ${rec.title} | Klima.Al`,
+      titleSq: `Kondicioner për dhomë ${size.m2} m² në ${city.sq} — ${rec.title} | Klima.Al`,
+      titleEn: `Air conditioner for ${size.m2} m² room in ${city.en} — ${rec.title} | Klima.Al`,
       description: `${size.kw} kW (${size.btu} BTU) ${rec.title} për dhomë ${size.m2} m² në ${city.sq}. Mitsubishi Heavy Industries, instalim profesional, garanci 3 vjet, R32.`,
       ogImage: rec.hero_image,
       canonical: `${SITE}/kondicioner/${size.m2}m2-${city.slug}.html`,
@@ -664,13 +708,76 @@ for (const city of CITIES) {
 }
 console.log(`Wrote ${cityPagesWritten} local landing pages to /kondicioner/`);
 
+// ── Service Areas hub page ──────────────────────────────
+function serviceAreasBody() {
+  return `<div class="category-page">
+  <div class="container">
+    <nav class="prod-crumbs" aria-label="Breadcrumb">
+      <a href="index.html" data-sq="Kreu" data-en="Home">Kreu</a>
+      <span>›</span>
+      <span class="crumb-current" data-sq="Zona të mbuluara" data-en="Service Areas">Zona të mbuluara</span>
+    </nav>
+    <header class="category-head">
+      <span class="sec-label" data-sq="Mbulim Kombëtar" data-en="National Coverage">Mbulim Kombëtar</span>
+      <h1 data-sq="Instalim kondicioneri në gjithë Shqipërinë" data-en="Air conditioner installation across Albania">Instalim kondicioneri në gjithë Shqipërinë</h1>
+      <p class="category-sub" data-sq="Klima.Al ofron shërbim instalimi, mirëmbajtjeje dhe riparimi në 5 qytete kryesore. Zgjidhni qytetin tuaj për udhëzues lokalë sipas madhësisë së dhomës." data-en="Klima.Al offers installation, maintenance and repair across 5 major cities. Pick your city for local guides by room size.">Klima.Al ofron shërbim instalimi, mirëmbajtjeje dhe riparimi në 5 qytete kryesore. Zgjidhni qytetin tuaj për udhëzues lokalë sipas madhësisë së dhomës.</p>
+    </header>
+
+    ${CITIES.map(c => `
+    <section class="service-city">
+      <h2><span class="service-city-name">${esc(c.sq)}</span> <span class="service-city-en">${esc(c.en)}</span></h2>
+      <p data-sq="Instalim profesional Mitsubishi Heavy Industries në ${esc(c.sq)} — instalim standard 8 000–15 000 L, vizitë në vend falas." data-en="Professional Mitsubishi Heavy Industries installation in ${esc(c.en)} — standard install 8 000–15 000 L, free site visit.">Instalim profesional Mitsubishi Heavy Industries në ${esc(c.sq)} — instalim standard 8 000–15 000 L, vizitë në vend falas.</p>
+      <div class="service-sizes">
+        ${SIZES.map(s => `<a href="kondicioner/${s.m2}m2-${c.slug}.html" class="service-size-tile"><strong>${s.m2} m²</strong><span>${s.kw} kW</span></a>`).join('')}
+      </div>
+    </section>`).join('')}
+  </div>
+</div>`;
+}
+
+const serviceAreasHtml = pageShell({
+  titleSq: 'Zona të mbuluara — Instalim kondicioneri në Tiranë, Durrës, Vlorë, Shkodër, Elbasan | Klima.Al',
+  titleEn: 'Service Areas — A/C installation in Tirana, Durrës, Vlorë, Shkodër, Elbasan | Klima.Al',
+  description: 'Klima.Al ofron instalim, mirëmbajtje dhe riparim kondicionerësh Mitsubishi Heavy Industries në Tiranë, Durrës, Vlorë, Shkodër dhe Elbasan. Udhëzues sipas madhësisë së dhomës (10–60 m²).',
+  ogImage: `${SITE}/hero-mitsubishi.jpg`,
+  canonical: `${SITE}/zona-te-mbuluara.html`,
+  jsonLdScripts: [
+    `<script type="application/ld+json">${JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Service',
+      name: 'Instalim kondicioneri Mitsubishi Heavy Industries',
+      provider: { '@id': `${SITE}/#business` },
+      areaServed: CITIES.map(c => ({ '@type': 'City', name: c.sq, addressCountry: 'AL' })),
+      serviceType: 'Air conditioner installation',
+      dateModified: today
+    })}</script>`
+  ],
+  bodyContent: serviceAreasBody()
+}).replace(/href="\.\.\//g, 'href="').replace(/href="\.\.\/favicon\.svg"/g, 'href="favicon.svg"').replace(/href="\.\.\/apple-touch-icon\.png"/g, 'href="apple-touch-icon.png"').replace(/href="\.\.\/manifest\.webmanifest"/g, 'href="manifest.webmanifest"').replace(/href="\.\.\/style\.css"/g, 'href="style.css"').replace(/src="\.\.\//g, 'src="');
+fs.writeFileSync(path.join(ROOT, 'zona-te-mbuluara.html'), serviceAreasHtml);
+console.log('Wrote service areas hub: zona-te-mbuluara.html');
+
 const staticPages = [
-  { loc: '/',                            prio: '1.0', freq: 'weekly' },
-  { loc: '/produkte/residential.html',   prio: '0.9', freq: 'weekly' },
-  { loc: '/produkte/multisplit.html',    prio: '0.9', freq: 'weekly' },
-  { loc: '/produkte/floor.html',         prio: '0.9', freq: 'weekly' },
-  { loc: '/materiale.html',              prio: '0.7', freq: 'monthly' },
-  { loc: '/faq.html',                    prio: '0.8', freq: 'monthly' }
+  { loc: '/',                                  prio: '1.0', freq: 'weekly' },
+  { loc: '/produkte/residential.html',         prio: '0.9', freq: 'weekly' },
+  { loc: '/produkte/multisplit.html',          prio: '0.9', freq: 'weekly' },
+  { loc: '/produkte/floor.html',               prio: '0.9', freq: 'weekly' },
+  { loc: '/materiale.html',                    prio: '0.7', freq: 'monthly' },
+  { loc: '/faq.html',                          prio: '0.8', freq: 'monthly' },
+  { loc: '/zona-te-mbuluara.html',             prio: '0.8', freq: 'monthly' },
+  { loc: '/ekipi.html',                        prio: '0.7', freq: 'monthly' },
+  { loc: '/kalkulator-energjie.html',          prio: '0.8', freq: 'monthly' },
+  { loc: '/galeria-instalimeve.html',          prio: '0.7', freq: 'monthly' },
+  { loc: '/krahasime/',                        prio: '0.8', freq: 'monthly' },
+  { loc: '/krahasime/kireia-vs-daikin.html',   prio: '0.8', freq: 'monthly' },
+  { loc: '/krahasime/kireia-vs-lg.html',       prio: '0.8', freq: 'monthly' },
+  { loc: '/krahasime/kireia-vs-samsung.html',  prio: '0.8', freq: 'monthly' },
+  { loc: '/blog/',                             prio: '0.7', freq: 'weekly' },
+  { loc: '/blog/si-te-zgjedhesh-kondicioner.html',    prio: '0.7', freq: 'monthly' },
+  { loc: '/blog/mirembajtja-vjetore-kondicioner.html', prio: '0.7', freq: 'monthly' },
+  { loc: '/blog/r32-vs-r410a-shpjeguar.html',         prio: '0.7', freq: 'monthly' },
+  { loc: '/privatesia.html',                          prio: '0.3', freq: 'yearly' },
+  { loc: '/kushte-perdorimi.html',                    prio: '0.3', freq: 'yearly' }
 ];
 const localPageUrls = CITIES.flatMap(c => SIZES.map(s => ({
   loc: `/kondicioner/${s.m2}m2-${c.slug}.html`,

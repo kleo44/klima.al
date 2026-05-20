@@ -17,9 +17,9 @@ function isFav(id) { return loadFavs().includes(id); }
 function toggleFav(id, productMeta) {
   const ids = loadFavs();
   const idx = ids.indexOf(id);
+  let added = false;
   if (idx >= 0) {
     ids.splice(idx, 1);
-    // remove cached meta
     const cache = loadFavCache();
     delete cache[id];
     saveFavCache(cache);
@@ -31,6 +31,7 @@ function toggleFav(id, productMeta) {
       return;
     }
     ids.push(id);
+    added = true;
     if (productMeta) {
       const cache = loadFavCache();
       cache[id] = productMeta;
@@ -38,6 +39,13 @@ function toggleFav(id, productMeta) {
     }
   }
   saveFavs(ids);
+  if (added) {
+    document.querySelectorAll(`.pc-fav[data-id="${CSS.escape(id)}"], .prod-fav[data-id="${CSS.escape(id)}"]`).forEach(el => {
+      el.classList.remove('just-faved');
+      void el.offsetWidth;
+      el.classList.add('just-faved');
+    });
+  }
 }
 
 const FAV_CACHE_KEY = 'klima-favorites-cache';

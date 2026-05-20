@@ -1,422 +1,506 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://klimaal.com/</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://klima-al.com/</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://klimaal.com/produkte/residential.html</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://klima-al.com/produkte/residential.html</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://klimaal.com/produkte/multisplit.html</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://klima-al.com/produkte/multisplit.html</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://klimaal.com/produkte/floor.html</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://klima-al.com/produkte/floor.html</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://klimaal.com/materiale.html</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://klima-al.com/materiale.html</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://klimaal.com/faq.html</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://klima-al.com/faq.html</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klimaal.com/product/kireia-2kw.html</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://klima-al.com/zona-te-mbuluara.html</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klimaal.com/product/kireia-2_5kw.html</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://klima-al.com/ekipi.html</loc>
+    <lastmod>2026-05-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://klima-al.com/kalkulator-energjie.html</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klimaal.com/product/kireia-3_5kw.html</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://klima-al.com/galeria-instalimeve.html</loc>
+    <lastmod>2026-05-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://klima-al.com/krahasime/</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klimaal.com/product/kireia-5kw.html</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://klima-al.com/krahasime/kireia-vs-daikin.html</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klimaal.com/product/kireia-plus.html</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://klima-al.com/krahasime/kireia-vs-lg.html</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klimaal.com/product/kireia-smart.html</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://klima-al.com/krahasime/kireia-vs-samsung.html</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klimaal.com/product/large-comfort.html</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://klima-al.com/blog/</loc>
+    <lastmod>2026-05-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://klima-al.com/blog/si-te-zgjedhesh-kondicioner.html</loc>
+    <lastmod>2026-05-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://klima-al.com/blog/mirembajtja-vjetore-kondicioner.html</loc>
+    <lastmod>2026-05-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://klima-al.com/blog/r32-vs-r410a-shpjeguar.html</loc>
+    <lastmod>2026-05-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://klima-al.com/privatesia.html</loc>
+    <lastmod>2026-05-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://klima-al.com/kushte-perdorimi.html</loc>
+    <lastmod>2026-05-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://klima-al.com/product/kireia-2kw.html</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klimaal.com/product/floor-3_5kw.html</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://klima-al.com/product/kireia-2_5kw.html</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klimaal.com/product/mi-kireia-plus.html</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://klima-al.com/product/kireia-3_5kw.html</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klimaal.com/product/mi-kireia.html</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://klima-al.com/product/kireia-5kw.html</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klimaal.com/product/mi-wall-skm.html</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://klima-al.com/product/kireia-plus.html</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klimaal.com/product/mi-wall-srk.html</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://klima-al.com/product/kireia-smart.html</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klimaal.com/product/mi-console.html</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://klima-al.com/product/large-comfort.html</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klimaal.com/product/mi-ceiling.html</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://klima-al.com/product/floor-3_5kw.html</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klimaal.com/product/mi-medium-ducted.html</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://klima-al.com/product/mi-kireia-plus.html</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klimaal.com/product/mi-low-ducted.html</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://klima-al.com/product/mi-kireia.html</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klimaal.com/product/mi-cassette-60.html</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://klima-al.com/product/mi-wall-skm.html</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klimaal.com/product/multi-4kw-outdoor.html</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://klima-al.com/product/mi-wall-srk.html</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klimaal.com/product/multi-4_5kw-outdoor.html</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://klima-al.com/product/mi-console.html</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klimaal.com/product/multi-5kw-outdoor.html</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://klima-al.com/product/mi-ceiling.html</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klimaal.com/product/multi-6kw-outdoor.html</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://klima-al.com/product/mi-medium-ducted.html</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klimaal.com/product/multi-7_1kw-outdoor.html</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://klima-al.com/product/mi-low-ducted.html</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klimaal.com/product/multi-8kw-outdoor.html</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://klima-al.com/product/mi-cassette-60.html</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klimaal.com/product/multi-10kw-outdoor.html</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://klima-al.com/product/multi-4kw-outdoor.html</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klimaal.com/kondicioner/10m2-tirane.html</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://klima-al.com/product/multi-4_5kw-outdoor.html</loc>
+    <lastmod>2026-05-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://klima-al.com/product/multi-5kw-outdoor.html</loc>
+    <lastmod>2026-05-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://klima-al.com/product/multi-6kw-outdoor.html</loc>
+    <lastmod>2026-05-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://klima-al.com/product/multi-7_1kw-outdoor.html</loc>
+    <lastmod>2026-05-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://klima-al.com/product/multi-8kw-outdoor.html</loc>
+    <lastmod>2026-05-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://klima-al.com/product/multi-10kw-outdoor.html</loc>
+    <lastmod>2026-05-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://klima-al.com/kondicioner/10m2-tirane.html</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://klimaal.com/kondicioner/15m2-tirane.html</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://klima-al.com/kondicioner/15m2-tirane.html</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://klimaal.com/kondicioner/20m2-tirane.html</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://klima-al.com/kondicioner/20m2-tirane.html</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://klimaal.com/kondicioner/25m2-tirane.html</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://klima-al.com/kondicioner/25m2-tirane.html</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://klimaal.com/kondicioner/30m2-tirane.html</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://klima-al.com/kondicioner/30m2-tirane.html</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://klimaal.com/kondicioner/40m2-tirane.html</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://klima-al.com/kondicioner/40m2-tirane.html</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://klimaal.com/kondicioner/50m2-tirane.html</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://klima-al.com/kondicioner/50m2-tirane.html</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://klimaal.com/kondicioner/60m2-tirane.html</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://klima-al.com/kondicioner/60m2-tirane.html</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://klimaal.com/kondicioner/10m2-durres.html</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://klima-al.com/kondicioner/10m2-durres.html</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://klimaal.com/kondicioner/15m2-durres.html</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://klima-al.com/kondicioner/15m2-durres.html</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://klimaal.com/kondicioner/20m2-durres.html</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://klima-al.com/kondicioner/20m2-durres.html</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://klimaal.com/kondicioner/25m2-durres.html</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://klima-al.com/kondicioner/25m2-durres.html</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://klimaal.com/kondicioner/30m2-durres.html</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://klima-al.com/kondicioner/30m2-durres.html</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://klimaal.com/kondicioner/40m2-durres.html</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://klima-al.com/kondicioner/40m2-durres.html</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://klimaal.com/kondicioner/50m2-durres.html</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://klima-al.com/kondicioner/50m2-durres.html</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://klimaal.com/kondicioner/60m2-durres.html</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://klima-al.com/kondicioner/60m2-durres.html</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://klimaal.com/kondicioner/10m2-vlore.html</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://klima-al.com/kondicioner/10m2-vlore.html</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://klimaal.com/kondicioner/15m2-vlore.html</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://klima-al.com/kondicioner/15m2-vlore.html</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://klimaal.com/kondicioner/20m2-vlore.html</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://klima-al.com/kondicioner/20m2-vlore.html</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://klimaal.com/kondicioner/25m2-vlore.html</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://klima-al.com/kondicioner/25m2-vlore.html</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://klimaal.com/kondicioner/30m2-vlore.html</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://klima-al.com/kondicioner/30m2-vlore.html</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://klimaal.com/kondicioner/40m2-vlore.html</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://klima-al.com/kondicioner/40m2-vlore.html</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://klimaal.com/kondicioner/50m2-vlore.html</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://klima-al.com/kondicioner/50m2-vlore.html</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://klimaal.com/kondicioner/60m2-vlore.html</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://klima-al.com/kondicioner/60m2-vlore.html</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://klimaal.com/kondicioner/10m2-shkoder.html</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://klima-al.com/kondicioner/10m2-shkoder.html</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://klimaal.com/kondicioner/15m2-shkoder.html</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://klima-al.com/kondicioner/15m2-shkoder.html</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://klimaal.com/kondicioner/20m2-shkoder.html</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://klima-al.com/kondicioner/20m2-shkoder.html</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://klimaal.com/kondicioner/25m2-shkoder.html</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://klima-al.com/kondicioner/25m2-shkoder.html</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://klimaal.com/kondicioner/30m2-shkoder.html</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://klima-al.com/kondicioner/30m2-shkoder.html</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://klimaal.com/kondicioner/40m2-shkoder.html</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://klima-al.com/kondicioner/40m2-shkoder.html</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://klimaal.com/kondicioner/50m2-shkoder.html</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://klima-al.com/kondicioner/50m2-shkoder.html</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://klimaal.com/kondicioner/60m2-shkoder.html</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://klima-al.com/kondicioner/60m2-shkoder.html</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://klimaal.com/kondicioner/10m2-elbasan.html</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://klima-al.com/kondicioner/10m2-elbasan.html</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://klimaal.com/kondicioner/15m2-elbasan.html</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://klima-al.com/kondicioner/15m2-elbasan.html</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://klimaal.com/kondicioner/20m2-elbasan.html</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://klima-al.com/kondicioner/20m2-elbasan.html</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://klimaal.com/kondicioner/25m2-elbasan.html</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://klima-al.com/kondicioner/25m2-elbasan.html</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://klimaal.com/kondicioner/30m2-elbasan.html</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://klima-al.com/kondicioner/30m2-elbasan.html</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://klimaal.com/kondicioner/40m2-elbasan.html</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://klima-al.com/kondicioner/40m2-elbasan.html</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://klimaal.com/kondicioner/50m2-elbasan.html</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://klima-al.com/kondicioner/50m2-elbasan.html</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://klimaal.com/kondicioner/60m2-elbasan.html</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://klima-al.com/kondicioner/60m2-elbasan.html</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

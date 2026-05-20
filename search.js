@@ -8,7 +8,7 @@ async function loadSearchCatalog() {
   if (__klimaSearchLoading) return __klimaSearchLoading;
   __klimaSearchLoading = (async () => {
     try {
-      const res = await fetch('catalog.json');
+      const res = await fetch('/catalog.json');
       const data = await res.json();
       __klimaSearchCatalog = data;
       return data;

@@ -7,7 +7,7 @@
 
   let catalog;
   try {
-    const res = await fetch('catalog.json');
+    const res = await fetch('/catalog.json');
     catalog = await res.json();
   } catch {
     grid.innerHTML = '<p>Produktet nuk u ngarkuan.</p>';

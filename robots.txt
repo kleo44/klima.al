@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://klimaal.com/sitemap.xml
+Sitemap: https://klima-al.com/sitemap.xml

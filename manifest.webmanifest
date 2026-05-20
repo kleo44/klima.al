@@ -2,18 +2,62 @@
   "name": "Klima.Al — Kondicionerë Mitsubishi Heavy Industries",
   "short_name": "Klima.Al",
   "description": "Distributor zyrtar Mitsubishi Heavy Industries në Shqipëri. Kondicionerë inverter R32 dhe instalim profesional.",
+  "id": "/",
   "lang": "sq-AL",
+  "dir": "ltr",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
+  "display_override": ["standalone", "minimal-ui"],
   "background_color": "#ffffff",
   "theme_color": "#0e1c2f",
   "orientation": "portrait",
   "icons": [
-    { "src": "favicon.svg",       "sizes": "any",       "type": "image/svg+xml" },
-    { "src": "icon-192.png",      "sizes": "192x192",   "type": "image/png", "purpose": "any" },
-    { "src": "icon-512.png",      "sizes": "512x512",   "type": "image/png", "purpose": "any" },
+    { "src": "favicon.svg",          "sizes": "any",     "type": "image/svg+xml" },
+    { "src": "icon-192.png",         "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icon-192.png",         "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+    { "src": "icon-512.png",         "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png",         "sizes": "512x512", "type": "image/png", "purpose": "maskable" },
     { "src": "apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
   ],
-  "categories": ["shopping", "lifestyle"]
+  "categories": ["shopping", "lifestyle", "business"],
+  "shortcuts": [
+    {
+      "name": "Katalogu i produkteve",
+      "short_name": "Produkte",
+      "description": "Shfleto kondicionerët KIREIA dhe Multi-Split",
+      "url": "/produkte/residential.html",
+      "icons": [{ "src": "icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Kalkulator i konsumit",
+      "short_name": "Kalkulator",
+      "description": "Llogarit sa lekë harxhon kondicioneri në muaj",
+      "url": "/kalkulator-energjie.html",
+      "icons": [{ "src": "icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Pyetjet më të Shpeshta",
+      "short_name": "FAQ",
+      "description": "Përgjigjet për pyetjet kryesore",
+      "url": "/faq.html",
+      "icons": [{ "src": "icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Porosit në WhatsApp",
+      "short_name": "WhatsApp",
+      "description": "Kontakt i drejtpërdrejtë me ekipin",
+      "url": "https://wa.me/355672549225",
+      "icons": [{ "src": "icon-192.png", "sizes": "192x192" }]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "hero-mitsubishi.jpg",
+      "sizes": "1200x1000",
+      "type": "image/jpeg",
+      "form_factor": "wide",
+      "label": "Klima.Al — Distributor zyrtar Mitsubishi Heavy Industries"
+    }
+  ]
 }

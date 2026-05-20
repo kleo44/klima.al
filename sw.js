@@ -4,19 +4,23 @@
    Images: cache-first (immutable assets)
 */
 
-const VERSION = 'klima-v5-2026-05-13';
+const VERSION = 'klima-v16-2026-05-20';
 const CORE = [
   '/',
   '/index.html',
   '/produkte.html',
   '/product.html',
   '/materiale.html',
+  '/compare.html',
+  '/faq.html',
   '/404.html',
   '/style.css',
   '/app.js',
   '/cart.js',
   '/product.js',
   '/search.js',
+  '/compare.js',
+  '/favorites.js',
   '/catalog.json',
   '/favicon.svg',
   '/manifest.webmanifest',

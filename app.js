@@ -32,7 +32,17 @@ document.querySelectorAll('.lb').forEach(b => b.addEventListener('click', () => 
 
 /* ── Sticky header shadow ─────────────────────────── */
 const header = document.getElementById('header');
-if (header) window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 20));
+if (header) {
+  let hdrTicking = false;
+  window.addEventListener('scroll', () => {
+    if (hdrTicking) return;
+    hdrTicking = true;
+    requestAnimationFrame(() => {
+      header.classList.toggle('scrolled', window.scrollY > 20);
+      hdrTicking = false;
+    });
+  }, { passive: true });
+}
 
 /* ── Hamburger ────────────────────────────────────── */
 const burger = document.getElementById('burger');
@@ -76,7 +86,7 @@ async function renderHomeProducts() {
   grid.innerHTML = Array.from({ length: 6 }, skeletonCardHTML).join('');
   let catalog;
   try {
-    const res = await fetch('catalog.json');
+    const res = await fetch('/catalog.json');
     catalog = await res.json();
   } catch (e) {
     grid.innerHTML = '<p style="color:#888;text-align:center;padding:40px">Produktet nuk u ngarkuan.</p>';
@@ -107,7 +117,7 @@ async function renderHomeProducts() {
     }
     document.title = `${(lang === 'sq' ? meta.label_sq : meta.label_en)} – Klima.Al`;
     const canon = document.getElementById('catCanonical');
-    if (canon) canon.setAttribute('href', `https://klimaal.com/produkte/${cat}.html`);
+    if (canon) canon.setAttribute('href', `https://klima-al.com/produkte/${cat}.html`);
   }
 
   if (products.length === 0) {
@@ -215,48 +225,69 @@ const form     = document.getElementById('cForm');
 const fSuccess = document.getElementById('fSuccess');
 
 if (form && fSuccess) {
-  form.addEventListener('submit', async e => {
+  form.addEventListener('submit', e => {
     e.preventDefault();
-    const btn = form.querySelector('button[type="submit"]');
-    const originalBtn = btn.textContent;
-    btn.disabled    = true;
-    btn.textContent = lang === 'sq' ? 'Duke dërguar…' : 'Sending…';
-
+    // Honeypot — silently succeed if filled
     const data = Object.fromEntries(new FormData(form).entries());
-    try {
-      const r = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
-      });
-      const json = await r.json().catch(() => ({}));
-      if (!r.ok || !json.ok) throw new Error(json.error || 'Send failed');
-
+    if (data.company) {
       form.reset();
-      fSuccess.classList.remove('error');
-      fSuccess.textContent = lang === 'sq'
-        ? "✅ Faleminderit! Do t'ju kontaktojmë brenda 2 orësh."
-        : '✅ Thank you! We will contact you within 2 hours.';
-      fSuccess.classList.add('show');
-      setTimeout(() => fSuccess.classList.remove('show'), 5000);
-    } catch (err) {
+      return;
+    }
+
+    const name    = String(data.name    || '').trim();
+    const phone   = String(data.phone   || '').trim();
+    const email   = String(data.email   || '').trim();
+    const product = String(data.product || '').trim();
+    const city    = String(data.city    || '').trim();
+    const message = String(data.message || '').trim();
+
+    if (!name || !phone) {
       fSuccess.classList.add('error');
       fSuccess.textContent = lang === 'sq'
-        ? `⚠️ Dërgimi dështoi. Na telefono te +355 67 254 9225.`
-        : `⚠️ Send failed. Please call us at +355 67 254 9225.`;
+        ? '⚠️ Emri dhe nr. i telefonit janë të nevojshëm.'
+        : '⚠️ Name and phone are required.';
       fSuccess.classList.add('show');
-      setTimeout(() => fSuccess.classList.remove('show'), 6000);
-    } finally {
-      btn.disabled = false;
-      btn.textContent = originalBtn;
+      setTimeout(() => fSuccess.classList.remove('show'), 5000);
+      return;
     }
+
+    const greeting = lang === 'sq' ? 'Përshëndetje Klima.Al,' : 'Hello Klima.Al,';
+    const lines = [
+      greeting,
+      '',
+      `Emri: ${name}`,
+      `Telefoni: ${phone}`,
+      email   ? `Email: ${email}`     : null,
+      product ? `Produkti: ${product}` : null,
+      city    ? `Qyteti: ${city}`     : null,
+      message ? `\nMesazh:\n${message}` : null
+    ].filter(Boolean).join('\n');
+
+    const url = `https://wa.me/355672549225?text=${encodeURIComponent(lines)}`;
+    window.open(url, '_blank', 'noopener');
+
+    form.reset();
+    fSuccess.classList.remove('error');
+    fSuccess.textContent = lang === 'sq'
+      ? '✅ WhatsApp u hap me kërkesën tuaj. Klikoni "Send" për ta dërguar.'
+      : '✅ WhatsApp opened with your request. Tap "Send" to deliver it.';
+    fSuccess.classList.add('show');
+    setTimeout(() => fSuccess.classList.remove('show'), 6000);
   });
 }
 
 /* ── Scroll to top ────────────────────────────────── */
 const sTop = document.getElementById('sTop');
 if (sTop) {
-  window.addEventListener('scroll', () => sTop.classList.toggle('show', window.scrollY > 400));
+  let sTopTicking = false;
+  window.addEventListener('scroll', () => {
+    if (sTopTicking) return;
+    sTopTicking = true;
+    requestAnimationFrame(() => {
+      sTop.classList.toggle('show', window.scrollY > 400);
+      sTopTicking = false;
+    });
+  }, { passive: true });
   sTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 }
 
@@ -272,18 +303,147 @@ const obs = new IntersectionObserver((entries) => {
 }, { threshold: 0.08 });
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
+/* ── Animated stat counters ───────────────────────── */
+(function () {
+  const items = document.querySelectorAll('.stats-bar .stat-item');
+  if (!items.length || !('IntersectionObserver' in window)) return;
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const easeOutCubic = t => 1 - Math.pow(1 - t, 3);
+
+  const animate = (el) => {
+    const originalHTML = el.innerHTML;
+    if (/[\/:]/.test(el.textContent)) return;
+    const match = el.textContent.match(/\d[\d\s]*/);
+    if (!match) return;
+    const raw = match[0];
+    const target = parseInt(raw.replace(/\s/g, ''), 10);
+    if (!Number.isFinite(target) || target < 10 || target > 100000) return;
+
+    const useSpace = /\d\s\d/.test(raw);
+    const format = n => useSpace ? n.toLocaleString('fr-FR').replace(/,/g, ' ') : String(n);
+
+    const duration = 1400;
+    const start = performance.now();
+    const tick = (now) => {
+      const t = Math.min((now - start) / duration, 1);
+      const cur = Math.round(target * easeOutCubic(t));
+      el.innerHTML = originalHTML.replace(raw, format(cur));
+      if (t < 1) requestAnimationFrame(tick);
+      else el.innerHTML = originalHTML;
+    };
+    requestAnimationFrame(tick);
+  };
+
+  const counter = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const strong = entry.target.querySelector('strong');
+      if (!strong || strong.dataset.counted) return;
+      strong.dataset.counted = '1';
+      animate(strong);
+      counter.unobserve(entry.target);
+    });
+  }, { threshold: 0.4 });
+
+  items.forEach(item => counter.observe(item));
+})();
+
+/* ── Section eyebrow accent line ──────────────────── */
+(function () {
+  const labels = document.querySelectorAll('.sec-label');
+  if (!labels.length) return;
+  if (!('IntersectionObserver' in window)) {
+    labels.forEach(l => l.classList.add('in-view'));
+    return;
+  }
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      e.target.classList.add('in-view');
+      io.unobserve(e.target);
+    });
+  }, { threshold: 0.5 });
+  labels.forEach(l => io.observe(l));
+})();
+
+/* ── Testimonial star fill-in ─────────────────────── */
+(function () {
+  const cards = document.querySelectorAll('.testi-card');
+  if (!cards.length) return;
+
+  cards.forEach(card => {
+    const stars = card.querySelector('.testi-stars');
+    if (!stars || stars.dataset.split) return;
+    const text = stars.textContent.trim();
+    if (!/^[★]+$/.test(text)) return;
+    stars.textContent = '';
+    [...text].forEach(ch => {
+      const s = document.createElement('span');
+      s.textContent = ch;
+      stars.appendChild(s);
+    });
+    stars.dataset.split = '1';
+  });
+
+  if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.querySelectorAll('.testi-stars span').forEach(s => s.classList.add('lit'));
+    return;
+  }
+
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const spans = e.target.querySelectorAll('.testi-stars span');
+      spans.forEach((s, i) => setTimeout(() => s.classList.add('lit'), i * 110));
+      io.unobserve(e.target);
+    });
+  }, { threshold: 0.3 });
+  cards.forEach(c => io.observe(c));
+})();
+
+/* ── Subtle parallax on feature images ────────────── */
+(function () {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (matchMedia('(max-width: 768px)').matches) return;
+  const imgs = document.querySelectorAll('.feat-img img');
+  if (!imgs.length) return;
+
+  const active = new Set();
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) active.add(e.target);
+      else active.delete(e.target);
+    });
+  }, { threshold: 0 });
+  imgs.forEach(img => {
+    img.style.willChange = 'transform';
+    io.observe(img);
+  });
+
+  let ticking = false;
+  const update = () => {
+    const vh = window.innerHeight;
+    active.forEach(img => {
+      const r = img.getBoundingClientRect();
+      const center = r.top + r.height / 2;
+      const progress = Math.max(-1, Math.min(1, (center - vh / 2) / vh));
+      img.style.transform = `translate3d(0, ${(-progress * 22).toFixed(1)}px, 0)`;
+    });
+    ticking = false;
+  };
+  const onScroll = () => {
+    if (!ticking) { requestAnimationFrame(update); ticking = true; }
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll, { passive: true });
+  update();
+})();
+
 /* ── Apply saved language ─────────────────────────── */
 setLang(lang);
 
-/* ── Sticky category header (produkte.html) ───────── */
-(function () {
-  const head = document.querySelector('.category-page .category-head');
-  if (!head) return;
-  const baseTop = head.getBoundingClientRect().top + window.scrollY;
-  window.addEventListener('scroll', () => {
-    head.classList.toggle('is-sticky', window.scrollY > baseTop + 40);
-  }, { passive: true });
-})();
+/* ── Sticky category header: disabled (caused scroll feedback loop on mobile) ── */
 
 /* ── PWA service worker registration ──────────────── */
 if ('serviceWorker' in navigator && location.protocol !== 'file:') {
@@ -330,7 +490,7 @@ function injectCollectionJsonLd(cat, products, catalog) {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
     name: `${meta.label_sq} – Klima.Al`,
-    url: `https://klimaal.com/produkte/${cat}.html`,
+    url: `https://klima-al.com/produkte/${cat}.html`,
     inLanguage: 'sq-AL',
     mainEntity: {
       '@type': 'ItemList',
@@ -338,7 +498,7 @@ function injectCollectionJsonLd(cat, products, catalog) {
       itemListElement: products.map((p, i) => ({
         '@type': 'ListItem',
         position: i + 1,
-        url: `https://klimaal.com/product/${encodeURIComponent(p.id)}.html`,
+        url: `https://klima-al.com/product/${encodeURIComponent(p.id)}.html`,
         name: p.title,
         image: p.hero_image
       }))
@@ -381,9 +541,20 @@ async function hydratePrerenderedCategory() {
   if (!grid) return;
   let catalog;
   try {
-    const res = await fetch('catalog.json');
+    const res = await fetch('/catalog.json');
+    if (!res.ok) throw new Error('catalog ' + res.status);
     catalog = await res.json();
   } catch { catalog = { products: [] }; }
+  // Bilingual <title> on /produkte/<cat>.html pages
+  const catSlug = (location.pathname.match(/\/produkte\/([^\/]+?)\.html$/) || [])[1];
+  const catMeta = catSlug && catalog.categories ? catalog.categories[catSlug] : null;
+  if (catMeta) {
+    const titleEl = document.querySelector('title');
+    if (titleEl) {
+      titleEl.dataset.sqTitle = `${catMeta.label_sq} – Klima.Al`;
+      titleEl.dataset.enTitle = `${catMeta.label_en} – Klima.Al`;
+    }
+  }
   const map = Object.fromEntries((catalog.products || []).map(p => [p.id, p]));
   grid.querySelectorAll('.pc-atc').forEach(btn => {
     btn.addEventListener('click', e => {
