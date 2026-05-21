@@ -608,9 +608,9 @@ function localBusinessJsonLd(city) {
     aggregateRating: { '@type':'AggregateRating', ratingValue:'5.0', bestRating:'5', ratingCount:'3', reviewCount:'3' },
     sameAs: [
       'https://wa.me/355672549225',
-      'https://www.instagram.com/klima.all/',
+      'https://www.instagram.com/klima.al/',
       'https://www.facebook.com/profile.php?id=61589934023018',
-      'https://www.tiktok.com/@klima.al0'
+      'https://www.tiktok.com/@klima.al'
     ]
   });
 }

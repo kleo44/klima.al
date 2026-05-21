@@ -91,7 +91,7 @@ function renderStickyCta(product) {
   bar.innerHTML = `
     <div class="psc-price">
       <span class="psc-price-lbl" data-sq="Çmim" data-en="Price">Çmim</span>
-      <strong class="psc-price-val ${isOnRequest ? 'on-request' : ''}"${isOnRequest ? ' data-sq="Me kërkesë" data-en="On request"' : ''}>${escapeHtml(priceText)}</strong>
+      <strong class="psc-price-val ${isOnRequest ? 'on-request' : ''}"${isOnRequest ? ' data-sq="Me kërkesë" data-en="On request"' : ''}>${escHtmlP(priceText)}</strong>
     </div>
     <button class="btn btn-red" id="prodStickyAtc" data-sq="Shto në Shportë" data-en="Add to Cart">Shto në Shportë</button>
   `;
@@ -196,7 +196,7 @@ function setMeta(attr, value, content) {
   el.setAttribute('content', content);
 }
 
-function escapeHtml(s) {
+function escHtmlP(s) {
   return String(s ?? '')
     .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
@@ -221,23 +221,23 @@ function renderProduct(p, catalog) {
     <nav class="prod-crumbs" aria-label="Breadcrumb">
       <a href="index.html">Kreu</a>
       <span>›</span>
-      <a href="produkte/${encodeURIComponent(p.category)}.html">${escapeHtml(breadcrumbCat)}</a>
+      <a href="produkte/${encodeURIComponent(p.category)}.html">${escHtmlP(breadcrumbCat)}</a>
       <span>›</span>
-      <span class="crumb-current">${escapeHtml(p.title)}</span>
+      <span class="crumb-current">${escHtmlP(p.title)}</span>
     </nav>
 
     <div class="prod-grid">
       <div class="prod-gallery">
         <div class="prod-hero" id="prodHero">
           ${images.length
-            ? `<img src="${escapeHtml(images[0])}" alt="${escapeHtml(p.title)}" id="prodHeroImg" />`
-            : `<div class="prod-hero-placeholder">${escapeHtml(p.title)}</div>`}
+            ? `<img src="${escHtmlP(images[0])}" alt="${escHtmlP(p.title)}" id="prodHeroImg" />`
+            : `<div class="prod-hero-placeholder">${escHtmlP(p.title)}</div>`}
         </div>
         ${hasMulti ? `
           <div class="prod-thumbs">
             ${images.map((src, i) => `
-              <button class="prod-thumb${i === 0 ? ' active' : ''}" data-src="${escapeHtml(src)}" aria-label="Image ${i + 1}">
-                <img src="${escapeHtml(src)}" alt="" loading="lazy" />
+              <button class="prod-thumb${i === 0 ? ' active' : ''}" data-src="${escHtmlP(src)}" aria-label="Image ${i + 1}">
+                <img src="${escHtmlP(src)}" alt="" loading="lazy" />
               </button>
             `).join('')}
           </div>
@@ -245,13 +245,13 @@ function renderProduct(p, catalog) {
       </div>
 
       <div class="prod-info">
-        ${p.brand_label ? `<span class="prod-brand">${escapeHtml(p.brand_label)}</span>` : `<span class="prod-brand">Mitsubishi Heavy Industries</span>`}
-        <h1 class="prod-title">${escapeHtml(p.title)}</h1>
-        ${p.subtitle ? `<p class="prod-sub">${escapeHtml(p.subtitle)}</p>` : ''}
+        ${p.brand_label ? `<span class="prod-brand">${escHtmlP(p.brand_label)}</span>` : `<span class="prod-brand">Mitsubishi Heavy Industries</span>`}
+        <h1 class="prod-title">${escHtmlP(p.title)}</h1>
+        ${p.subtitle ? `<p class="prod-sub">${escHtmlP(p.subtitle)}</p>` : ''}
 
         ${features && features.length ? `
           <ul class="prod-features">
-            ${features.slice(0, 5).map(f => `<li>${escapeHtml(f)}</li>`).join('')}
+            ${features.slice(0, 5).map(f => `<li>${escHtmlP(f)}</li>`).join('')}
           </ul>
         ` : ''}
 
@@ -262,9 +262,9 @@ function renderProduct(p, catalog) {
               ${sizes.map((s, i) => `
                 <button class="prod-size-btn${i === 0 ? ' active' : ''}"
                         data-idx="${i}"
-                        data-model="${escapeHtml(s.model || '')}"
-                        data-label="${escapeHtml(s.label || s.model || '')}">
-                  ${escapeHtml(s.label || s.model || '')}
+                        data-model="${escHtmlP(s.model || '')}"
+                        data-label="${escHtmlP(s.label || s.model || '')}">
+                  ${escHtmlP(s.label || s.model || '')}
                 </button>
               `).join('')}
             </div>
@@ -274,20 +274,20 @@ function renderProduct(p, catalog) {
         <div class="prod-price-row">
           <div class="prod-price-block">
             <span class="prod-price-lbl">Çmim</span>
-            <strong class="prod-price ${isOnRequest ? 'on-request' : ''}" id="prodPrice">${escapeHtml(priceText)}</strong>
+            <strong class="prod-price ${isOnRequest ? 'on-request' : ''}" id="prodPrice">${escHtmlP(priceText)}</strong>
           </div>
           <button class="btn btn-red prod-atc" id="prodAtc"
                   data-sq="Shto në Shportë" data-en="Add to Cart">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="margin-right:8px;vertical-align:-3px"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
             Shto në Shportë
           </button>
-          <button class="prod-fav" type="button" data-id="${escapeHtml(p.id)}" aria-label="Shto te të preferuarat" aria-pressed="false" title="Shto te të preferuarat">
+          <button class="prod-fav" type="button" data-id="${escHtmlP(p.id)}" aria-label="Shto te të preferuarat" aria-pressed="false" title="Shto te të preferuarat">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
           </button>
         </div>
 
         ${p.brochure_url ? `
-          <a href="${escapeHtml(p.brochure_url)}" target="_blank" class="prod-brochure">
+          <a href="${escHtmlP(p.brochure_url)}" target="_blank" class="prod-brochure">
             📄 <span data-sq="Skedë teknike (PDF)" data-en="Technical brochure (PDF)">Skedë teknike (PDF)</span>
           </a>
         ` : ''}
@@ -297,7 +297,7 @@ function renderProduct(p, catalog) {
     ${description ? `
       <section class="prod-section">
         <h2 data-sq="Përshkrimi" data-en="Description">Përshkrimi</h2>
-        <div class="prod-desc">${description.split(/\n\n+/).map(para => `<p>${escapeHtml(para)}</p>`).join('')}</div>
+        <div class="prod-desc">${description.split(/\n\n+/).map(para => `<p>${escHtmlP(para)}</p>`).join('')}</div>
       </section>
     ` : ''}
 
@@ -335,14 +335,14 @@ function renderSpecsTable(specs) {
           <thead>
             <tr>
               <th>Modeli</th>
-              ${colKeys.map(k => `<th>${escapeHtml(labels[k] || k.replace(/_/g, ' '))}</th>`).join('')}
+              ${colKeys.map(k => `<th>${escHtmlP(labels[k] || k.replace(/_/g, ' '))}</th>`).join('')}
             </tr>
           </thead>
           <tbody>
             ${specs.map(row => `
               <tr>
-                <td><strong>${escapeHtml(row.model || '—')}</strong></td>
-                ${colKeys.map(k => `<td>${escapeHtml(row[k] != null ? row[k] : '—')}</td>`).join('')}
+                <td><strong>${escHtmlP(row.model || '—')}</strong></td>
+                ${colKeys.map(k => `<td>${escHtmlP(row[k] != null ? row[k] : '—')}</td>`).join('')}
               </tr>
             `).join('')}
           </tbody>
