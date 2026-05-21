@@ -231,7 +231,6 @@ ${tableRows}
 <script src="../favorites.js" defer></script>
 <script src="../cart.js" defer></script>
 <script src="../app.js" defer></script>
-<script defer src="/_vercel/insights/script.js"></script>
 <script defer src="/_vercel/speed-insights/script.js"></script>
 </body>
 </html>`;
@@ -341,7 +340,6 @@ function buildIndex() {
 <script src="../favorites.js" defer></script>
 <script src="../cart.js" defer></script>
 <script src="../app.js" defer></script>
-<script defer src="/_vercel/insights/script.js"></script>
 <script defer src="/_vercel/speed-insights/script.js"></script>
 </body>
 </html>`;

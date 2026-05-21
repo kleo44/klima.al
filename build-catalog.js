@@ -297,7 +297,6 @@ ${FOOTER_HTML}
 <script src="../cart.js" defer></script>
 <script src="../app.js" defer></script>
 <script src="../product.js" defer></script>
-<script defer src="/_vercel/insights/script.js"></script>
 <script defer src="/_vercel/speed-insights/script.js"></script>
 </body>
 </html>
@@ -765,9 +764,7 @@ const staticPages = [
   { loc: '/materiale.html',                    prio: '0.7', freq: 'monthly' },
   { loc: '/faq.html',                          prio: '0.8', freq: 'monthly' },
   { loc: '/zona-te-mbuluara.html',             prio: '0.8', freq: 'monthly' },
-  { loc: '/ekipi.html',                        prio: '0.7', freq: 'monthly' },
   { loc: '/kalkulator-energjie.html',          prio: '0.8', freq: 'monthly' },
-  { loc: '/galeria-instalimeve.html',          prio: '0.7', freq: 'monthly' },
   { loc: '/krahasime/',                        prio: '0.8', freq: 'monthly' },
   { loc: '/krahasime/kireia-vs-daikin.html',   prio: '0.8', freq: 'monthly' },
   { loc: '/krahasime/kireia-vs-lg.html',       prio: '0.8', freq: 'monthly' },
